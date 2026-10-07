@@ -1,43 +1,87 @@
-Content:
-# Architecture
+# ESP32 IoT System - Architecture
 
-## Main components
+## 1. Architecture
 
+The system is divided into the following components:
+
+- ESP32
 - ESP32 Simulator
-- ESP32 Firmware
-- Backend REST API
+- FastAPI Backend
 - PostgreSQL
-- Frontend Dashboard
-- Node-RED
+- Web Frontend
 - Postman
+- Node-RED
 
-## Main data flow
+Node-RED is intentionally developed separately.
 
-ESP32 Simulator / ESP32
+## 2. Main communication
+
+ESP32 / Simulator
         |
+        | HTTP POST
         v
-Backend REST API
+FastAPI Backend
         |
+        | SQL
         v
 PostgreSQL
 
-Frontend Dashboard
+Frontend
         |
+        | HTTP REST
         v
-Backend REST API
+FastAPI Backend
 
-Node-RED
-        |
-        +---- Backend REST API
-        |
-        +---- ESP32 / Simulator
+## 3. Telemetry
 
-## Development strategy
+The ESP32 periodically sends:
 
-The simulator will be implemented first so that the complete software system can be developed and tested without physical ESP32 hardware.
+- device_id
+- temperature
+- humidity
+- pressure
+- button_state
+- timestamp
 
-The real ESP32 firmware must follow the same communication contract as the simulator.
+The backend stores each measurement in `sensor_logs`.
 
-Node-RED will be developed separately after the main software system is functional.
+## 4. LED control
 
-The system should remain modular so that replacing the simulator with the real ESP32 does not require changes to the backend or frontend.
+The Web Dashboard sends:
+
+POST /api/actuators/led
+
+The backend stores the desired LED state.
+
+The ESP32 periodically requests:
+
+GET /api/actuators/led
+
+The ESP32 applies the returned state to GPIO2.
+
+## 5. Simulator
+
+The simulator reproduces the ESP32 communication flow.
+
+It generates:
+
+- temperature
+- humidity
+- pressure
+- button state
+
+and sends telemetry to the backend.
+
+This allows development without physical hardware.
+
+## 6. Node-RED
+
+Node-RED will be integrated after:
+
+1. Backend is working.
+2. PostgreSQL is working.
+3. Simulator is working.
+4. Frontend is working.
+5. ESP32 firmware is working.
+
+The Node-RED flow will use the same REST API contract.

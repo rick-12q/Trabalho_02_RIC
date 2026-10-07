@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ESP32 IoT Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js"
+    ></script>
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <main class="dashboard">
+
+        <header class="header">
+
+            <div>
+                <p class="eyebrow">
+                    ESP32 IoT SYSTEM
+                </p>
+
+                <h1>
+                    Device Dashboard
+                </h1>
+
+                <p class="subtitle">
+                    Monitoramento em tempo real
+                </p>
+            </div>
+
+            <div class="connection">
+                <span
+                    id="connectionDot"
+                    class="dot offline"
+                ></span>
+
+                <span id="connectionText">
+                    Offline
+                </span>
+            </div>
+
+        </header>
+
+
+        <section class="cards">
+
+            <article class="card">
+
+                <div class="card-header">
+                    <span>Temperatura</span>
+                    <span>°C</span>
+                </div>
+
+                <div
+                    id="temperature"
+                    class="value"
+                >
+                    --
+                </div>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-header">
+                    <span>Umidade</span>
+                    <span>%</span>
+                </div>
+
+                <div
+                    id="humidity"
+                    class="value"
+                >
+                    --
+                </div>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-header">
+                    <span>Pressão</span>
+                    <span>hPa</span>
+                </div>
+
+                <div
+                    id="pressure"
+                    class="value"
+                >
+                    --
+                </div>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-header">
+                    <span>Botão</span>
+                </div>
+
+                <div
+                    id="buttonState"
+                    class="status"
+                >
+                    --
+                </div>
+
+            </article>
+
+
+            <article class="card led-card">
+
+                <div class="card-header">
+                    <span>LED</span>
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        id="ledToggle"
+                        type="checkbox"
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+                <div
+                    id="ledText"
+                    class="led-text"
+                >
+                    Desligado
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <section class="chart-card">
+
+            <div class="chart-header">
+
+                <div>
+                    <p class="eyebrow">
+                        HISTÓRICO
+                    </p>
+
+                    <h2>
+                        Temperatura
+                    </h2>
+                </div>
+
+            </div>
+
+            <div class="chart-container">
+
+                <canvas
+                    id="temperatureChart"
+                ></canvas>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            <span>
+                ESP32 IoT System
+            </span>
+
+            <span>
+                Device:
+                <strong id="deviceId">
+                    --
+                </strong>
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ESP32 Simulator</title>
+
+    <link
+        rel="stylesheet"
+        href="/style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- ================================================= -->
+        <!-- HEADER -->
+        <!-- ================================================= -->
+
+        <header class="topbar">
+
+            <div>
+
+                <span class="eyebrow">
+                    EMBEDDED IOT LAB
+                </span>
+
+                <h1>
+                    ESP32 Simulator
+                </h1>
+
+                <p>
+                    Simulador visual do dispositivo ESP32
+                </p>
+
+            </div>
+
+            <div class="connection">
+
+                <span
+                    id="connectionDot"
+                    class="connection-dot"
+                ></span>
+
+                <span id="connectionText">
+                    Conectando...
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================================================= -->
+        <!-- GRID PRINCIPAL -->
+        <!-- ================================================= -->
+
+        <main class="dashboard">
+
+
+            <!-- ============================================= -->
+            <!-- ESP32 VISUAL -->
+            <!-- ============================================= -->
+
+            <section class="card device-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            DISPOSITIVO
+                        </span>
+
+                        <h2>
+                            ESP32 Virtual
+                        </h2>
+
+                    </div>
+
+                    <span class="device-id">
+                        esp32-simulator-001
+                    </span>
+
+                </div>
+
+
+                <div class="esp-area">
+
+                    <div class="esp-board">
+
+                        <div class="board-title">
+                            ESP32
+                        </div>
+
+                        <div class="chip">
+
+                            <span class="chip-logo">
+                                ESP32
+                            </span>
+
+                            <span class="chip-subtitle">
+                                Wi-Fi + MCU
+                            </span>
+
+                        </div>
+
+
+                        <!-- LED -->
+
+                        <div
+                            id="visualLed"
+                            class="led led-off"
+                        >
+
+                            <div class="led-light"></div>
+
+                            <span>
+                                LED
+                            </span>
+
+                        </div>
+
+
+                        <!-- BME280 -->
+
+                        <div class="sensor-chip">
+
+                            <strong>
+                                BME280
+                            </strong>
+
+                            <span>
+                                T / RH / P
+                            </span>
+
+                        </div>
+
+
+                        <!-- GPIO -->
+
+                        <div class="gpio gpio-left">
+                            GPIO
+                        </div>
+
+                        <div class="gpio gpio-right">
+                            GPIO
+                        </div>
+
+
+                        <!-- USB -->
+
+                        <div class="usb">
+                            USB
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LED STATUS -->
+
+                <div class="device-status">
+
+                    <div class="status-item">
+
+                        <span class="status-label">
+                            LED
+                        </span>
+
+                        <strong id="ledStatus">
+                            OFF
+                        </strong>
+
+                    </div>
+
+                    <div class="status-item">
+
+                        <span class="status-label">
+                            BOTÃO
+                        </span>
+
+                        <strong id="buttonStatus">
+                            OFF
+                        </strong>
+
+                    </div>
+
+                    <div class="status-item">
+
+                        <span class="status-label">
+                            DEVICE
+                        </span>
+
+                        <strong>
+                            ONLINE
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ============================================= -->
+            <!-- CONTROLES -->
+            <!-- ============================================= -->
+
+            <section class="card controls-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            CONTROLES
+                        </span>
+
+                        <h2>
+                            Simulação física
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="control-block">
+
+                    <div class="control-info">
+
+                        <div>
+
+                            <strong>
+                                Botão físico
+                            </strong>
+
+                            <span>
+                                Simula o botão conectado ao ESP32
+                            </span>
+
+                        </div>
+
+                        <button
+                            id="buttonToggle"
+                            class="big-button"
+                        >
+                            PRESSIONAR
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="control-block">
+
+                    <div class="control-info">
+
+                        <div>
+
+                            <strong>
+                                LED remoto
+                            </strong>
+
+                            <span>
+                                Comando enviado ao backend
+                            </span>
+
+                        </div>
+
+                        <div class="led-controls">
+
+                            <button
+                                id="ledOn"
+                                class="action-button"
+                            >
+                                LIGAR
+                            </button>
+
+                            <button
+                                id="ledOff"
+                                class="action-button secondary"
+                            >
+                                DESLIGAR
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="control-block">
+
+                    <div class="control-info">
+
+                        <div>
+
+                            <strong>
+                                Telemetria
+                            </strong>
+
+                            <span>
+                                Próximo envio automático
+                            </span>
+
+                        </div>
+
+                        <div class="timer">
+
+                            <span id="countdown">
+                                5
+                            </span>
+
+                            s
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ============================================= -->
+            <!-- SENSORES -->
+            <!-- ============================================= -->
+
+            <section class="card sensors-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            BME280
+                        </span>
+
+                        <h2>
+                            Telemetria
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="sensor-grid">
+
+
+                    <div class="sensor">
+
+                        <span class="sensor-icon">
+                            🌡
+                        </span>
+
+                        <span class="sensor-name">
+                            Temperatura
+                        </span>
+
+                        <strong id="temperature">
+                            -- °C
+                        </strong>
+
+                    </div>
+
+
+                    <div class="sensor">
+
+                        <span class="sensor-icon">
+                            💧
+                        </span>
+
+                        <span class="sensor-name">
+                            Umidade
+                        </span>
+
+                        <strong id="humidity">
+                            -- %
+                        </strong>
+
+                    </div>
+
+
+                    <div class="sensor">
+
+                        <span class="sensor-icon">
+                            ◉
+                        </span>
+
+                        <span class="sensor-name">
+                            Pressão
+                        </span>
+
+                        <strong id="pressure">
+                            -- hPa
+                        </strong>
+
+                    </div>
+
+
+                    <div class="sensor">
+
+                        <span class="sensor-icon">
+                            ●
+                        </span>
+
+                        <span class="sensor-name">
+                            Botão
+                        </span>
+
+                        <strong id="sensorButton">
+                            OFF
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ============================================= -->
+            <!-- JSON MONITOR -->
+            <!-- ============================================= -->
+
+            <section class="card json-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            NETWORK MONITOR
+                        </span>
+
+                        <h2>
+                            JSON enviado ao Backend
+                        </h2>
+
+                    </div>
+
+                    <span
+                        id="jsonStatus"
+                        class="json-status"
+                    >
+                        aguardando
+                    </span>
+
+                </div>
+
+
+                <div class="json-toolbar">
+
+                    <span>
+                        Última telemetria
+                    </span>
+
+                    <button
+                        id="clearJson"
+                        class="small-button"
+                    >
+                        LIMPAR
+                    </button>
+
+                </div>
+
+
+                <pre
+                    id="jsonOutput"
+                    class="json-output"
+                >Aguardando telemetria...</pre>
+
+            </section>
+
+
+            <!-- ============================================= -->
+            <!-- LOG -->
+            <!-- ============================================= -->
+
+            <section class="card log-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            EVENT LOG
+                        </span>
+
+                        <h2>
+                            Eventos
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="eventLog"
+                    class="event-log"
+                ></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="/script.js"></script>
+
+</body>
+
+</html>

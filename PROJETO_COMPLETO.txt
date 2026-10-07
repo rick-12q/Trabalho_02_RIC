@@ -1,0 +1,716 @@
+﻿============================================================
+PROJETO COMPLETO
+============================================================
+
+ROOT:
+C:\Users\rickn\Documentos\3-UNESP\2026_2_SEM\RIC\Projeto_2\Code
+
+DATA DA EXPORTAÇÃO:
+2026-10-06 11:16:36
+
+============================================================
+ESTRUTURA DO PROJETO
+============================================================
+
+[FILE] .gitignore
+[DIR]  .vscode
+[FILE] .vscode\settings.json
+[DIR]  backend
+[FILE] backend\.gitkeep
+[DIR]  backend\app
+[FILE] backend\app\__init__.py
+[FILE] backend\app\config.py
+[FILE] backend\app\database.py
+[FILE] backend\app\main.py
+[FILE] backend\app\models.py
+[FILE] backend\app\schemas.py
+[FILE] backend\app\services.py
+[FILE] backend\README.md
+[DIR]  database
+[FILE] database\.gitkeep
+[FILE] database\README.md
+[DIR]  docs
+[FILE] docs\.gitkeep
+[FILE] docs\ARCHITECTURE.md
+[FILE] docs\README.md
+[DIR]  firmware
+[DIR]  firmware\esp32
+[FILE] firmware\esp32\.gitkeep
+[FILE] firmware\README.md
+[DIR]  frontend
+[FILE] frontend\.gitkeep
+[FILE] frontend\README.md
+[DIR]  node-red
+[FILE] node-red\.gitkeep
+[FILE] node-red\README.md
+[DIR]  postman
+[FILE] postman\.gitkeep
+[FILE] postman\README.md
+[FILE] README.md
+[DIR]  simulator
+[FILE] simulator\.gitkeep
+[FILE] simulator\main.py
+[FILE] simulator\models.py
+[FILE] simulator\README.md
+[FILE] simulator\requirements.txt
+[FILE] simulator\sensors.py
+[FILE] simulator\state.py
+
+============================================================
+CONTEÚDO DOS ARQUIVOS
+============================================================
+
+
+============================================================
+ARQUIVO: .gitignore
+============================================================
+
+
+# Brud Code workspace history
+.brud/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Logs
+*.log
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Build
+dist/
+build/
+
+# Credentials and tokens
+credentials/
+secrets/
+*_credentials.json
+*_token.json
+google_credentials.json
+google_token.json
+
+
+
+
+============================================================
+ARQUIVO: .vscode\settings.json
+============================================================
+
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.jj": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".brud": true
+    },
+    "files.watcherExclude": {
+        ".git/objects/**": true,
+        ".git/subtree-cache/**": true,
+        ".hg/store/**": true,
+        "*/.git/objects/**": true,
+        "*/.git/subtree-cache/**": true,
+        "*/.hg/store/**": true,
+        ".brud": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true,
+        ".brud": true
+    }
+}
+
+
+
+============================================================
+ARQUIVO: backend\.gitkeep
+============================================================
+
+Content:
+
+
+
+
+============================================================
+ARQUIVO: backend\app\__init__.py
+============================================================
+
+[ARQUIVO VAZIO]
+
+
+
+============================================================
+ARQUIVO: backend\app\config.py
+============================================================
+
+[ARQUIVO VAZIO]
+
+
+
+============================================================
+ARQUIVO: backend\app\database.py
+============================================================
+
+[ARQUIVO VAZIO]
+
+
+
+============================================================
+ARQUIVO: backend\app\main.py
+============================================================
+
+from fastapi import FastAPI
+
+app = FastAPI(
+    title="ESP32 IoT Backend",
+    version="1.0.0",
+)
+
+
+@app.get("/health")
+def health():
+    return {
+        "status": "ok",
+        "service": "backend",
+    }
+
+
+
+============================================================
+ARQUIVO: backend\app\models.py
+============================================================
+
+[ARQUIVO VAZIO]
+
+
+
+============================================================
+ARQUIVO: backend\app\schemas.py
+============================================================
+
+[ARQUIVO VAZIO]
+
+
+
+============================================================
+ARQUIVO: backend\app\services.py
+============================================================
+
+[ARQUIVO VAZIO]
+
+
+
+============================================================
+ARQUIVO: backend\README.md
+============================================================
+
+Content:
+# Backend
+
+Backend REST API do sistema IoT.
+
+Responsabilidades futuras:
+
+- Receber telemetria do ESP32/simulador
+- Armazenar dados no PostgreSQL
+- Consultar histÃ³rico de telemetria
+- Consultar estado do dispositivo
+- Controlar o LED
+- Validar requisiÃ§Ãµes
+- Fornecer respostas JSON
+- Registrar erros e eventos relevantes
+
+O backend deverÃ¡ utilizar variÃ¡veis de ambiente para configuraÃ§Ãµes e credenciais.
+
+A API deverÃ¡ manter um contrato estÃ¡vel para que o simulador, o firmware real, o frontend, o Node-RED e o Postman possam utilizÃ¡-la.
+
+
+
+============================================================
+ARQUIVO: database\.gitkeep
+============================================================
+
+Content:
+
+
+
+
+============================================================
+ARQUIVO: database\README.md
+============================================================
+
+Content:
+# Database
+
+Banco de dados PostgreSQL do sistema IoT.
+
+Responsabilidades:
+
+- Armazenar telemetria dos dispositivos
+- Armazenar estado dos atuadores
+- Manter histÃ³rico dos dados
+- Garantir integridade e consistÃªncia dos registros
+- Fornecer Ã­ndices para consultas frequentes
+
+Estrutura prevista:
+
+- `sensor_logs`
+- `actuator_status`
+
+Os scripts SQL serÃ£o adicionados posteriormente.
+
+
+
+============================================================
+ARQUIVO: docs\.gitkeep
+============================================================
+
+Content:
+
+
+
+
+============================================================
+ARQUIVO: docs\ARCHITECTURE.md
+============================================================
+
+Content:
+# Architecture
+
+## Main components
+
+- ESP32 Simulator
+- ESP32 Firmware
+- Backend REST API
+- PostgreSQL
+- Frontend Dashboard
+- Node-RED
+- Postman
+
+## Main data flow
+
+ESP32 Simulator / ESP32
+        |
+        v
+Backend REST API
+        |
+        v
+PostgreSQL
+
+Frontend Dashboard
+        |
+        v
+Backend REST API
+
+Node-RED
+        |
+        +---- Backend REST API
+        |
+        +---- ESP32 / Simulator
+
+## Development strategy
+
+The simulator will be implemented first so that the complete software system can be developed and tested without physical ESP32 hardware.
+
+The real ESP32 firmware must follow the same communication contract as the simulator.
+
+Node-RED will be developed separately after the main software system is functional.
+
+The system should remain modular so that replacing the simulator with the real ESP32 does not require changes to the backend or frontend.
+
+
+
+============================================================
+ARQUIVO: docs\README.md
+============================================================
+
+Content:
+# Documentation
+
+DocumentaÃ§Ã£o tÃ©cnica, arquitetura, contratos de API, decisÃµes de projeto e procedimentos de execuÃ§Ã£o.
+
+
+
+============================================================
+ARQUIVO: firmware\esp32\.gitkeep
+============================================================
+
+Content:
+
+
+
+
+============================================================
+ARQUIVO: firmware\README.md
+============================================================
+
+Content:
+# ESP32 Firmware
+
+Firmware para o ESP32 real.
+
+O firmware deverÃ¡ implementar o mesmo contrato de comunicaÃ§Ã£o utilizado pelo simulador.
+
+
+
+============================================================
+ARQUIVO: frontend\.gitkeep
+============================================================
+
+Content:
+
+
+
+
+============================================================
+ARQUIVO: frontend\README.md
+============================================================
+
+Content:
+# Frontend
+
+Dashboard web do sistema IoT.
+
+Tecnologias previstas:
+
+- HTML
+- CSS
+- JavaScript
+- Chart.js
+
+A interface deverÃ¡ permitir visualizar telemetria, estado do dispositivo e controlar o LED.
+
+
+
+============================================================
+ARQUIVO: node-red\.gitkeep
+============================================================
+
+Content:
+
+
+
+
+============================================================
+ARQUIVO: node-red\README.md
+============================================================
+
+Content:
+# Node-RED
+
+Fluxos Node-RED do sistema IoT.
+
+O desenvolvimento do Node-RED serÃ¡ realizado separadamente do nÃºcleo principal do projeto.
+
+
+
+============================================================
+ARQUIVO: postman\.gitkeep
+============================================================
+
+Content:
+
+
+
+
+============================================================
+ARQUIVO: postman\README.md
+============================================================
+
+Content:
+# Postman
+
+ColeÃ§Ãµes e testes da API REST do sistema IoT.
+
+
+
+============================================================
+ARQUIVO: README.md
+============================================================
+
+Content:
+# ESP32 IoT System
+
+Sistema IoT modular composto por:
+
+- Simulador de ESP32 para desenvolvimento no PC
+- Firmware ESP32 real para futura utilizaÃ§Ã£o com hardware
+- Sensor BME280
+- Backend REST API
+- PostgreSQL
+- Frontend web com dashboard
+- Node-RED para integraÃ§Ã£o e automaÃ§Ã£o
+- Postman para testes da API
+
+## Estrutura
+
+- `simulator/` â€” simulador do ESP32 no PC
+- `firmware/` â€” firmware para ESP32 real
+- `backend/` â€” API REST e regras de negÃ³cio
+- `frontend/` â€” interface web
+- `database/` â€” scripts SQL e configuraÃ§Ã£o do banco
+- `postman/` â€” coleÃ§Ãµes e testes da API
+- `node-red/` â€” fluxos Node-RED
+- `docs/` â€” documentaÃ§Ã£o tÃ©cnica
+
+## Fluxo principal
+
+ESP32/Simulador â†’ Backend REST API â†’ PostgreSQL
+
+Frontend â†’ Backend REST API
+
+Node-RED â†’ Backend REST API / ESP32
+
+## Sensor
+
+O sistema utiliza o BME280 para:
+
+- Temperatura
+- Umidade
+- PressÃ£o atmosfÃ©rica
+
+## Atuador
+
+LED controlado remotamente atravÃ©s da API REST.
+
+## Objetivo
+
+Desenvolver primeiro todo o sistema utilizando o simulador no PC, mantendo o mesmo contrato REST que serÃ¡ utilizado posteriormente pelo firmware real do ESP32.
+
+
+
+============================================================
+ARQUIVO: simulator\.gitkeep
+============================================================
+
+Content:
+
+
+
+
+============================================================
+ARQUIVO: simulator\main.py
+============================================================
+
+from fastapi import FastAPI
+import uvicorn
+
+from .models import LedCommand
+from .sensors import update_sensor_values
+from .state import DeviceState
+
+DEVICE_ID = "esp32-simulator-001"
+
+app = FastAPI(
+    title="ESP32 Simulator",
+    version="1.0.0",
+)
+
+state = DeviceState(DEVICE_ID)
+
+
+@app.get("/health")
+def health():
+    return {
+        "status": "ok",
+        "device_id": state.device_id,
+    }
+
+
+@app.get("/api/status")
+def status():
+    return {
+        "device_id": state.device_id,
+        "led_state": state.led_state,
+        "button_state": state.button_state,
+        "telemetry": state.telemetry(),
+    }
+
+
+@app.get("/api/telemetry")
+def telemetry():
+    update_sensor_values(state)
+    return state.telemetry()
+
+
+@app.get("/api/actuators/led")
+def get_led():
+    return {
+        "device_id": state.device_id,
+        "led_state": state.led_state,
+    }
+
+
+@app.post("/api/actuators/led")
+def set_led(command: LedCommand):
+    if command.device_id != state.device_id:
+        return {
+            "status": "error",
+            "message": "Unknown device_id",
+        }
+
+    state.set_led(command.led_state)
+
+    return {
+        "status": "ok",
+        "device_id": state.device_id,
+        "led_state": state.led_state,
+    }
+
+
+if __name__ == "__main__":
+    uvicorn.run(
+        "simulator.main:app",
+        host="127.0.0.1",
+        port=8001,
+        reload=False,
+    )
+
+
+
+============================================================
+ARQUIVO: simulator\models.py
+============================================================
+
+from datetime import datetime
+
+from pydantic import BaseModel, Field
+
+
+class Telemetry(BaseModel):
+    device_id: str = Field(min_length=1)
+    temperature: float
+    humidity: float = Field(ge=0, le=100)
+    pressure: float = Field(gt=0)
+    button_state: bool
+    timestamp: datetime | None = None
+
+
+class LedCommand(BaseModel):
+    device_id: str = Field(min_length=1)
+    led_state: bool
+
+
+
+============================================================
+ARQUIVO: simulator\README.md
+============================================================
+
+Content:
+# ESP32 Simulator
+
+Simulador do ESP32 executado no PC para desenvolvimento e testes sem hardware.
+
+O simulador deverÃ¡ reproduzir o comportamento e o contrato REST previstos para o ESP32 real.
+
+Responsabilidades futuras:
+
+- Simular BME280
+- Gerar temperatura, umidade e pressÃ£o
+- Simular botÃ£o fÃ­sico
+- Simular LED
+- Expor API HTTP do dispositivo
+- Enviar telemetria para o backend
+- Permitir testes locais antes da utilizaÃ§Ã£o do ESP32 fÃ­sico
+
+
+
+============================================================
+ARQUIVO: simulator\requirements.txt
+============================================================
+
+fastapi
+uvicorn
+pydantic
+httpx
+python-dotenv
+
+
+
+============================================================
+ARQUIVO: simulator\sensors.py
+============================================================
+
+import random
+
+from .state import DeviceState
+
+
+def update_sensor_values(state: DeviceState) -> None:
+    state.temperature = round(
+        max(-40.0, min(85.0, state.temperature + random.uniform(-0.3, 0.3))),
+        2,
+    )
+    state.humidity = round(
+        max(0.0, min(100.0, state.humidity + random.uniform(-1.0, 1.0))),
+        2,
+    )
+    state.pressure = round(
+        max(300.0, min(1100.0, state.pressure + random.uniform(-0.5, 0.5))),
+        2,
+    )
+
+
+
+============================================================
+ARQUIVO: simulator\state.py
+============================================================
+
+from datetime import datetime, timezone
+
+
+class DeviceState:
+    def __init__(self, device_id: str):
+        self.device_id = device_id
+        self.led_state = False
+        self.button_state = False
+        self.temperature = 25.0
+        self.humidity = 60.0
+        self.pressure = 1013.25
+        self.last_update = datetime.now(timezone.utc)
+
+    def telemetry(self) -> dict:
+        return {
+            "device_id": self.device_id,
+            "temperature": self.temperature,
+            "humidity": self.humidity,
+            "pressure": self.pressure,
+            "button_state": self.button_state,
+            "timestamp": self.last_update.isoformat(),
+        }
+
+    def set_led(self, state: bool) -> None:
+        self.led_state = state
+        self.last_update = datetime.now(timezone.utc)
+
+
