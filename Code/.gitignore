@@ -48,3 +48,15 @@ secrets/
 *_token.json
 google_credentials.json
 google_token.json
+
+# Segredos e ambiente local
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Arquivos locais do editor
+.vscode/
