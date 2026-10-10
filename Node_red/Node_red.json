@@ -1,0 +1,1809 @@
+[
+    {
+        "id": "980c7951c5c88b87",
+        "type": "tab",
+        "label": "Trabalho 2 RIC",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cbfac64917cb9c1d",
+        "type": "group",
+        "z": "980c7951c5c88b87",
+        "name": "LOG WINDOW",
+        "style": {
+            "stroke": "#ff0000",
+            "fill": "#ffbfbf",
+            "label": true
+        },
+        "nodes": [
+            "667318473411eb80",
+            "0b8ca9f040896c27",
+            "5e8e78e76f831ae7",
+            "dc30cb3fade84aa7",
+            "84927bf4334ef8b6",
+            "0670c38307266245",
+            "c4102ddf98301dae",
+            "c524f8c4ae80a5a3",
+            "063223cbe0f227b7"
+        ],
+        "x": 1434,
+        "y": 439,
+        "w": 672,
+        "h": 162
+    },
+    {
+        "id": "51636a8787dcc5d9",
+        "type": "group",
+        "z": "980c7951c5c88b87",
+        "name": "INDICADORES",
+        "style": {
+            "stroke": "#ffC000",
+            "fill": "#ffefbf",
+            "label": true
+        },
+        "nodes": [
+            "be28a6be6ac246b9",
+            "cb72929f1b7fba93",
+            "28deb7886302718d",
+            "21c7ba25ece16dd1",
+            "9b8e3617f5ae121d",
+            "86fa4dfd3b5cfe0a",
+            "4c327bcd7942f034",
+            "16f2fb9a1dbfa95b",
+            "c7f593afd7eff5cd",
+            "441a187f44a8738f",
+            "0f2c4679e197bb68",
+            "a4179ca59cdd05ab",
+            "28706189aee00daa"
+        ],
+        "x": 1434,
+        "y": 79,
+        "w": 672,
+        "h": 342
+    },
+    {
+        "id": "e9fde44cbc2201ac",
+        "type": "group",
+        "z": "980c7951c5c88b87",
+        "name": "LED onBoard",
+        "style": {
+            "stroke": "#ffff00",
+            "fill": "#ffffbf",
+            "label": true
+        },
+        "nodes": [
+            "8f448983e24f6382",
+            "4db6fc1ef4b7b6f7",
+            "0df22ea9b6e77b1a",
+            "a174e858e1fc4b84",
+            "bb22d379ba623e5d",
+            "6c701d0c4456d895",
+            "d9b7264697093456",
+            "99d024f7c39a6a52",
+            "b277af79532d9b36"
+        ],
+        "x": 2134,
+        "y": 619,
+        "w": 852,
+        "h": 222
+    },
+    {
+        "id": "ec836f23263b71a2",
+        "type": "group",
+        "z": "980c7951c5c88b87",
+        "name": "INPUT DATA",
+        "style": {
+            "stroke": "#92d04f",
+            "fill": "#e3f3d3",
+            "label": true
+        },
+        "nodes": [
+            "49809fd655a1369a",
+            "5d9eedfd9d177c64",
+            "7fec9bd51291c0a5",
+            "21726122143e5a0f",
+            "91db7135bd399752",
+            "862a17f4e9fcffd0",
+            "eea1f72269b339ce",
+            "371140ce8a564bae",
+            "e4d141c3aa348d71"
+        ],
+        "x": 2134,
+        "y": 439,
+        "w": 852,
+        "h": 162
+    },
+    {
+        "id": "c2f88427de4a2da6",
+        "type": "group",
+        "z": "980c7951c5c88b87",
+        "name": "STATUS DE CONEXÃO",
+        "style": {
+            "label": true,
+            "stroke": "#0070c0",
+            "fill": "#bfdbef"
+        },
+        "nodes": [
+            "6f36135232588dd4",
+            "f3797bec809dd812",
+            "8ceba32cdbd6a7fb",
+            "de1069b9e65ff1ca",
+            "05e85b1bc60ebf7b",
+            "81d6d45ae8422238",
+            "ee9070895e346e8b",
+            "50c13d5d82509eba",
+            "1b1fa5b9cfbb2a1f",
+            "4ed7ae62d771f479",
+            "8a325ccf870ce8c2",
+            "9b47b424f24556ad",
+            "6986c6d5b55c7e3c",
+            "b8e9ef178233d8ec",
+            "484b804add635b30"
+        ],
+        "x": 1434,
+        "y": 619,
+        "w": 672,
+        "h": 222
+    },
+    {
+        "id": "b0befb7b6408a70e",
+        "type": "group",
+        "z": "980c7951c5c88b87",
+        "name": "DataBase viewer",
+        "style": {
+            "stroke": "#001f60",
+            "fill": "#bfc7d7",
+            "label": true
+        },
+        "nodes": [
+            "8e6e2135faef57e1",
+            "b5eedb78c6c8705e",
+            "34c56c0b935fad0c",
+            "4005e2523dbc79e7"
+        ],
+        "x": 2134,
+        "y": 339,
+        "w": 852,
+        "h": 82
+    },
+    {
+        "id": "1364620685c5acc0",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#2d5002",
+                "baseFont": "Arial Black,Arial Black,Gadget,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#2d5002",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#579b04",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#2d5002",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "Arial Black,Arial Black,Gadget,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "ESP32 Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "true",
+            "allowTempTheme": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "c9107c3452c30065",
+        "type": "ui_tab",
+        "name": "DASHBOARD",
+        "icon": "developer_dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "84b6c3a32fce25fc",
+        "type": "ui_group",
+        "name": "SENSORES",
+        "tab": "c9107c3452c30065",
+        "order": 1,
+        "disp": true,
+        "width": "18",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "787ca6f3c3c3444b",
+        "type": "ui_group",
+        "name": "LED",
+        "tab": "c9107c3452c30065",
+        "order": 2,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "284c0b07a7518698",
+        "type": "ui_tab",
+        "name": "LOG",
+        "icon": "insert_drive_file",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ca48d813fc30e625",
+        "type": "ui_group",
+        "name": "Log viewer",
+        "tab": "284c0b07a7518698",
+        "order": 1,
+        "disp": false,
+        "width": "18",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a060f76801deaecf",
+        "type": "ui_group",
+        "name": "BOTAO",
+        "tab": "c9107c3452c30065",
+        "order": 3,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "839914c0dac64495",
+        "type": "postgreSQLConfig",
+        "name": "conexao_db",
+        "host": "127.0.0.1",
+        "hostFieldType": "str",
+        "port": 5432,
+        "portFieldType": "num",
+        "database": "esp32_iot",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": 10,
+        "maxFieldType": "num",
+        "idle": 1000,
+        "idleFieldType": "num",
+        "connectionTimeout": 10000,
+        "connectionTimeoutFieldType": "num",
+        "userFieldType": "cred",
+        "userEnv": "",
+        "passwordFieldType": "cred",
+        "passwordEnv": ""
+    },
+    {
+        "id": "d1deb91078b00a19",
+        "type": "ui_tab",
+        "name": "SQL EXPLORER",
+        "icon": "storage",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1ea0f3e13ccc4f3a",
+        "type": "ui_group",
+        "name": "Dados do banco",
+        "tab": "d1deb91078b00a19",
+        "order": 1,
+        "disp": false,
+        "width": "20",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d0c5ad859dcc3fd8",
+        "type": "ui_spacer",
+        "z": "980c7951c5c88b87",
+        "name": "spacer",
+        "group": "787ca6f3c3c3444b",
+        "order": 2,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "50c3b2b7c2038c2b",
+        "type": "ui_spacer",
+        "z": "980c7951c5c88b87",
+        "name": "spacer",
+        "group": "787ca6f3c3c3444b",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "651a95a1ebf3c46e",
+        "type": "ui_spacer",
+        "z": "980c7951c5c88b87",
+        "name": "spacer",
+        "group": "787ca6f3c3c3444b",
+        "order": 6,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "084125d950a2e16e",
+        "type": "ui_spacer",
+        "z": "980c7951c5c88b87",
+        "name": "spacer",
+        "group": "1ea0f3e13ccc4f3a",
+        "order": 3,
+        "width": 19,
+        "height": 1
+    },
+    {
+        "id": "5220cfc1c15888d0",
+        "type": "ui_tab",
+        "name": "SOBRE",
+        "icon": "github-box",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3827f62d045e9de8",
+        "type": "ui_group",
+        "name": "Sobre_assig",
+        "tab": "5220cfc1c15888d0",
+        "order": 1,
+        "disp": false,
+        "width": "18",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "49809fd655a1369a",
+        "type": "http in",
+        "z": "980c7951c5c88b87",
+        "g": "ec836f23263b71a2",
+        "name": "ESP32 - Receber Telemetria",
+        "url": "/api/telemetry",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 2280,
+        "y": 480,
+        "wires": [
+            [
+                "5d9eedfd9d177c64"
+            ]
+        ]
+    },
+    {
+        "id": "5d9eedfd9d177c64",
+        "type": "json",
+        "z": "980c7951c5c88b87",
+        "g": "ec836f23263b71a2",
+        "name": "JSON Converter ",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 2540,
+        "y": 480,
+        "wires": [
+            [
+                "7fec9bd51291c0a5"
+            ]
+        ]
+    },
+    {
+        "id": "7fec9bd51291c0a5",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "ec836f23263b71a2",
+        "name": "Processar Telemetria",
+        "func": "const data = msg.payload;\n\nif (!data || typeof data !== \"object\") {\n    return null;\n}\n\nmsg.device_id = data.device_id;\n\nmsg.temperature = Number(data.temperature);\nmsg.humidity = Number(data.humidity);\nmsg.pressure = Number(data.pressure);\nmsg.button_state = Boolean(data.button_state);\nmsg.timestamp = data.timestamp;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2760,
+        "y": 480,
+        "wires": [
+            [
+                "862a17f4e9fcffd0"
+            ]
+        ]
+    },
+    {
+        "id": "be28a6be6ac246b9",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "51636a8787dcc5d9",
+        "name": "Preparar Temperatura",
+        "func": "msg.payload = msg.temperature;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1680,
+        "y": 140,
+        "wires": [
+            [
+                "4c327bcd7942f034",
+                "28706189aee00daa"
+            ]
+        ]
+    },
+    {
+        "id": "cb72929f1b7fba93",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "51636a8787dcc5d9",
+        "name": "Preparar Umidade",
+        "func": "msg.payload = msg.humidity;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1670,
+        "y": 220,
+        "wires": [
+            [
+                "9b8e3617f5ae121d"
+            ]
+        ]
+    },
+    {
+        "id": "28deb7886302718d",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "51636a8787dcc5d9",
+        "name": "Preparar Pressão",
+        "func": "msg.payload = msg.pressure;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1670,
+        "y": 300,
+        "wires": [
+            [
+                "86fa4dfd3b5cfe0a"
+            ]
+        ]
+    },
+    {
+        "id": "21c7ba25ece16dd1",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "51636a8787dcc5d9",
+        "name": "Preparar Botão",
+        "func": "if (msg.button_state) {\n    msg.payload = \"PRESSIONADO\";\n} else {\n    msg.payload = \"NÃO PRESSIONADO\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1660,
+        "y": 380,
+        "wires": [
+            [
+                "a4179ca59cdd05ab"
+            ]
+        ]
+    },
+    {
+        "id": "21726122143e5a0f",
+        "type": "inject",
+        "z": "980c7951c5c88b87",
+        "g": "ec836f23263b71a2",
+        "name": "Clock 2s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2240,
+        "y": 560,
+        "wires": [
+            [
+                "eea1f72269b339ce"
+            ]
+        ]
+    },
+    {
+        "id": "91db7135bd399752",
+        "type": "http request",
+        "z": "980c7951c5c88b87",
+        "g": "ec836f23263b71a2",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 2580,
+        "y": 560,
+        "wires": [
+            [
+                "5d9eedfd9d177c64",
+                "371140ce8a564bae"
+            ]
+        ]
+    },
+    {
+        "id": "9b8e3617f5ae121d",
+        "type": "ui_gauge",
+        "z": "980c7951c5c88b87",
+        "g": "51636a8787dcc5d9",
+        "name": "",
+        "group": "84b6c3a32fce25fc",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "compass",
+        "title": "UMIDADE",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00c800"
+        ],
+        "seg1": "35",
+        "seg2": "70",
+        "diff": false,
+        "className": "",
+        "x": 2010,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "86fa4dfd3b5cfe0a",
+        "type": "ui_gauge",
+        "z": "980c7951c5c88b87",
+        "g": "51636a8787dcc5d9",
+        "name": "",
+        "group": "84b6c3a32fce25fc",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "gtype": "compass",
+        "title": "PRESSÃO",
+        "label": "hPa",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "2000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 2010,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "4c327bcd7942f034",
+        "type": "ui_gauge",
+        "z": "980c7951c5c88b87",
+        "g": "51636a8787dcc5d9",
+        "name": "",
+        "group": "84b6c3a32fce25fc",
+        "order": 3,
+        "width": 6,
+        "height": 4,
+        "gtype": "compass",
+        "title": "TEMPERATURA",
+        "label": "Grau Celsius",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00c800"
+        ],
+        "seg1": "35",
+        "seg2": "70",
+        "diff": false,
+        "className": "",
+        "x": 1990,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "862a17f4e9fcffd0",
+        "type": "link out",
+        "z": "980c7951c5c88b87",
+        "g": "ec836f23263b71a2",
+        "name": "Processamento telemetria OUT",
+        "mode": "link",
+        "links": [
+            "16f2fb9a1dbfa95b",
+            "c7f593afd7eff5cd",
+            "441a187f44a8738f",
+            "0f2c4679e197bb68",
+            "c524f8c4ae80a5a3"
+        ],
+        "x": 2945,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "16f2fb9a1dbfa95b",
+        "type": "link in",
+        "z": "980c7951c5c88b87",
+        "g": "51636a8787dcc5d9",
+        "name": "Processamento telemetria IN",
+        "links": [
+            "862a17f4e9fcffd0"
+        ],
+        "x": 1475,
+        "y": 140,
+        "wires": [
+            [
+                "be28a6be6ac246b9"
+            ]
+        ]
+    },
+    {
+        "id": "c7f593afd7eff5cd",
+        "type": "link in",
+        "z": "980c7951c5c88b87",
+        "g": "51636a8787dcc5d9",
+        "name": "Processamento telemetria IN",
+        "links": [
+            "862a17f4e9fcffd0"
+        ],
+        "x": 1475,
+        "y": 220,
+        "wires": [
+            [
+                "cb72929f1b7fba93"
+            ]
+        ]
+    },
+    {
+        "id": "441a187f44a8738f",
+        "type": "link in",
+        "z": "980c7951c5c88b87",
+        "g": "51636a8787dcc5d9",
+        "name": "Processamento telemetria IN",
+        "links": [
+            "862a17f4e9fcffd0"
+        ],
+        "x": 1475,
+        "y": 300,
+        "wires": [
+            [
+                "28deb7886302718d"
+            ]
+        ]
+    },
+    {
+        "id": "0f2c4679e197bb68",
+        "type": "link in",
+        "z": "980c7951c5c88b87",
+        "g": "51636a8787dcc5d9",
+        "name": "Processamento telemetria IN",
+        "links": [
+            "862a17f4e9fcffd0"
+        ],
+        "x": 1475,
+        "y": 380,
+        "wires": [
+            [
+                "21c7ba25ece16dd1"
+            ]
+        ]
+    },
+    {
+        "id": "a4179ca59cdd05ab",
+        "type": "ui_text",
+        "z": "980c7951c5c88b87",
+        "g": "51636a8787dcc5d9",
+        "group": "a060f76801deaecf",
+        "order": 1,
+        "width": 9,
+        "height": 3,
+        "name": "",
+        "label": "Estado do Botão:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": 16,
+        "color": "#ffffff",
+        "x": 1990,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "28706189aee00daa",
+        "type": "ui_chart",
+        "z": "980c7951c5c88b87",
+        "g": "51636a8787dcc5d9",
+        "name": "",
+        "group": "84b6c3a32fce25fc",
+        "order": 4,
+        "width": 18,
+        "height": 6,
+        "label": "TEMPERATURA",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Aguardando dados",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1990,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f448983e24f6382",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "e9fde44cbc2201ac",
+        "name": "led control",
+        "func": "const deviceId = flow.get(\"device_id\");\n\nif (!deviceId) {\n    node.warn(\"Selecione uma fonte de dados primeiro\");\n    return null;\n}\n\nmsg.headers = {\n    \"Content-Type\": \"application/json\"\n};\n\nmsg.payload = {\n    device_id: deviceId,\n    led_state: Boolean(msg.payload),\n    updated_by: \"node-red\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2670,
+        "y": 800,
+        "wires": [
+            [
+                "0df22ea9b6e77b1a"
+            ]
+        ]
+    },
+    {
+        "id": "4db6fc1ef4b7b6f7",
+        "type": "ui_switch",
+        "z": "980c7951c5c88b87",
+        "g": "e9fde44cbc2201ac",
+        "name": "",
+        "label": "Botão do LED",
+        "tooltip": "Ligar/desligar o LED onBoard",
+        "group": "787ca6f3c3c3444b",
+        "order": 3,
+        "width": 3,
+        "height": 2,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 2500,
+        "y": 800,
+        "wires": [
+            [
+                "8f448983e24f6382"
+            ]
+        ]
+    },
+    {
+        "id": "0df22ea9b6e77b1a",
+        "type": "http request",
+        "z": "980c7951c5c88b87",
+        "g": "e9fde44cbc2201ac",
+        "name": "Controle do led",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:8000/api/actuators/led",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 2880,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ed7ae62d771f479",
+        "type": "inject",
+        "z": "980c7951c5c88b87",
+        "g": "c2f88427de4a2da6",
+        "name": "Clock 3s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1540,
+        "y": 800,
+        "wires": [
+            [
+                "1b1fa5b9cfbb2a1f"
+            ]
+        ]
+    },
+    {
+        "id": "1b1fa5b9cfbb2a1f",
+        "type": "http request",
+        "z": "980c7951c5c88b87",
+        "g": "c2f88427de4a2da6",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:8000/health",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1720,
+        "y": 800,
+        "wires": [
+            [
+                "8a325ccf870ce8c2"
+            ]
+        ]
+    },
+    {
+        "id": "8a325ccf870ce8c2",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "c2f88427de4a2da6",
+        "name": "Verificar Backend",
+        "func": "if (msg.payload && msg.payload.status === \"ok\") {\n    msg.payload = {\n        topic: \"status_backend\",\n        backend_online: true\n    };\n} else {\n    msg.payload = {\n        topic: \"status_backend\",\n        backend_online: false\n    };\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1930,
+        "y": 800,
+        "wires": [
+            [
+                "9b47b424f24556ad"
+            ]
+        ]
+    },
+    {
+        "id": "eea1f72269b339ce",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "ec836f23263b71a2",
+        "name": "preparar URL",
+        "func": "const deviceId = flow.get(\"device_id\");\n\nif (!deviceId) {\n    node.warn(\"Selecione uma fonte de dados primeiro\");\n    return null;\n}\n\nmsg.url =\n    \"http://127.0.0.1:8000/api/telemetry/latest?device_id=\" +\n    encodeURIComponent(deviceId);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2400,
+        "y": 560,
+        "wires": [
+            [
+                "91db7135bd399752"
+            ]
+        ]
+    },
+    {
+        "id": "a174e858e1fc4b84",
+        "type": "inject",
+        "z": "980c7951c5c88b87",
+        "g": "e9fde44cbc2201ac",
+        "name": "CLOCK 2s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2250,
+        "y": 660,
+        "wires": [
+            [
+                "bb22d379ba623e5d"
+            ]
+        ]
+    },
+    {
+        "id": "bb22d379ba623e5d",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "e9fde44cbc2201ac",
+        "name": "Preparar URL Estado LED",
+        "func": "const deviceId = flow.get(\"device_id\");\n\nif (!deviceId) {\n    return null;\n}\n\nmsg.url =\n    \"http://127.0.0.1:8000/api/actuators/led?device_id=\" +\n    encodeURIComponent(deviceId);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2540,
+        "y": 660,
+        "wires": [
+            [
+                "6c701d0c4456d895"
+            ]
+        ]
+    },
+    {
+        "id": "6c701d0c4456d895",
+        "type": "http request",
+        "z": "980c7951c5c88b87",
+        "g": "e9fde44cbc2201ac",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 2840,
+        "y": 660,
+        "wires": [
+            [
+                "d9b7264697093456"
+            ]
+        ]
+    },
+    {
+        "id": "d9b7264697093456",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "e9fde44cbc2201ac",
+        "name": "extrair estado led",
+        "func": "if (\n    !msg.payload ||\n    typeof msg.payload.led_state !== \"boolean\"\n) {\n    return null;\n}\n\nmsg.payload = msg.payload.led_state;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2270,
+        "y": 800,
+        "wires": [
+            [
+                "4db6fc1ef4b7b6f7",
+                "99d024f7c39a6a52",
+                "b277af79532d9b36"
+            ]
+        ]
+    },
+    {
+        "id": "99d024f7c39a6a52",
+        "type": "ui_template",
+        "z": "980c7951c5c88b87",
+        "g": "e9fde44cbc2201ac",
+        "group": "787ca6f3c3c3444b",
+        "name": "Indicador LED",
+        "order": 1,
+        "width": 4,
+        "height": 3,
+        "format": "<div style=\"text-align:center; padding:20px;\">\n    <div id=\"led-indicador\" style=\"\n        width:35px;\n        height:35px;\n        margin:auto;\n        border-radius:50%;\n        background-color:#777777;\n        box-shadow:none;\n        transition:background-color 0.5s, box-shadow 0.5s;\n    \"></div>\n\n    <p id=\"led-texto\" style=\"margin-top:12px;\">\n        LED DESLIGADO\n    </p>\n</div>\n\n<script>\n    (function(scope) {\n    let ligado = false;\n    let inicio = null;\n    let animacao = null;\n\n    const velocidade = 12000; // 12 segundos para completar o ciclo\n\n    function misturar(a, b, t) {\n        return a.map((v, i) =>\n            Math.round(v + (b[i] - v) * t)\n        );\n    }\n\n    function corHex(rgb) {\n        return \"#\" + rgb.map(v =>\n            v.toString(16).padStart(2, \"0\")\n        ).join(\"\");\n    }\n\n    function atualizar(tempo) {\n        const bolinha = document.getElementById(\"led-indicador\");\n        const texto = document.getElementById(\"led-texto\");\n\n        if (!bolinha || !texto) {\n            animacao = requestAnimationFrame(atualizar);\n            return;\n        }\n\n        if (!ligado) {\n            bolinha.style.backgroundColor = \"#777777\";\n            bolinha.style.boxShadow = \"none\";\n            texto.textContent = \"LED DESLIGADO\";\n            animacao = null;\n            return;\n        }\n\n        if (inicio === null) inicio = tempo;\n\n        const progresso = ((tempo - inicio) % velocidade) / velocidade;\n        const cores = [\n            [0, 204, 68],   // Verde\n            [0, 140, 255],  // Azul\n            [255, 34, 34],  // Vermelho\n            [0, 204, 68]    // Volta ao verde\n        ];\n\n        const posicao = progresso * 3;\n        const etapa = Math.floor(posicao);\n        const fracao = posicao - etapa;\n\n        // Suaviza a velocidade da transição\n        const suave = fracao * fracao * (3 - 2 * fracao);\n        const rgb = misturar(\n            cores[etapa],\n            cores[etapa + 1],\n            suave\n        );\n\n        const cor = corHex(rgb);\n\n        bolinha.style.backgroundColor = cor;\n        bolinha.style.boxShadow = \"0 0 18px \" + cor;\n        texto.textContent = \"LED LIGADO\";\n\n        animacao = requestAnimationFrame(atualizar);\n    }\n\n    scope.$watch('msg', function(msg) {\n        if (!msg || msg.payload === undefined) return;\n\n        const novoEstado =\n            msg.payload === true ||\n            msg.payload === 1 ||\n            msg.payload === \"true\";\n\n        if (novoEstado === ligado) return;\n\n        ligado = novoEstado;\n\n        if (ligado) {\n            inicio = null;\n            if (animacao === null) {\n                animacao = requestAnimationFrame(atualizar);\n            }\n        } else {\n            if (animacao !== null) {\n                cancelAnimationFrame(animacao);\n                animacao = null;\n            }\n\n            const bolinha = document.getElementById(\"led-indicador\");\n            const texto = document.getElementById(\"led-texto\");\n\n            if (bolinha) {\n                bolinha.style.backgroundColor = \"#777777\";\n                bolinha.style.boxShadow = \"none\";\n            }\n\n            if (texto) texto.textContent = \"LED DESLIGADO\";\n        }\n    });\n\n    scope.$on('$destroy', function() {\n        if (animacao !== null) {\n            cancelAnimationFrame(animacao);\n        }\n    });\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 2500,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "371140ce8a564bae",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "ec836f23263b71a2",
+        "name": "Preparar Indicador Fonte",
+        "func": "\nconst source = flow.get(\"source\") || \"simulator\";\n\nlet data = msg.payload;\n\n// Converte o JSON em texto para objeto\nif (typeof data === \"string\") {\n    try {\n        data = JSON.parse(data);\n    } catch (err) {\n        node.warn(\"Erro ao converter resposta JSON: \" + err.message);\n        return null;\n    }\n}\n\nconst expectedDevice =\n    flow.get(\"device_id\") || \"esp32-simulator-001\";\n\nconst timestamp = Date.parse(data?.timestamp);\nconst age = Date.now() - timestamp;\n\nconst online =\n    !!data &&\n    data.device_id === expectedDevice &&\n    Number.isFinite(timestamp) &&\n    age >= 0 &&\n    age <= 15000;\n\nmsg.payload = {\n    source: source,\n    online: online\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2790,
+        "y": 560,
+        "wires": [
+            [
+                "e4d141c3aa348d71"
+            ]
+        ]
+    },
+    {
+        "id": "667318473411eb80",
+        "type": "ui_template",
+        "z": "980c7951c5c88b87",
+        "g": "cbfac64917cb9c1d",
+        "group": "ca48d813fc30e625",
+        "name": "Log",
+        "order": 1,
+        "width": 18,
+        "height": 9,
+        "format": "<style>\n    .terminal-log {\n        background: #080d12;\n        color: #d7e1e8;\n        border: 1px solid #293541;\n        border-radius: 12px;\n        overflow: hidden;\n        font-family: Consolas, \"Courier New\", monospace;\n        box-shadow: 0 8px 28px #0006;\n    }\n\n    .terminal-header {\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        gap: 12px;\n        flex-wrap: wrap;\n        padding: 14px 18px;\n        background: #141c25;\n        border-bottom: 1px solid #293541;\n    }\n\n    .terminal-title {\n        display: flex;\n        align-items: center;\n        gap: 12px;\n        font-size: 14px;\n        font-weight: bold;\n        letter-spacing: 1px;\n    }\n\n    .terminal-dots {\n        display: flex;\n        gap: 6px;\n    }\n\n    .terminal-dot {\n        width: 10px;\n        height: 10px;\n        border-radius: 50%;\n    }\n\n    .dot-red {\n        background: #ff5f57;\n    }\n\n    .dot-yellow {\n        background: #febc2e;\n    }\n\n    .dot-green {\n        background: #28c840;\n    }\n\n    .terminal-counter {\n        color: #7f96a8;\n        font-size: 11px;\n        margin-top: 5px;\n    }\n\n    .terminal-clear {\n        background: #c62828;\n        color: #fff;\n        border: 1px solid #ef5350;\n        border-radius: 6px;\n        padding: 9px 13px;\n        cursor: pointer;\n        font-family: inherit;\n        font-size: 11px;\n        font-weight: bold;\n        letter-spacing: .5px;\n        transition: .2s;\n    }\n\n    .terminal-clear:hover {\n        background: #ef3030;\n        box-shadow: 0 0 14px #ef303055;\n    }\n\n    .terminal-screen {\n        height: 480px;\n        overflow: auto;\n        padding: 14px 16px;\n        background:\n            repeating-linear-gradient(0deg,\n                #ffffff03 0px,\n                #ffffff03 1px,\n                transparent 1px,\n                transparent 3px),\n            #080d12;\n    }\n\n    .terminal-line {\n        display: grid;\n        grid-template-columns: 145px 1fr;\n        gap: 12px;\n        padding: 8px 4px;\n        border-bottom: 1px solid #ffffff09;\n        font-size: 12px;\n        line-height: 1.6;\n        overflow-wrap: anywhere;\n    }\n\n    .terminal-time {\n        color: #71869a;\n    }\n\n    .terminal-message {\n        color: #d7e1e8;\n    }\n\n    .event-connect {\n        color: #35df8a;\n    }\n\n    .event-disconnect {\n        color: #ff626c;\n    }\n\n    .event-button {\n        color: #f6c85f;\n    }\n\n    .event-led-on {\n        color: #50c8ff;\n    }\n\n    .event-led-off {\n        color: #a6b4c2;\n    }\n\n    .terminal-prefix {\n        color: #647b8d;\n        margin-right: 7px;\n    }\n\n    .terminal-empty {\n        color: #536777;\n        padding: 30px 4px;\n        text-align: center;\n        font-size: 12px;\n    }\n\n    .terminal-footer {\n        display: flex;\n        justify-content: space-between;\n        gap: 8px;\n        flex-wrap: wrap;\n        padding: 9px 16px;\n        background: #111820;\n        border-top: 1px solid #293541;\n        color: #647b8d;\n        font-size: 10px;\n    }\n\n    .terminal-live {\n        color: #35df8a;\n    }\n\n    @media (max-width: 600px) {\n        .terminal-line {\n            grid-template-columns: 1fr;\n            gap: 2px;\n        }\n\n        .terminal-screen {\n            height: 400px;\n        }\n    }\n</style>\n\n<div class=\"terminal-log\">\n    <div class=\"terminal-header\">\n        <div>\n            <div class=\"terminal-title\">\n                <span class=\"terminal-dots\">\n                    <span class=\"terminal-dot dot-red\"></span>\n                <span class=\"terminal-dot dot-yellow\"></span>\n                <span class=\"terminal-dot dot-green\"></span>\n                </span>\n                SYSTEM EVENT LOG\n            </div>\n            <div class=\"terminal-counter\" id=\"log-contador\">\n                0 EVENTOS REGISTRADOS\n            </div>\n        </div>\n\n        <button type=\"button\" class=\"terminal-clear\"\n                id=\"log-limpar\">\n            ✕ LIMPAR LOG\n        </button>\n    </div>\n\n    <div class=\"terminal-screen\" id=\"log-tela\">\n        <div class=\"terminal-empty\">\n            Aguardando eventos do sistema...\n        </div>\n    </div>\n\n    <div class=\"terminal-footer\">\n        <span>RIC / ESP32 MONITOR</span>\n        <span class=\"terminal-live\">● MONITORAMENTO ATIVO</span>\n    </div>\n</div>\n\n<script>\n    (function(scope) {\n    let eventos = [];\n    let inicializado = false;\n\n    const tela = document.getElementById(\"log-tela\");\n    const contador = document.getElementById(\"log-contador\");\n    const botao = document.getElementById(\"log-limpar\");\n\n    function classeEvento(texto) {\n        texto = String(texto || \"\").toUpperCase();\n\n        if (texto.includes(\"DESCONECTADO\")) return \"event-disconnect\";\n        if (texto.includes(\"CONECTADO\")) return \"event-connect\";\n        if (texto.includes(\"BOTÃO\")) return \"event-button\";\n        if (texto.includes(\"LED ACESO\")) return \"event-led-on\";\n        if (texto.includes(\"LED APAGADO\")) return \"event-led-off\";\n\n        return \"\";\n    }\n\n    function renderizar() {\n        if (!tela || !contador) return;\n\n        contador.textContent =\n            eventos.length + \" EVENTOS REGISTRADOS\";\n\n        tela.replaceChildren();\n\n        if (eventos.length === 0) {\n            const vazio = document.createElement(\"div\");\n            vazio.className = \"terminal-empty\";\n            vazio.textContent = \"Nenhum evento. Sistema aguardando atividade...\";\n            tela.appendChild(vazio);\n            return;\n        }\n\n        eventos.forEach(function(evento) {\n            const linha = document.createElement(\"div\");\n            linha.className = \"terminal-line\";\n\n            const hora = document.createElement(\"span\");\n            hora.className = \"terminal-time\";\n            hora.textContent = \"[\" + (evento.hora || \"--:--:--\") + \"]\";\n\n            const mensagem = document.createElement(\"span\");\n            mensagem.className = \"terminal-message\";\n\n            const prefixo = document.createElement(\"span\");\n            prefixo.className = \"terminal-prefix\";\n            prefixo.textContent = \">\";\n\n            const texto = document.createElement(\"span\");\n            texto.className = classeEvento(evento.evento);\n            texto.textContent =\n                (evento.evento || \"EVENTO\") +\n                \"  |  \" +\n                (evento.dispositivo || \"DISPOSITIVO\");\n\n            mensagem.appendChild(prefixo);\n            mensagem.appendChild(texto);\n            linha.appendChild(hora);\n            linha.appendChild(mensagem);\n            tela.appendChild(linha);\n        });\n    }\n\n    if (botao) {\n        botao.addEventListener(\"click\", function() {\n            if (!confirm(\"Deseja apagar todo o histórico de logs?\")) {\n                return;\n            }\n\n            eventos = [];\n            renderizar();\n\n            scope.send({\n                topic: \"limpar_log\",\n                payload: { acao: \"limpar\" }\n            });\n        });\n    }\n\n    scope.$watch(\"msg\", function(msg) {\n        if (!msg) return;\n\n        if (msg.topic === \"log_limpo_confirmado\") {\n            eventos = [];\n            renderizar();\n            return;\n        }\n\n        if (!Array.isArray(msg.payload)) return;\n\n        eventos = msg.payload.slice(0, 200);\n        inicializado = true;\n        renderizar();\n\n        // Só rola para o final quando chegam novos eventos.\n        if (tela && inicializado) {\n            tela.scrollTop = 0;\n        }\n    });\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 2010,
+        "y": 480,
+        "wires": [
+            [
+                "0670c38307266245"
+            ]
+        ]
+    },
+    {
+        "id": "0b8ca9f040896c27",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "cbfac64917cb9c1d",
+        "name": "registrar evento",
+        "func": "const evento = msg.payload;\n\nif (!evento || !evento.evento) {\n    return null;\n}\n\nlet logs = flow.get(\"eventos_log\") || [];\n\nlogs.unshift({\n    hora: new Date().toLocaleString(\"pt-BR\"),\n    evento: evento.evento,\n    dispositivo: evento.dispositivo || \"-\"\n});\n\n// Mantém os 200 eventos mais recentes.\nlogs = logs.slice(0, 200);\n\nflow.set(\"eventos_log\", logs);\n\nmsg.payload = logs;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1780,
+        "y": 480,
+        "wires": [
+            [
+                "667318473411eb80"
+            ]
+        ]
+    },
+    {
+        "id": "5e8e78e76f831ae7",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "cbfac64917cb9c1d",
+        "name": "detectar conexao",
+        "func": "const dados = msg.payload;\n\nif (!dados || !dados.source ||\n    typeof dados.online !== \"boolean\") {\n    return null;\n}\n\nconst fonte = dados.source;\nconst estadoAnterior = context.get(\"estado_\" + fonte) || \"desconhecido\";\n\nif (dados.online) {\n    const timer = context.get(\"timer_\" + fonte);\n\n    if (timer) {\n        clearTimeout(timer);\n        context.set(\"timer_\" + fonte, null);\n    }\n\n    if (estadoAnterior !== \"online\") {\n        context.set(\"estado_\" + fonte, \"online\");\n\n        msg.payload = {\n            evento: \"DISPOSITIVO CONECTADO\",\n            dispositivo: fonte === \"real\" ? \"ESP REAL\" : \"SIMULATOR\"\n        };\n\n        return msg;\n    }\n\n    return null;\n}\n\nif (estadoAnterior !== \"online\") {\n    return null;\n}\n\n// Aguarda 30 segundos antes de confirmar a desconexão.\nif (!context.get(\"timer_\" + fonte)) {\n    const timer = setTimeout(function() {\n        context.set(\"timer_\" + fonte, null);\n        context.set(\"estado_\" + fonte, \"offline\");\n\n        node.send({\n            payload: {\n                evento: \"DISPOSITIVO DESCONECTADO\",\n                dispositivo: fonte === \"real\" ? \"ESP REAL\" : \"SIMULATOR\"\n            }\n        });\n    }, 30000);\n\n    context.set(\"timer_\" + fonte, timer);\n}\n\nreturn null;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1590,
+        "y": 560,
+        "wires": [
+            [
+                "0b8ca9f040896c27"
+            ]
+        ]
+    },
+    {
+        "id": "dc30cb3fade84aa7",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "cbfac64917cb9c1d",
+        "name": "detectar botao",
+        "func": "\nconst deviceId = msg.device_id || \"desconhecido\";\nconst pressionado = msg.button_state === true;\n\nconst estadoAnterior =\n    context.get(\"botao_\" + deviceId);\n\ncontext.set(\"botao_\" + deviceId, pressionado);\n\n// Ignora a primeira leitura para não criar evento falso\nif (estadoAnterior === undefined) {\n    return null;\n}\n\n// Só registra quando o estado muda\nif (estadoAnterior === pressionado) {\n    return null;\n}\n\nmsg.payload = {\n    evento: pressionado\n        ? \"BOTÃO PRESSIONADO\"\n        : \"BOTÃO SOLTO\",\n    dispositivo: deviceId\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1580,
+        "y": 520,
+        "wires": [
+            [
+                "0b8ca9f040896c27"
+            ]
+        ]
+    },
+    {
+        "id": "84927bf4334ef8b6",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "cbfac64917cb9c1d",
+        "name": "detectar led",
+        "func": "if (typeof msg.payload !== \"boolean\") {\n    return null;\n}\n\nconst estado = msg.payload;\nconst anterior = context.get(\"estado_led\");\n\ncontext.set(\"estado_led\", estado);\n\n// Primeira leitura: inicializa sem gerar um evento falso.\nif (typeof anterior !== \"boolean\") {\n    return null;\n}\n\nif (estado === anterior) {\n    return null;\n}\n\nmsg.payload = {\n    evento: estado ? \"LED ACESO\" : \"LED APAGADO\",\n    dispositivo: flow.get(\"source\") === \"real\"\n        ? \"ESP REAL\"\n        : \"SIMULATOR\"\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1570,
+        "y": 480,
+        "wires": [
+            [
+                "0b8ca9f040896c27"
+            ]
+        ]
+    },
+    {
+        "id": "0670c38307266245",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "cbfac64917cb9c1d",
+        "name": "limpar LOG",
+        "func": "\nif (msg.topic !== \"limpar_log\") {\n    return null;\n}\n\nflow.set(\"eventos_log\", []);\n\nmsg.topic = \"log_limpo_confirmado\";\nmsg.payload = [];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2010,
+        "y": 520,
+        "wires": [
+            [
+                "667318473411eb80"
+            ]
+        ]
+    },
+    {
+        "id": "c4102ddf98301dae",
+        "type": "link in",
+        "z": "980c7951c5c88b87",
+        "g": "cbfac64917cb9c1d",
+        "name": "link in 1",
+        "links": [
+            "e4d141c3aa348d71"
+        ],
+        "x": 1475,
+        "y": 560,
+        "wires": [
+            [
+                "5e8e78e76f831ae7"
+            ]
+        ]
+    },
+    {
+        "id": "c524f8c4ae80a5a3",
+        "type": "link in",
+        "z": "980c7951c5c88b87",
+        "g": "cbfac64917cb9c1d",
+        "name": "link in 2",
+        "links": [
+            "3011b1ad8087dcfa",
+            "862a17f4e9fcffd0"
+        ],
+        "x": 1475,
+        "y": 520,
+        "wires": [
+            [
+                "dc30cb3fade84aa7"
+            ]
+        ]
+    },
+    {
+        "id": "063223cbe0f227b7",
+        "type": "link in",
+        "z": "980c7951c5c88b87",
+        "g": "cbfac64917cb9c1d",
+        "name": "link in 3",
+        "links": [
+            "b277af79532d9b36"
+        ],
+        "x": 1475,
+        "y": 480,
+        "wires": [
+            [
+                "84927bf4334ef8b6"
+            ]
+        ]
+    },
+    {
+        "id": "e4d141c3aa348d71",
+        "type": "link out",
+        "z": "980c7951c5c88b87",
+        "g": "ec836f23263b71a2",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "c4102ddf98301dae",
+            "05e85b1bc60ebf7b",
+            "81d6d45ae8422238",
+            "b8e9ef178233d8ec"
+        ],
+        "x": 2945,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "b277af79532d9b36",
+        "type": "link out",
+        "z": "980c7951c5c88b87",
+        "g": "e9fde44cbc2201ac",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "063223cbe0f227b7"
+        ],
+        "x": 2385,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "f3797bec809dd812",
+        "type": "ui_template",
+        "z": "980c7951c5c88b87",
+        "g": "c2f88427de4a2da6",
+        "group": "ca48d813fc30e625",
+        "name": "Indicador de conexao fisica",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n    #indicador-fonte-fisica {\n        position: fixed;\n        top: 8px;\n        right: 20px;\n        z-index: 999999;\n        display: flex;\n        align-items: center;\n        gap: 14px;\n        padding: 8px 12px;\n        border-radius: 8px;\n        background: #20252b;\n        color: #fff;\n        font: 12px Arial, sans-serif;\n        box-shadow: 0 2px 8px #0005;\n    }\n\n    #seletor-fonte-cabecalho {\n        background: #333;\n        color: white;\n        border: 1px solid #666;\n        border-radius: 5px;\n        padding: 6px;\n        max-width: 145px;\n    }\n\n    #indicador-fonte-fisica .led {\n        width: 10px;\n        height: 10px;\n        border-radius: 50%;\n        flex-shrink: 0;\n        background: #777;\n    }\n\n    #indicador-fonte-fisica .online .led {\n        background: #20e878;\n        animation: piscar-lento 2.4s ease-in-out infinite;\n    }\n\n    #indicador-fonte-fisica .status {\n        font-size: 11px;\n        color: #ff5252;\n    }\n\n    #indicador-fonte-fisica .online .status {\n        color: #20e878;\n    }\n\n    #indicador-fonte-fisica .bloco-status {\n        display: flex;\n        align-items: center;\n        gap: 6px;\n    }\n\n    #indicador-fonte-fisica .grupo-status {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    gap: 16px;\n    }\n    \n    #indicador-fonte-fisica .bloco-status {\n    display: flex;\n    align-items: center;\n    gap: 6px;\n    }\n\n    @keyframes piscar-lento {\n\n        0%,\n        100% {\n            opacity: 1;\n            box-shadow: 0 0 8px #20e878;\n        }\n\n        50% {\n            opacity: .35;\n            box-shadow: none;\n        }\n    }\n</style>\n\n<div id=\"indicador-fonte-fisica\">\n    <select id=\"seletor-fonte-cabecalho\"\n            aria-label=\"Selecionar fonte de dados\">\n        <option value=\"simulator\">SIMULATOR</option>\n        <option value=\"real\">ESP REAL</option>\n    </select>\n\n    <div class=\"grupo-status\">\n        <div id=\"status-fonte\" class=\"bloco-status\">\n            <span class=\"led\"></span>\n            <div>\n                <div id=\"indicador-nome-fonte\">SIMULATOR</div>\n                <div id=\"indicador-status\" class=\"status\">OFFLINE</div>\n            </div>\n        </div>\n\n        <div id=\"status-backend\" class=\"bloco-status\">\n            <span class=\"led\"></span>\n            <div>\n                <div>BACKEND</div>\n                <div id=\"indicador-backend-status\" class=\"status\">OFFLINE</div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<script>\n    (function(scope) {\n    let fonteAtual = \"simulator\";\n    let fonteInicializada = false;\n    let backendOnline = false;\n\n    const seletor = document.getElementById(\n        \"seletor-fonte-cabecalho\"\n    );\n    const nome = document.getElementById(\n        \"indicador-nome-fonte\"\n    );\n    const status = document.getElementById(\n        \"indicador-status\"\n    );\n    const statusFonte = document.getElementById(\n        \"status-fonte\"\n    );\n    const statusBackend = document.getElementById(\n        \"status-backend\"\n    );\n    const textoBackend = document.getElementById(\n        \"indicador-backend-status\"\n    );\n\n    function atualizarFonte(online) {\n        nome.textContent =\n            fonteAtual === \"real\" ? \"ESP REAL\" : \"SIMULATOR\";\n\n        status.textContent = online ? \"ONLINE\" : \"OFFLINE\";\n        statusFonte.classList.toggle(\"online\", online);\n    }\n\n    function atualizarBackend(online) {\n    backendOnline = online;\n    textoBackend.textContent = online ? \"ONLINE\" : \"OFFLINE\";\n    statusBackend.classList.toggle(\"online\", online);\n    }\n\n    if (seletor) {\n        seletor.addEventListener(\"change\", function() {\n            fonteAtual = seletor.value;\n            fonteInicializada = true;\n\n            nome.textContent =\n                fonteAtual === \"real\" ? \"ESP REAL\" : \"SIMULATOR\";\n\n            scope.send({\n                payload: fonteAtual,\n                topic: \"selecionar_fonte\"\n            });\n        });\n    }\n\n    scope.$watch(\"msg\", function(msg) {\n        if (!msg) return;\n\n        const dados = msg.payload;\n\n        // Atualização independente do status do backend\n        if (dados && dados.topic === \"status_backend\") {\n            atualizarBackend(dados.backend_online === true);\n            return;\n        }\n\n        // Atualização da fonte selecionada\n        if (!dados || typeof dados !== \"object\") return;\n\n        if (!fonteInicializada && dados.source) {\n            fonteAtual = dados.source;\n            fonteInicializada = true;\n\n            if (seletor) {\n                seletor.value = fonteAtual;\n            }\n        }\n\n        if (dados.source) {\n            atualizarFonte(dados.online === true);\n        }\n    });\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1740,
+        "y": 660,
+        "wires": [
+            [
+                "8ceba32cdbd6a7fb"
+            ]
+        ]
+    },
+    {
+        "id": "8ceba32cdbd6a7fb",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "c2f88427de4a2da6",
+        "name": "define mode",
+        "func": "const sources = {\n    simulator: {\n        source: \"simulator\",\n        device_id: \"esp32-simulator-001\"\n    },\n    real: {\n        source: \"real\",\n        device_id: \"esp32-001\"\n    }\n};\n\nconst selected = sources[msg.payload];\n\nif (!selected) {\n    node.error(\"Fonte de dados inválida\", msg);\n    return null;\n}\n\n// Guardar a seleção para os demais nós deste flow.\nflow.set(\"source\", selected.source);\nflow.set(\"device_id\", selected.device_id);\n\nmsg.headers = {\n    \"Content-Type\": \"application/json\"\n};\n\nmsg.payload = {\n    source: selected.source\n};\n\nmsg.source = selected.source;\nmsg.device_id = selected.device_id;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1990,
+        "y": 720,
+        "wires": [
+            [
+                "de1069b9e65ff1ca"
+            ]
+        ]
+    },
+    {
+        "id": "de1069b9e65ff1ca",
+        "type": "http request",
+        "z": "980c7951c5c88b87",
+        "g": "c2f88427de4a2da6",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:8000/api/source",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 2000,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6f36135232588dd4",
+        "type": "ui_template",
+        "z": "980c7951c5c88b87",
+        "g": "c2f88427de4a2da6",
+        "group": "1ea0f3e13ccc4f3a",
+        "name": "Indicador de conexao fisica",
+        "order": 2,
+        "width": 1,
+        "height": 1,
+        "format": "<style>\n    #indicador-fonte-fisica {\n        position: fixed;\n        top: 8px;\n        right: 20px;\n        z-index: 999999;\n        display: flex;\n        align-items: center;\n        gap: 14px;\n        padding: 8px 12px;\n        border-radius: 8px;\n        background: #20252b;\n        color: #fff;\n        font: 12px Arial, sans-serif;\n        box-shadow: 0 2px 8px #0005;\n    }\n\n    #seletor-fonte-cabecalho {\n        background: #333;\n        color: white;\n        border: 1px solid #666;\n        border-radius: 5px;\n        padding: 6px;\n        max-width: 145px;\n    }\n\n    #indicador-fonte-fisica .led {\n        width: 10px;\n        height: 10px;\n        border-radius: 50%;\n        flex-shrink: 0;\n        background: #777;\n    }\n\n    #indicador-fonte-fisica .online .led {\n        background: #20e878;\n        animation: piscar-lento 2.4s ease-in-out infinite;\n    }\n\n    #indicador-fonte-fisica .status {\n        font-size: 11px;\n        color: #ff5252;\n    }\n\n    #indicador-fonte-fisica .online .status {\n        color: #20e878;\n    }\n\n    #indicador-fonte-fisica .bloco-status {\n        display: flex;\n        align-items: center;\n        gap: 6px;\n    }\n\n    #indicador-fonte-fisica .grupo-status {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    gap: 16px;\n    }\n    \n    #indicador-fonte-fisica .bloco-status {\n    display: flex;\n    align-items: center;\n    gap: 6px;\n    }\n\n    @keyframes piscar-lento {\n\n        0%,\n        100% {\n            opacity: 1;\n            box-shadow: 0 0 8px #20e878;\n        }\n\n        50% {\n            opacity: .35;\n            box-shadow: none;\n        }\n    }\n</style>\n\n<div id=\"indicador-fonte-fisica\">\n    <select id=\"seletor-fonte-cabecalho\"\n            aria-label=\"Selecionar fonte de dados\">\n        <option value=\"simulator\">SIMULATOR</option>\n        <option value=\"real\">ESP REAL</option>\n    </select>\n\n    <div class=\"grupo-status\">\n        <div id=\"status-fonte\" class=\"bloco-status\">\n            <span class=\"led\"></span>\n            <div>\n                <div id=\"indicador-nome-fonte\">SIMULATOR</div>\n                <div id=\"indicador-status\" class=\"status\">OFFLINE</div>\n            </div>\n        </div>\n\n        <div id=\"status-backend\" class=\"bloco-status\">\n            <span class=\"led\"></span>\n            <div>\n                <div>BACKEND</div>\n                <div id=\"indicador-backend-status\" class=\"status\">OFFLINE</div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<script>\n    (function(scope) {\n    let fonteAtual = \"simulator\";\n    let fonteInicializada = false;\n    let backendOnline = false;\n\n    const seletor = document.getElementById(\n        \"seletor-fonte-cabecalho\"\n    );\n    const nome = document.getElementById(\n        \"indicador-nome-fonte\"\n    );\n    const status = document.getElementById(\n        \"indicador-status\"\n    );\n    const statusFonte = document.getElementById(\n        \"status-fonte\"\n    );\n    const statusBackend = document.getElementById(\n        \"status-backend\"\n    );\n    const textoBackend = document.getElementById(\n        \"indicador-backend-status\"\n    );\n\n    function atualizarFonte(online) {\n        nome.textContent =\n            fonteAtual === \"real\" ? \"ESP REAL\" : \"SIMULATOR\";\n\n        status.textContent = online ? \"ONLINE\" : \"OFFLINE\";\n        statusFonte.classList.toggle(\"online\", online);\n    }\n    function atualizarBackend(online) {\n    backendOnline = online;\n    textoBackend.textContent = online ? \"ONLINE\" : \"OFFLINE\";\n    statusBackend.classList.toggle(\"online\", online);\n    }\n    if (seletor) {\n        seletor.addEventListener(\"change\", function() {\n            fonteAtual = seletor.value;\n            fonteInicializada = true;\n\n            nome.textContent =\n                fonteAtual === \"real\" ? \"ESP REAL\" : \"SIMULATOR\";\n\n            scope.send({\n                payload: fonteAtual,\n                topic: \"selecionar_fonte\"\n            });\n        });\n    }\n\n    scope.$watch(\"msg\", function(msg) {\n        if (!msg) return;\n\n        const dados = msg.payload;\n\n        // Atualização independente do status do backend\n        if (dados && dados.topic === \"status_backend\") {\n            atualizarBackend(dados.backend_online === true);\n            return;\n        }\n\n        // Atualização da fonte selecionada\n        if (!dados || typeof dados !== \"object\") return;\n\n        if (!fonteInicializada && dados.source) {\n            fonteAtual = dados.source;\n            fonteInicializada = true;\n\n            if (seletor) {\n                seletor.value = fonteAtual;\n            }\n        }\n\n        if (dados.source) {\n            atualizarFonte(dados.online === true);\n        }\n    });\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1740,
+        "y": 700,
+        "wires": [
+            [
+                "8ceba32cdbd6a7fb"
+            ]
+        ]
+    },
+    {
+        "id": "05e85b1bc60ebf7b",
+        "type": "link in",
+        "z": "980c7951c5c88b87",
+        "g": "c2f88427de4a2da6",
+        "name": "link in 4",
+        "links": [
+            "e4d141c3aa348d71"
+        ],
+        "x": 1555,
+        "y": 660,
+        "wires": [
+            [
+                "f3797bec809dd812"
+            ]
+        ]
+    },
+    {
+        "id": "81d6d45ae8422238",
+        "type": "link in",
+        "z": "980c7951c5c88b87",
+        "g": "c2f88427de4a2da6",
+        "name": "link in 5",
+        "links": [
+            "e4d141c3aa348d71"
+        ],
+        "x": 1555,
+        "y": 700,
+        "wires": [
+            [
+                "6f36135232588dd4"
+            ]
+        ]
+    },
+    {
+        "id": "9b47b424f24556ad",
+        "type": "link out",
+        "z": "980c7951c5c88b87",
+        "g": "c2f88427de4a2da6",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "ee9070895e346e8b",
+            "50c13d5d82509eba",
+            "6e3e1b8ac2ef0598",
+            "484b804add635b30"
+        ],
+        "x": 2055,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "ee9070895e346e8b",
+        "type": "link in",
+        "z": "980c7951c5c88b87",
+        "g": "c2f88427de4a2da6",
+        "name": "link in 6",
+        "links": [
+            "9b47b424f24556ad"
+        ],
+        "x": 1475,
+        "y": 660,
+        "wires": [
+            [
+                "f3797bec809dd812"
+            ]
+        ]
+    },
+    {
+        "id": "50c13d5d82509eba",
+        "type": "link in",
+        "z": "980c7951c5c88b87",
+        "g": "c2f88427de4a2da6",
+        "name": "link in 7",
+        "links": [
+            "9b47b424f24556ad"
+        ],
+        "x": 1475,
+        "y": 700,
+        "wires": [
+            [
+                "6f36135232588dd4"
+            ]
+        ]
+    },
+    {
+        "id": "b5eedb78c6c8705e",
+        "type": "postgresql",
+        "z": "980c7951c5c88b87",
+        "g": "b0befb7b6408a70e",
+        "name": "",
+        "query": "SELECT * FROM ;",
+        "postgreSQLConfig": "839914c0dac64495",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 2710,
+        "y": 380,
+        "wires": [
+            [
+                "4005e2523dbc79e7"
+            ]
+        ]
+    },
+    {
+        "id": "34c56c0b935fad0c",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "g": "b0befb7b6408a70e",
+        "name": "consultar historico SQL",
+        "func": "scope.filteredRows = function () {\n    const search = (scope.searchText || \"\").toLowerCase();\n\n    return scope.rows.filter(function (r) {\n        if (scope.deviceFilter &&\n            r.device_id !== scope.deviceFilter) return false;\n\n        if (scope.typeFilter &&\n            r.record_type !== scope.typeFilter) return false;\n\n        if (scope.buttonFilter !== \"\") {\n            if (r.button_state == null ||\n                String(r.button_state) !== scope.buttonFilter) {\n                return false;\n            }\n        }\n\n        if (scope.ledFilter !== \"\") {\n            const ledState = r.record_type === \"LED\"\n                ? String(r.value).toUpperCase() === \"ON\"\n                : r.led_state === true;\n\n            const ledKnown = r.record_type === \"LED\"\n                ? [\"ON\", \"OFF\"].includes(String(r.value).toUpperCase())\n                : r.led_state === true || r.led_state === false;\n\n            if (!ledKnown || String(ledState) !== scope.ledFilter) {\n                return false;\n            }\n        }\n\n        const text = [\n            r.device_id, r.record_type, r.detail,\n            r.value, r.updated_by\n        ].join(\" \").toLowerCase();\n\n        return text.includes(search);\n    });\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2490,
+        "y": 380,
+        "wires": [
+            [
+                "b5eedb78c6c8705e"
+            ]
+        ]
+    },
+    {
+        "id": "8e6e2135faef57e1",
+        "type": "inject",
+        "z": "980c7951c5c88b87",
+        "g": "b0befb7b6408a70e",
+        "name": "Clock 10s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2250,
+        "y": 380,
+        "wires": [
+            [
+                "34c56c0b935fad0c"
+            ]
+        ]
+    },
+    {
+        "id": "4005e2523dbc79e7",
+        "type": "ui_template",
+        "z": "980c7951c5c88b87",
+        "g": "b0befb7b6408a70e",
+        "group": "1ea0f3e13ccc4f3a",
+        "name": "",
+        "order": 1,
+        "width": 20,
+        "height": 23,
+        "format": "<div class=\"sql-explorer\">\n    <h2>SQL EXPLORER</h2>\n    <p>Histórico do banco de dados PostgreSQL</p>\n\n    <div class=\"sql-controls\">\n        <label>\n            Pesquisar\n            <input type=\"text\"\n                   ng-model=\"searchText\"\n                   placeholder=\"Dispositivo, sensor, valor...\">\n        </label>\n\n        <label>\n            Dispositivo\n            <select ng-model=\"deviceFilter\">\n                <option value=\"\">Todos</option>\n                <option ng-repeat=\"d in devices\" value=\"{{d}}\">\n                    {{d}}\n                </option>\n            </select>\n        </label>\n\n        <label>\n            Tipo de registro\n            <select ng-model=\"typeFilter\">\n                <option value=\"\">Todos</option>\n                <option value=\"SENSOR\">Sensores</option>\n                <option value=\"LED\">LED</option>\n            </select>\n        </label>\n\n        <label>\n            Estado do botão\n            <select ng-model=\"buttonFilter\">\n                <option value=\"\">Todos</option>\n                <option value=\"true\">Pressionado</option>\n                <option value=\"false\">Solto</option>\n            </select>\n        </label>\n\n        <label>\n            Estado do LED\n            <select ng-model=\"ledFilter\">\n                <option value=\"\">Todos</option>\n                <option value=\"true\">Ligado</option>\n                <option value=\"false\">Desligado</option>\n            </select>\n        </label>\n\n        <button ng-click=\"resetFilters()\">Limpar filtros</button>\n        <button ng-click=\"exportCsv()\">Exportar CSV</button>\n    </div>\n\n    <div class=\"sql-info\">\n        <span>Registros carregados: {{rows.length}}</span>\n        <span>Registros filtrados: {{filteredRows().length}}</span>\n        <span ng-if=\"lastUpdate\">\n            Atualizado: {{lastUpdate | date:'dd/MM/yyyy HH:mm:ss'}}\n        </span>\n    </div>\n\n    <div class=\"sql-table-wrap\">\n        <table class=\"sql-table\">\n            <thead>\n                <tr>\n                    <th>Data/hora</th>\n                    <th>Tipo</th>\n                    <th>Dispositivo</th>\n                    <th>Sensor/atuador</th>\n                    <th>Valor</th>\n                    <th>Botão</th>\n                    <th>LED</th>\n                    <th>Comandado por</th>\n                </tr>\n            </thead>\n\n            <tbody>\n                <tr ng-repeat=\"r in filteredRows() | limitTo:pageSize:(page-1)*pageSize\">\n                    <td>{{r.timestamp | date:'dd/MM/yyyy HH:mm:ss'}}</td>\n                    <td>{{r.record_type}}</td>\n                    <td>{{r.device_id}}</td>\n                    <td>{{r.detail}}</td>\n                    <td>{{r.value}}</td>\n                    <td>\n                        <span ng-if=\"r.button_state === true\">Pressionado</span>\n                        <span ng-if=\"r.button_state === false\">Solto</span>\n                        <span ng-if=\"r.button_state == null\">—</span>\n                    </td>\n                    <td>\n                        <span ng-if=\"r.led_state === true\">Ligado</span>\n                        <span ng-if=\"r.led_state === false\">Desligado</span>\n                        <span ng-if=\"r.led_state == null\">—</span>\n                    </td>\n                    <td>{{r.updated_by || '—'}}</td>\n                </tr>\n\n                <tr ng-if=\"filteredRows().length === 0\">\n                    <td colspan=\"8\">Nenhum registro encontrado.</td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n\n    <div class=\"sql-pagination\">\n        <button ng-click=\"page = page - 1\"\n                ng-disabled=\"page <= 1\">Anterior</button>\n\n        <span>Página {{page}} de {{totalPages()}}</span>\n\n        <button ng-click=\"page = page + 1\"\n                ng-disabled=\"page >= totalPages()\">Próxima</button>\n    </div>\n</div>\n\n<style>\n    .sql-explorer {\n        --sql-primary: #52b788;\n        --sql-accent: #40916c;\n        --sql-bg: #111916;\n        --sql-panel: #19231e;\n        --sql-border: #2c3b32;\n        --sql-text: #e2ebe5;\n        --sql-muted: #94a69a;\n\n        box-sizing: border-box;\n        width: 100%;\n        padding: 24px;\n        color: var(--sql-text);\n        font-family: Inter, \"Segoe UI\", Roboto, Arial, sans-serif;\n        background: var(--sql-bg);\n        border: 1px solid var(--sql-border);\n        border-radius: 16px;\n        box-shadow: 0 10px 35px rgba(0, 0, 0, .20);\n    }\n\n    .sql-explorer h2 {\n        position: relative;\n        margin: 0 0 8px;\n        padding-left: 16px;\n        color: #d8f3e3;\n        font-size: 25px;\n        font-weight: 750;\n        letter-spacing: -.6px;\n    }\n\n    .sql-explorer h2::before {\n        content: \"\";\n        position: absolute;\n        left: 0;\n        top: 2px;\n        bottom: 2px;\n        width: 5px;\n        border-radius: 5px;\n        background: var(--sql-primary);\n    }\n\n    .sql-explorer>p {\n        margin: 0 0 24px;\n        padding-left: 16px;\n        color: var(--sql-muted);\n        font-size: 13px;\n    }\n\n    /* Filtros */\n\n    .sql-controls {\n        display: grid;\n        grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));\n        gap: 16px;\n        align-items: end;\n        margin: 0 0 20px;\n        padding: 20px;\n        background: var(--sql-panel);\n        border: 1px solid var(--sql-border);\n        border-radius: 12px;\n    }\n\n    .sql-controls label {\n        display: flex;\n        flex-direction: column;\n        gap: 8px;\n        min-width: 0;\n        color: #b5c8bb;\n        font-size: 11px;\n        font-weight: 750;\n        letter-spacing: .6px;\n        text-transform: uppercase;\n    }\n\n    .sql-controls input,\n    .sql-controls select {\n        box-sizing: border-box;\n        width: 100%;\n        min-width: 0;\n        height: 42px;\n        padding: 0 12px;\n        color: #e5eee8;\n        background: #111a15;\n        border: 1px solid #35483b;\n        border-radius: 8px;\n        outline: none;\n        font-family: inherit;\n        font-size: 13px;\n        text-transform: none;\n        transition: border-color .2s, box-shadow .2s;\n    }\n\n    .sql-controls input::placeholder {\n        color: #788b7d;\n    }\n\n    .sql-controls input:hover,\n    .sql-controls select:hover {\n        border-color: #58836a;\n    }\n\n    .sql-controls input:focus,\n    .sql-controls select:focus {\n        border-color: #52b788;\n        box-shadow: 0 0 0 3px rgba(82, 183, 136, .14);\n    }\n\n    /* Botões */\n\n    .sql-explorer button {\n        min-height: 40px;\n        padding: 0 15px;\n        color: #d8f3e3;\n        background: #263b2e;\n        border: 1px solid #3d5c47;\n        border-radius: 8px;\n        font-family: inherit;\n        font-size: 12px;\n        font-weight: 700;\n        cursor: pointer;\n        transition: .2s ease;\n    }\n\n    .sql-explorer button:hover:not(:disabled) {\n        color: #ffffff;\n        background: #315740;\n        border-color: #52b788;\n        transform: translateY(-1px);\n    }\n\n    .sql-explorer button:disabled {\n        opacity: .35;\n        cursor: not-allowed;\n    }\n\n    /* Indicadores */\n\n    .sql-info {\n        display: flex;\n        flex-wrap: wrap;\n        justify-content: space-between;\n        align-items: center;\n        gap: 10px;\n        margin: 0 0 14px;\n        padding: 14px 18px;\n        color: #a7b9ad;\n        background: #1c2b22;\n        border: 1px solid #304739;\n        border-radius: 10px;\n        font-size: 12px;\n    }\n\n    .sql-info span:first-child {\n        color: #8ce0b0;\n        font-weight: 750;\n    }\n\n    /* Tabela */\n\n    .sql-table-wrap {\n        width: 100%;\n        max-height: 650px;\n        overflow: auto;\n        background: #151e19;\n        border: 1px solid #2c3c32;\n        border-radius: 12px;\n        box-shadow: 0 4px 20px rgba(0, 0, 0, .16);\n    }\n\n    .sql-table {\n        width: 100%;\n        min-width: 940px;\n        border-collapse: separate;\n        border-spacing: 0;\n        color: #d8e3db;\n        background: #151e19;\n        font-family: inherit;\n        font-size: 12px;\n    }\n\n    .sql-table th {\n        position: sticky;\n        top: 0;\n        z-index: 2;\n        padding: 16px 15px;\n        color: #e6f5eb;\n        background: #234632;\n        border: none;\n        border-bottom: 2px solid #52b788;\n        text-align: left;\n        white-space: nowrap;\n        font-size: 10px;\n        font-weight: 750;\n        letter-spacing: .8px;\n        text-transform: uppercase;\n    }\n\n    .sql-table th:first-child,\n    .sql-table td:first-child {\n        padding-left: 20px;\n    }\n\n    .sql-table td {\n        padding: 14px 15px;\n        border: none;\n        border-bottom: 1px solid #27352c;\n        text-align: left;\n        vertical-align: middle;\n        white-space: nowrap;\n        font-size: 12px;\n        line-height: 1.5;\n    }\n\n    .sql-table tbody tr {\n        background: #151e19;\n        transition: background-color .15s ease;\n    }\n\n    .sql-table tbody tr:nth-child(even) {\n        background: #1a251e;\n    }\n\n    .sql-table tbody tr:hover {\n        background: #263b2d;\n    }\n\n    .sql-table tbody tr:last-child td {\n        border-bottom: none;\n    }\n\n    .sql-table td:first-child {\n        color: #9caf9f;\n        font-variant-numeric: tabular-nums;\n        font-size: 11px;\n    }\n\n    .sql-table td:nth-child(2) {\n        color: #8ce0b0;\n        font-size: 10px;\n        font-weight: 800;\n        letter-spacing: .5px;\n    }\n\n    .sql-table td:nth-child(3) {\n        color: #a8d5b8;\n        font-family: Consolas, \"Courier New\", monospace;\n        font-size: 11px;\n    }\n\n    .sql-table td:nth-child(5) {\n        color: #9be5b7;\n        font-family: Consolas, \"Courier New\", monospace;\n        font-size: 12px;\n        font-weight: 750;\n        font-variant-numeric: tabular-nums;\n    }\n\n    .sql-table td:nth-child(6),\n    .sql-table td:nth-child(7) {\n        color: #d6e5da;\n        font-weight: 650;\n    }\n\n    .sql-table td:nth-child(8) {\n        color: #9caf9f;\n        font-size: 11px;\n    }\n\n    .sql-table td[colspan] {\n        height: 100px;\n        color: #9caf9f;\n        text-align: center;\n        font-size: 13px;\n    }\n\n    /* Paginação */\n\n    .sql-pagination {\n        display: flex;\n        flex-wrap: wrap;\n        justify-content: center;\n        align-items: center;\n        gap: 18px;\n        margin: 18px 0 0;\n        padding: 15px;\n        background: var(--sql-panel);\n        border: 1px solid var(--sql-border);\n        border-radius: 10px;\n    }\n\n    .sql-pagination span {\n        color: #c0d1c5;\n        font-size: 12px;\n        font-weight: 700;\n        font-variant-numeric: tabular-nums;\n    }\n\n    /* Barra de rolagem */\n\n    .sql-table-wrap::-webkit-scrollbar {\n        width: 9px;\n        height: 9px;\n    }\n\n    .sql-table-wrap::-webkit-scrollbar-track {\n        background: #151e19;\n    }\n\n    .sql-table-wrap::-webkit-scrollbar-thumb {\n        background: #405b48;\n        border: 2px solid #151e19;\n        border-radius: 8px;\n    }\n\n    .sql-table-wrap::-webkit-scrollbar-thumb:hover {\n        background: #62856c;\n    }\n\n    /* Telas menores */\n\n    @media (max-width: 700px) {\n        .sql-explorer {\n            padding: 14px;\n            border-radius: 10px;\n        }\n\n        .sql-explorer h2 {\n            font-size: 21px;\n        }\n\n        .sql-controls {\n            grid-template-columns: 1fr;\n            gap: 13px;\n            padding: 14px;\n        }\n\n        .sql-controls button {\n            width: 100%;\n        }\n\n        .sql-info {\n            align-items: flex-start;\n            flex-direction: column;\n            padding: 12px;\n        }\n\n        .sql-table th,\n        .sql-table td {\n            padding: 12px;\n        }\n    }\n</style>\n\n<script>\n    (function(scope) {\n    scope.rows = [];\n    scope.devices = [];\n    scope.searchText = \"\";\n    scope.deviceFilter = \"\";\n    scope.typeFilter = \"\";\n    scope.buttonFilter = \"\";\n    scope.ledFilter = \"\";\n    scope.page = 1;\n    scope.pageSize = 25;\n    scope.lastUpdate = null;\n\n    scope.$watch(\"msg\", function(msg) {\n        if (!msg || !Array.isArray(msg.payload)) return;\n\n        scope.rows = msg.payload;\n        scope.devices = [...new Set(\n            scope.rows.map(r => r.device_id).filter(Boolean)\n        )].sort();\n\n        scope.lastUpdate = new Date();\n        scope.page = 1;\n    });\n\n    scope.filteredRows = function() {\n    const search = (scope.searchText || \"\").toLowerCase();\n    \n    return scope.rows.filter(function(r) {\n    if (scope.deviceFilter &&\n    r.device_id !== scope.deviceFilter) return false;\n    \n    if (scope.typeFilter &&\n    r.record_type !== scope.typeFilter) return false;\n    \n    if (scope.buttonFilter !== \"\") {\n    if (r.button_state == null ||\n    String(r.button_state) !== scope.buttonFilter) {\n    return false;\n    }\n    }\n    \n    // O filtro de LED só exclui registros de LED\n    // quando o registro é do tipo LED.\n    if (scope.ledFilter !== \"\") {\n    const isLedRecord = r.record_type === \"LED\";\n    \n    if (isLedRecord) {\n    const estado = String(r.value).toUpperCase();\n    if (estado !== (scope.ledFilter === \"true\" ? \"ON\" : \"OFF\")) {\n    return false;\n    }\n    }\n    }\n    \n    const text = [\n    r.device_id,\n    r.record_type,\n    r.detail,\n    r.value,\n    r.updated_by\n    ].join(\" \").toLowerCase();\n    \n    return text.includes(search);\n    });\n    };\n    scope.totalPages = function() {\n        return Math.max(1, Math.ceil(\n            scope.filteredRows().length / scope.pageSize\n        ));\n    };\n\n    scope.resetFilters = function() {\n        scope.searchText = \"\";\n        scope.deviceFilter = \"\";\n        scope.typeFilter = \"\";\n        scope.buttonFilter = \"\";\n        scope.ledFilter = \"\";\n        scope.page = 1;\n    };\n\n    scope.exportCsv = function() {\n        const columns = [\n            \"timestamp\", \"record_type\", \"device_id\", \"detail\",\n            \"value\", \"button_state\", \"led_state\", \"updated_by\"\n        ];\n\n        const escapeCsv = function(value) {\n            if (value == null) value = \"\";\n            return '\"' + String(value).replace(/\"/g, '\"\"') + '\"';\n        };\n\n        const lines = [columns.join(\",\")];\n\n        scope.filteredRows().forEach(function(row) {\n            lines.push(columns.map(function(key) {\n                return escapeCsv(row[key]);\n            }).join(\",\"));\n        });\n\n        const blob = new Blob(\n            [\"\\uFEFF\" + lines.join(\"\\r\\n\")],\n            { type: \"text/csv;charset=utf-8;\" }\n        );\n\n        const url = URL.createObjectURL(blob);\n        const link = document.createElement(\"a\");\n        link.href = url;\n        link.download = \"sql-explorer.csv\";\n        link.click();\n        URL.revokeObjectURL(url);\n    };\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 2900,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6986c6d5b55c7e3c",
+        "type": "ui_template",
+        "z": "980c7951c5c88b87",
+        "g": "c2f88427de4a2da6",
+        "group": "787ca6f3c3c3444b",
+        "name": "Indicador de conexao fisica",
+        "order": 5,
+        "width": 1,
+        "height": 1,
+        "format": "<style>\n    #indicador-fonte-fisica {\n        position: fixed;\n        top: 8px;\n        right: 20px;\n        z-index: 999999;\n        display: flex;\n        align-items: center;\n        gap: 14px;\n        padding: 8px 12px;\n        border-radius: 8px;\n        background: #20252b;\n        color: #fff;\n        font: 12px Arial, sans-serif;\n        box-shadow: 0 2px 8px #0005;\n    }\n\n    #seletor-fonte-cabecalho {\n        background: #333;\n        color: white;\n        border: 1px solid #666;\n        border-radius: 5px;\n        padding: 6px;\n        max-width: 145px;\n    }\n\n    #indicador-fonte-fisica .led {\n        width: 10px;\n        height: 10px;\n        border-radius: 50%;\n        flex-shrink: 0;\n        background: #777;\n    }\n\n    #indicador-fonte-fisica .online .led {\n        background: #20e878;\n        animation: piscar-lento 2.4s ease-in-out infinite;\n    }\n\n    #indicador-fonte-fisica .status {\n        font-size: 11px;\n        color: #ff5252;\n    }\n\n    #indicador-fonte-fisica .online .status {\n        color: #20e878;\n    }\n\n    #indicador-fonte-fisica .bloco-status {\n        display: flex;\n        align-items: center;\n        gap: 6px;\n    }\n\n    #indicador-fonte-fisica .grupo-status {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    gap: 16px;\n    }\n    \n    #indicador-fonte-fisica .bloco-status {\n    display: flex;\n    align-items: center;\n    gap: 6px;\n    }\n\n    @keyframes piscar-lento {\n\n        0%,\n        100% {\n            opacity: 1;\n            box-shadow: 0 0 8px #20e878;\n        }\n\n        50% {\n            opacity: .35;\n            box-shadow: none;\n        }\n    }\n</style>\n\n<div id=\"indicador-fonte-fisica\">\n    <select id=\"seletor-fonte-cabecalho\"\n            aria-label=\"Selecionar fonte de dados\">\n        <option value=\"simulator\">SIMULATOR</option>\n        <option value=\"real\">ESP REAL</option>\n    </select>\n\n    <div class=\"grupo-status\">\n        <div id=\"status-fonte\" class=\"bloco-status\">\n            <span class=\"led\"></span>\n            <div>\n                <div id=\"indicador-nome-fonte\">SIMULATOR</div>\n                <div id=\"indicador-status\" class=\"status\">OFFLINE</div>\n            </div>\n        </div>\n\n        <div id=\"status-backend\" class=\"bloco-status\">\n            <span class=\"led\"></span>\n            <div>\n                <div>BACKEND</div>\n                <div id=\"indicador-backend-status\" class=\"status\">OFFLINE</div>\n            </div>\n        </div>\n    </div>\n</div>\n\n<script>\n    (function(scope) {\n    let fonteAtual = \"simulator\";\n    let fonteInicializada = false;\n    let backendOnline = false;\n\n    const seletor = document.getElementById(\n        \"seletor-fonte-cabecalho\"\n    );\n    const nome = document.getElementById(\n        \"indicador-nome-fonte\"\n    );\n    const status = document.getElementById(\n        \"indicador-status\"\n    );\n    const statusFonte = document.getElementById(\n        \"status-fonte\"\n    );\n    const statusBackend = document.getElementById(\n        \"status-backend\"\n    );\n    const textoBackend = document.getElementById(\n        \"indicador-backend-status\"\n    );\n\n    function atualizarFonte(online) {\n        nome.textContent =\n            fonteAtual === \"real\" ? \"ESP REAL\" : \"SIMULATOR\";\n\n        status.textContent = online ? \"ONLINE\" : \"OFFLINE\";\n        statusFonte.classList.toggle(\"online\", online);\n    }\n    function atualizarBackend(online) {\n    backendOnline = online;\n    textoBackend.textContent = online ? \"ONLINE\" : \"OFFLINE\";\n    statusBackend.classList.toggle(\"online\", online);\n    }\n    if (seletor) {\n        seletor.addEventListener(\"change\", function() {\n            fonteAtual = seletor.value;\n            fonteInicializada = true;\n\n            nome.textContent =\n                fonteAtual === \"real\" ? \"ESP REAL\" : \"SIMULATOR\";\n\n            scope.send({\n                payload: fonteAtual,\n                topic: \"selecionar_fonte\"\n            });\n        });\n    }\n\n    scope.$watch(\"msg\", function(msg) {\n        if (!msg) return;\n\n        const dados = msg.payload;\n\n        // Atualização independente do status do backend\n        if (dados && dados.topic === \"status_backend\") {\n            atualizarBackend(dados.backend_online === true);\n            return;\n        }\n\n        // Atualização da fonte selecionada\n        if (!dados || typeof dados !== \"object\") return;\n\n        if (!fonteInicializada && dados.source) {\n            fonteAtual = dados.source;\n            fonteInicializada = true;\n\n            if (seletor) {\n                seletor.value = fonteAtual;\n            }\n        }\n\n        if (dados.source) {\n            atualizarFonte(dados.online === true);\n        }\n    });\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1740,
+        "y": 740,
+        "wires": [
+            [
+                "8ceba32cdbd6a7fb"
+            ]
+        ]
+    },
+    {
+        "id": "b8e9ef178233d8ec",
+        "type": "link in",
+        "z": "980c7951c5c88b87",
+        "g": "c2f88427de4a2da6",
+        "name": "link in 8",
+        "links": [
+            "e4d141c3aa348d71"
+        ],
+        "x": 1555,
+        "y": 740,
+        "wires": [
+            [
+                "6986c6d5b55c7e3c"
+            ]
+        ]
+    },
+    {
+        "id": "484b804add635b30",
+        "type": "link in",
+        "z": "980c7951c5c88b87",
+        "g": "c2f88427de4a2da6",
+        "name": "link in 9",
+        "links": [
+            "9b47b424f24556ad"
+        ],
+        "x": 1475,
+        "y": 740,
+        "wires": [
+            [
+                "6986c6d5b55c7e3c"
+            ]
+        ]
+    },
+    {
+        "id": "d50ccc3cc62e85c8",
+        "type": "function",
+        "z": "980c7951c5c88b87",
+        "name": "configurador de dados",
+        "func": "\n/*\n * CONFIG - SOBRE\n * Edite os textos, integrantes e contatos somente aqui.\n */\n\nmsg.payload = {\n    projeto: {\n        titulo: \"Integração ESP32 e Node-RED\",\n\n        subtitulo:\n            \"Programação Remota, Comunicação e Visualização Web usando API REST HTTP\",\n\n        descricao:\n            \"Este projeto desenvolve um sistema IoT para monitoramento e controle remoto utilizando um ESP32 LORA e uma plaquinha de sensores. A solução permite visualizar dados dos sensores, acompanhar o estado do botão físico do board e controlar um LED por meio de uma interface web.\",\n\n        objetivo:\n            \"comunicação HTTP REST, processamento de dados, banco de dados e visualização em tempo real em uma única solução.\",\n\n        tecnologias: [\n            \"ESP32\",\n            \"Arduino / C++\",\n            \"API REST HTTP\",\n            \"Python / FastAPI\",\n            \"Node-RED\",\n            \"PostgreSQL\",\n            \"HTML, CSS e JavaScript\"\n        ],\n\n        funcionalidades: [\n            \"Monitoramento de temperatura, umidade e pressão\",\n            \"Visualização do estado do botão físico\",\n            \"Controle remoto do LED\",\n            \"Registro e consulta do histórico no PostgreSQL\",\n            \"Dashboard web para monitoramento e controle\",\n            \"Simulação do dispositivo para testes sem hardware físico\"\n        ],\n\n        repositorio:\n            \"https://github.com/rick-12q/Trabalho_02_RIC\",\n        \n        relatorio:\n            \"http://localhost:1880/relatorio.pdf\",\n\n        instituicao:\n            \"UNESP — Universidade Estadual Paulista\",\n\n        disciplina:\n            \"RIC — TRABALHO II\",\n\n        ano: \"2026\"\n    },\n\n    membros: [\n        {\n            nome: \"Luiz Henrique Corrêa Monteiro\",\n            funcao: \"Integrante do projeto\",\n            email: \"lh.monteiro@unesp.br\"\n        },\n        {\n            nome: \"Paulo de Melo Pereira Rodrigues Ramalho\",\n            funcao: \"Integrante do projeto\",\n            email: \"paulo.ramalho@unesp.br\"\n        }\n    ],\n\n    rodape: {\n        texto:\n            \"Projeto acadêmico desenvolvido para conclusão da disciplina de RIC.\",\n        versao: \"1.2.1\"\n    }\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2500,
+        "y": 200,
+        "wires": [
+            [
+                "1401706568060e5a"
+            ]
+        ]
+    },
+    {
+        "id": "1401706568060e5a",
+        "type": "ui_template",
+        "z": "980c7951c5c88b87",
+        "group": "3827f62d045e9de8",
+        "name": "",
+        "order": 0,
+        "width": "18",
+        "height": "28",
+        "format": "<div class=\"about-page\" ng-if=\"about\">\n\n    <section class=\"about-hero\">\n        <div class=\"about-eyebrow\">\n            <span class=\"about-dot\"></span>\n            PROJETO II DE RIC · {{about.projeto.ano}}\n        </div>\n\n        <h1>{{about.projeto.titulo}}</h1>\n        <p class=\"about-subtitle\">{{about.projeto.subtitulo}}</p>\n\n        <p class=\"about-description\">{{about.projeto.descricao}}</p>\n\n        <div class=\"about-actions\">\n            <a class=\"about-button about-button-primary\" ng-href=\"{{about.projeto.repositorio}}\" target=\"_blank\"\n                rel=\"noopener noreferrer\">\n                <span class=\"about-button-icon\">↗</span>\n                Acessar repositório GitHub\n            </a>\n        \n            <a class=\"about-button about-button-secondary\" ng-href=\"{{about.projeto.relatorio}}\" target=\"_blank\"\n                rel=\"noopener noreferrer\" ng-if=\"about.projeto.relatorio\">\n                <span class=\"about-button-icon\">↓</span>\n                Acessar relatório PDF\n            </a>\n        </div>\n\n        <div class=\"about-meta\">\n            <div>\n                <span class=\"about-meta-label\">INSTITUIÇÃO</span>\n                <strong>{{about.projeto.instituicao}}</strong>\n            </div>\n            <div>\n                <span class=\"about-meta-label\">DISCIPLINA</span>\n                <strong>{{about.projeto.disciplina}}</strong>\n            </div>\n        </div>\n    </section>\n\n    <section class=\"about-section\">\n        <div class=\"about-section-heading\">\n            <span class=\"about-section-number\">01</span>\n            <div>\n                <h2>Sobre o projeto</h2>\n                <p>Objetivo e propósito da solução</p>\n            </div>\n        </div>\n\n        <div class=\"about-info-card\">\n            <div class=\"about-card-icon\">◎</div>\n            <div>\n                <h3>Objetivo</h3>\n                <p>{{about.projeto.objetivo}}</p>\n            </div>\n        </div>\n\n        <div class=\"about-section-heading about-subheading\">\n            <span class=\"about-section-number\">02</span>\n            <div>\n                <h2>Funcionalidades</h2>\n                <p>O que o sistema oferece</p>\n            </div>\n        </div>\n\n        <div class=\"about-feature-grid\">\n            <div class=\"about-feature\" ng-repeat=\"item in about.projeto.funcionalidades track by $index\">\n                <span class=\"about-feature-check\">✓</span>\n                <span>{{item}}</span>\n            </div>\n        </div>\n    </section>\n\n    <section class=\"about-section\">\n        <div class=\"about-section-heading\">\n            <span class=\"about-section-number\">03</span>\n            <div>\n                <h2>Tecnologias utilizadas</h2>\n                <p>Ferramentas e componentes do sistema</p>\n            </div>\n        </div>\n\n        <div class=\"about-tech-grid\">\n            <div class=\"about-tech\" ng-repeat=\"tech in about.projeto.tecnologias track by $index\">\n                <span class=\"about-tech-dot\"></span>\n                {{tech}}\n            </div>\n        </div>\n    </section>\n\n    <section class=\"about-section\">\n        <div class=\"about-section-heading\">\n            <span class=\"about-section-number\">04</span>\n            <div>\n                <h2>Equipe do projeto</h2>\n                <p>Integrantes e formas de contato</p>\n            </div>\n        </div>\n\n        <div class=\"about-team-grid\">\n            <article class=\"about-member\" ng-repeat=\"member in about.membros track by $index\">\n\n                <div class=\"about-avatar\">\n                    {{member.nome.charAt(0).toUpperCase()}}\n                </div>\n\n                <div class=\"about-member-info\">\n                    <h3>{{member.nome}}</h3>\n                    <p>{{member.funcao}}</p>\n\n                    <a class=\"about-email\" ng-href=\"mailto:{{member.email}}\" ng-if=\"member.email &&\n                              member.email.indexOf('@') > 0 &&\n                              member.email.indexOf('_AQUI') === -1 &&\n                              member.email.indexOf('INTEGRANTE') === -1 &&\n                              member.email.indexOf('SEGUNDO') === -1 &&\n                              member.email.indexOf('EMAIL_DO') === -1\">\n                        <span>✉</span>\n                        Enviar e-mail\n                    </a>\n\n                    <span class=\"about-email-pending\"\n                          ng-if=\"!member.email ||\n                                 member.email.indexOf('@') <= 0 ||\n                                 member.email.indexOf('_AQUI') !== -1 ||\n                                 member.email.indexOf('INTEGRANTE') !== -1 ||\n                                 member.email.indexOf('SEGUNDO') !== -1 ||\n                                 member.email.indexOf('EMAIL_DO') !== -1\">\n                        E-mail não configurado\n                    </span>\n                </div>\n            </article>\n        </div>\n    </section>\n\n    <footer class=\"about-footer\">\n        <div class=\"about-footer-brand\">\n            <span class=\"about-footer-mark\">IOT</span>\n            <div>\n                <strong>{{about.projeto.titulo}}</strong>\n                <span>{{about.rodape.texto}}</span>\n            </div>\n        </div>\n\n        <div class=\"about-footer-version\">\n            v{{about.rodape.versao}}\n        </div>\n    </footer>\n\n</div>\n\n<div class=\"about-loading\" ng-if=\"!about\">\n    Aguardando informações do projeto...\n</div>\n\n<style>\n    .about-page {\n        --about-bg: #111916;\n        --about-panel: #19231e;\n        --about-panel-hover: #202e25;\n        --about-border: #2c3b32;\n        --about-green: #52b788;\n        --about-green-light: #8ce0b0;\n        --about-text: #e2ebe5;\n        --about-muted: #94a69a;\n\n        box-sizing: border-box;\n        width: 100%;\n        padding: 28px;\n        color: var(--about-text);\n        background: var(--about-bg);\n        border: 1px solid var(--about-border);\n        border-radius: 16px;\n        font-family: Inter, \"Segoe UI\", Roboto, Arial, sans-serif;\n    }\n\n    .about-page *,\n    .about-page *::before,\n    .about-page *::after {\n        box-sizing: border-box;\n    }\n\n    .about-hero {\n        position: relative;\n        overflow: hidden;\n        padding: 34px;\n        background:\n            radial-gradient(ellipse at 95% 0%,\n                rgba(82, 183, 136, .14), transparent 48%),\n            linear-gradient(135deg, #1c3024, #17221b 75%);\n        border: 1px solid #344d3b;\n        border-radius: 14px;\n    }\n\n    .about-eyebrow {\n        display: flex;\n        align-items: center;\n        gap: 9px;\n        color: var(--about-green-light);\n        font-size: 10px;\n        font-weight: 800;\n        letter-spacing: 1.7px;\n    }\n\n    .about-dot,\n    .about-tech-dot {\n        flex: 0 0 auto;\n        width: 7px;\n        height: 7px;\n        background: var(--about-green);\n        border-radius: 50%;\n    }\n\n    .about-hero h1 {\n        max-width: 850px;\n        margin: 24px 0 12px;\n        color: #eff9f2;\n        font-size: clamp(25px, 3vw, 38px);\n        font-weight: 800;\n        line-height: 1.18;\n        letter-spacing: -1.1px;\n    }\n\n    .about-subtitle {\n        max-width: 850px;\n        margin: 0;\n        color: var(--about-green-light);\n        font-size: 14px;\n        line-height: 1.8;\n    }\n\n    .about-description {\n        max-width: 850px;\n        margin: 22px 0 0;\n        color: #c0d0c5;\n        font-size: 14px;\n        line-height: 1.9;\n    }\n\n    .about-actions {\n        display: flex;\n        flex-wrap: wrap;\n        gap: 12px;\n        margin-top: 25px;\n    }\n\n    .about-button {\n        display: inline-flex;\n        justify-content: center;\n        align-items: center;\n        gap: 10px;\n        min-height: 44px;\n        padding: 0 17px;\n        border: 1px solid transparent;\n        border-radius: 8px;\n        text-decoration: none !important;\n        font-size: 12px;\n        font-weight: 750;\n        transition: .2s ease;\n    }\n\n    .about-button-primary {\n        color: #102219 !important;\n        background: var(--about-green);\n        border-color: var(--about-green);\n    }\n\n    .about-button-primary:hover {\n        color: #08180f !important;\n        background: #74d3a1;\n        transform: translateY(-2px);\n    }\n\n    .about-button-icon {\n        font-size: 17px;\n    }\n\n    .about-meta {\n        display: grid;\n        grid-template-columns: repeat(2, minmax(0, 1fr));\n        gap: 20px;\n        margin-top: 32px;\n        padding-top: 24px;\n        border-top: 1px solid #34483a;\n    }\n\n    .about-meta>div {\n        display: flex;\n        flex-direction: column;\n        gap: 8px;\n        min-width: 0;\n    }\n\n    .about-meta-label {\n        color: #91a998;\n        font-size: 9px;\n        font-weight: 800;\n        letter-spacing: 1.3px;\n    }\n\n    .about-meta strong {\n        color: #e0ece3;\n        font-size: 12px;\n        line-height: 1.6;\n        font-weight: 600;\n    }\n\n    .about-section {\n        margin-top: 34px;\n    }\n\n    .about-section-heading {\n        display: flex;\n        align-items: center;\n        gap: 15px;\n        margin-bottom: 19px;\n    }\n\n    .about-section-number {\n        display: flex;\n        flex: 0 0 42px;\n        width: 42px;\n        height: 42px;\n        align-items: center;\n        justify-content: center;\n        color: var(--about-green-light);\n        background: #22382a;\n        border: 1px solid #355341;\n        border-radius: 10px;\n        font-size: 12px;\n        font-weight: 800;\n    }\n\n    .about-section-heading h2 {\n        margin: 0;\n        color: #e5f0e8;\n        font-size: 18px;\n        font-weight: 750;\n        letter-spacing: -.3px;\n    }\n\n    .about-section-heading p {\n        margin: 5px 0 0;\n        color: var(--about-muted);\n        font-size: 12px;\n    }\n\n    .about-info-card {\n        display: flex;\n        align-items: flex-start;\n        gap: 16px;\n        padding: 22px;\n        background: var(--about-panel);\n        border: 1px solid var(--about-border);\n        border-radius: 12px;\n    }\n\n    .about-card-icon {\n        display: flex;\n        flex: 0 0 40px;\n        width: 40px;\n        height: 40px;\n        align-items: center;\n        justify-content: center;\n        color: var(--about-green-light);\n        background: #253b2c;\n        border-radius: 10px;\n        font-size: 23px;\n    }\n\n    .about-info-card h3,\n    .about-member h3 {\n        margin: 0;\n        color: #e5f0e8;\n        font-size: 14px;\n        font-weight: 750;\n    }\n\n    .about-info-card p {\n        margin: 9px 0 0;\n        color: #aebfb3;\n        font-size: 13px;\n        line-height: 1.9;\n    }\n\n    .about-subheading {\n        margin-top: 34px;\n    }\n\n    .about-feature-grid {\n        display: grid;\n        grid-template-columns: repeat(2, minmax(0, 1fr));\n        gap: 10px;\n    }\n\n    .about-feature {\n        display: flex;\n        align-items: flex-start;\n        gap: 11px;\n        padding: 15px;\n        color: #c5d4c9;\n        background: var(--about-panel);\n        border: 1px solid var(--about-border);\n        border-radius: 9px;\n        font-size: 12px;\n        line-height: 1.7;\n        transition: background .2s, border-color .2s;\n    }\n\n    .about-feature:hover {\n        background: var(--about-panel-hover);\n        border-color: #476550;\n    }\n\n    .about-feature-check {\n        color: var(--about-green-light);\n        font-size: 15px;\n        font-weight: 800;\n    }\n\n    .about-tech-grid {\n        display: flex;\n        flex-wrap: wrap;\n        gap: 10px;\n    }\n\n    .about-tech {\n        display: inline-flex;\n        align-items: center;\n        gap: 9px;\n        padding: 11px 14px;\n        color: #c9dace;\n        background: #1a2820;\n        border: 1px solid #304639;\n        border-radius: 8px;\n        font-size: 12px;\n        font-weight: 650;\n    }\n\n    .about-tech-dot {\n        width: 6px;\n        height: 6px;\n    }\n\n    .about-team-grid {\n        display: grid;\n        grid-template-columns: repeat(2, minmax(0, 1fr));\n        gap: 14px;\n    }\n\n    .about-member {\n        display: flex;\n        align-items: flex-start;\n        gap: 15px;\n        min-width: 0;\n        padding: 21px;\n        background: var(--about-panel);\n        border: 1px solid var(--about-border);\n        border-radius: 12px;\n        transition: border-color .2s, transform .2s;\n    }\n\n    .about-member:hover {\n        border-color: #4d7558;\n        transform: translateY(-2px);\n    }\n\n    .about-avatar {\n        display: flex;\n        flex: 0 0 46px;\n        width: 46px;\n        height: 46px;\n        align-items: center;\n        justify-content: center;\n        color: #d9f5e3;\n        background: linear-gradient(145deg, #376849, #203b2a);\n        border: 1px solid #4b7859;\n        border-radius: 12px;\n        font-size: 18px;\n        font-weight: 800;\n    }\n\n    .about-member-info {\n        min-width: 0;\n    }\n\n    .about-member h3 {\n        overflow-wrap: anywhere;\n        line-height: 1.6;\n    }\n\n    .about-member-info>p {\n        margin: 6px 0 14px;\n        color: var(--about-muted);\n        font-size: 12px;\n    }\n\n    .about-email,\n    .about-email-pending {\n        display: inline-flex;\n        align-items: center;\n        gap: 7px;\n        color: var(--about-green-light) !important;\n        font-size: 12px;\n        font-weight: 700;\n    }\n\n    .about-email {\n        text-decoration: none !important;\n    }\n\n    .about-email:hover {\n        color: #c0f7d4 !important;\n        text-decoration: underline !important;\n    }\n\n    .about-email-pending {\n        color: #899a8e !important;\n        font-size: 11px;\n        font-weight: 500;\n    }\n\n    .about-footer {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        gap: 18px;\n        margin-top: 36px;\n        padding: 22px 0 0;\n        border-top: 1px solid var(--about-border);\n    }\n\n    .about-footer-brand {\n        display: flex;\n        align-items: center;\n        gap: 13px;\n        min-width: 0;\n    }\n\n    .about-footer-mark {\n        display: flex;\n        flex: 0 0 40px;\n        width: 40px;\n        height: 40px;\n        align-items: center;\n        justify-content: center;\n        color: #d7f5e1;\n        background: #244631;\n        border: 1px solid #3b6548;\n        border-radius: 10px;\n        font-size: 11px;\n        font-weight: 850;\n        letter-spacing: .5px;\n    }\n\n    .about-footer-brand>div {\n        display: flex;\n        flex-direction: column;\n        gap: 5px;\n    }\n\n    .about-footer-brand strong {\n        color: #dce9df;\n        font-size: 11px;\n    }\n\n    .about-footer-brand>div>span {\n        color: #84978a;\n        font-size: 10px;\n        line-height: 1.6;\n    }\n\n    .about-footer-version {\n        flex: 0 0 auto;\n        padding: 7px 10px;\n        color: #9db8a4;\n        background: #1c2b22;\n        border: 1px solid #304739;\n        border-radius: 6px;\n        font-size: 10px;\n        font-weight: 700;\n    }\n\n    .about-loading {\n        padding: 30px;\n        color: #94a69a;\n        background: #111916;\n        border-radius: 12px;\n        text-align: center;\n    }\n\n    @media (max-width: 700px) {\n        .about-page {\n            padding: 14px;\n        }\n\n        .about-hero {\n            padding: 22px;\n        }\n\n        .about-meta,\n        .about-feature-grid,\n        .about-team-grid {\n            grid-template-columns: 1fr;\n        }\n\n        .about-hero h1 {\n            font-size: 27px;\n        }\n\n        .about-footer {\n            align-items: flex-start;\n        }\n    }\n    .about-button-secondary {\n    color: #dce9df !important;\n    background: #202e25;\n    border-color: #405746;\n}\n\n.about-button-secondary:hover {\n    color: #ffffff !important;\n    background: #2b4132;\n    border-color: #52b788;\n    transform: translateY(-2px);\n}\n.about-button-secondary {\ncolor: #dce9df !important;\nbackground: #202e25;\nborder-color: #405746;\n}\n\n.about-button-secondary:hover {\ncolor: #ffffff !important;\nbackground: #2b4132;\nborder-color: #52b788;\ntransform: translateY(-2px);\n}\n</style>\n\n<script>\n    (function(scope) {\n    scope.about = null;\n\n    scope.$watch(\"msg\", function(msg) {\n        if (msg && msg.payload && msg.payload.projeto &&\n            msg.payload.membros) {\n            scope.about = msg.payload;\n        }\n    });\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 2720,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a525330b3ccdd8d4",
+        "type": "inject",
+        "z": "980c7951c5c88b87",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2260,
+        "y": 200,
+        "wires": [
+            [
+                "d50ccc3cc62e85c8"
+            ]
+        ]
+    },
+    {
+        "id": "2b2282fc1bb19a72",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6",
+            "node-red-contrib-postgresql": "0.16.2"
+        }
+    }
+]
