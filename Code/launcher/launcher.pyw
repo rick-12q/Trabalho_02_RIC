@@ -24,6 +24,7 @@ POSTGRES_BIN = Path(r"C:\Program Files\PostgreSQL\18\bin")
 POSTGRES_DATA = Path(r"C:\Program Files\PostgreSQL\18\data")
 
 BACKEND_HOST = "127.0.0.1"
+BACKEND_BIND_HOST = "0.0.0.0"
 BACKEND_PORT = 8000
 
 SIMULATOR_HOST = "127.0.0.1"
@@ -614,7 +615,7 @@ class Launcher:
                         "uvicorn",
                         "backend.app.main:app",
                         "--host",
-                        BACKEND_HOST,
+                        BACKEND_BIND_HOST,
                         "--port",
                         str(BACKEND_PORT),
                     ],
