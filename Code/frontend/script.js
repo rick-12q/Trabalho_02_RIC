@@ -1,6 +1,6 @@
 let DEVICE_ID = "esp32-simulator-001";
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "http://200.145.26.14:8000";
 
 let sourceSelect = null;
 
