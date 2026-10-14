@@ -1,0 +1,10 @@
+% Introdução
+
+\section{Introdução}
+%\addcontentsline{toc}{chapter}{Introdução} % Adiciona "Introdução" ao sumário
+
+Hoje em dia os sistemas modernos estão cada vez mais integrados entre si, e para fazer essa troca de informações uma das formas mais viáveis é o uso de \textbf{HTTP API Rest}. A ideia central do projeto é utilizar uma placa de desenvolvimento \textit{ESP32} com a tecnologia LoRa para ler dados de um sensor que mede umidade, altitude e temperatura, além de fazer a leitura do estado de um botão e controlar o acionamento de um LED interno.
+
+Essas informações coletadas são enviadas pela internet via API REST, para um dashboard no Node-Red. Além disso, esse modo de comunicação permite que o Node-Red também envie comandos para a placa ESP32. Além do Node-Red, foi desenvolvido como extra uma interface HTML5, que permite outras formas de visualização, bem como um simulador digital da placa ESP32, por fim, os dados são salvos em um banco de dados SQL. 
+
+A utilização dessa estrutura é bastante ampla, podendo ser empregada tanto no ramo industrial, bem como para automação residencial, profissional, etc.

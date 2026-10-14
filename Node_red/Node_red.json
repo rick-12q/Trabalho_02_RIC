@@ -28,8 +28,8 @@
             "c524f8c4ae80a5a3",
             "063223cbe0f227b7"
         ],
-        "x": 74,
-        "y": 459,
+        "x": 194,
+        "y": 399,
         "w": 672,
         "h": 162
     },
@@ -58,8 +58,8 @@
             "a4179ca59cdd05ab",
             "28706189aee00daa"
         ],
-        "x": 74,
-        "y": 99,
+        "x": 194,
+        "y": 39,
         "w": 672,
         "h": 342
     },
@@ -84,8 +84,8 @@
             "99d024f7c39a6a52",
             "b277af79532d9b36"
         ],
-        "x": 774,
-        "y": 639,
+        "x": 894,
+        "y": 579,
         "w": 852,
         "h": 222
     },
@@ -110,8 +110,8 @@
             "371140ce8a564bae",
             "e4d141c3aa348d71"
         ],
-        "x": 774,
-        "y": 459,
+        "x": 894,
+        "y": 399,
         "w": 852,
         "h": 162
     },
@@ -142,8 +142,8 @@
             "b8e9ef178233d8ec",
             "484b804add635b30"
         ],
-        "x": 74,
-        "y": 639,
+        "x": 194,
+        "y": 579,
         "w": 672,
         "h": 222
     },
@@ -163,28 +163,31 @@
             "34c56c0b935fad0c",
             "4005e2523dbc79e7"
         ],
-        "x": 774,
-        "y": 359,
+        "x": 894,
+        "y": 299,
         "w": 852,
         "h": 82
     },
     {
-        "id": "695975f8d7792e0d",
+        "id": "d54acba62f40532b",
         "type": "group",
         "z": "980c7951c5c88b87",
-        "name": "Tela de sobre",
         "style": {
-            "stroke": "#6f2fa0",
-            "fill": "#dbcbe7",
-            "label": true
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#767676"
         },
         "nodes": [
             "d50ccc3cc62e85c8",
             "1401706568060e5a",
             "a525330b3ccdd8d4"
         ],
-        "x": 774,
-        "y": 259,
+        "x": 894,
+        "y": 199,
         "w": 852,
         "h": 82
     },
@@ -463,8 +466,8 @@
         "upload": false,
         "skipBodyParsing": false,
         "swaggerDoc": "",
-        "x": 920,
-        "y": 500,
+        "x": 1040,
+        "y": 440,
         "wires": [
             [
                 "5d9eedfd9d177c64"
@@ -480,8 +483,8 @@
         "property": "payload",
         "action": "obj",
         "pretty": false,
-        "x": 1180,
-        "y": 500,
+        "x": 1300,
+        "y": 440,
         "wires": [
             [
                 "7fec9bd51291c0a5"
@@ -501,8 +504,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1400,
-        "y": 500,
+        "x": 1520,
+        "y": 440,
         "wires": [
             [
                 "862a17f4e9fcffd0"
@@ -522,8 +525,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 160,
+        "x": 440,
+        "y": 100,
         "wires": [
             [
                 "4c327bcd7942f034",
@@ -544,8 +547,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
-        "y": 240,
+        "x": 430,
+        "y": 180,
         "wires": [
             [
                 "9b8e3617f5ae121d"
@@ -565,8 +568,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
-        "y": 320,
+        "x": 430,
+        "y": 260,
         "wires": [
             [
                 "86fa4dfd3b5cfe0a"
@@ -586,8 +589,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
-        "y": 400,
+        "x": 420,
+        "y": 340,
         "wires": [
             [
                 "a4179ca59cdd05ab"
@@ -616,8 +619,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 880,
-        "y": 580,
+        "x": 1000,
+        "y": 520,
         "wires": [
             [
                 "eea1f72269b339ce"
@@ -641,8 +644,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1220,
-        "y": 580,
+        "x": 1340,
+        "y": 520,
         "wires": [
             [
                 "5d9eedfd9d177c64",
@@ -675,8 +678,8 @@
         "seg2": "70",
         "diff": false,
         "className": "",
-        "x": 650,
-        "y": 240,
+        "x": 770,
+        "y": 180,
         "wires": []
     },
     {
@@ -704,8 +707,8 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 650,
-        "y": 320,
+        "x": 770,
+        "y": 260,
         "wires": []
     },
     {
@@ -733,8 +736,8 @@
         "seg2": "70",
         "diff": false,
         "className": "",
-        "x": 630,
-        "y": 180,
+        "x": 750,
+        "y": 120,
         "wires": []
     },
     {
@@ -751,8 +754,8 @@
             "0f2c4679e197bb68",
             "c524f8c4ae80a5a3"
         ],
-        "x": 1585,
-        "y": 500,
+        "x": 1705,
+        "y": 440,
         "wires": []
     },
     {
@@ -764,8 +767,8 @@
         "links": [
             "862a17f4e9fcffd0"
         ],
-        "x": 115,
-        "y": 160,
+        "x": 235,
+        "y": 100,
         "wires": [
             [
                 "be28a6be6ac246b9"
@@ -781,8 +784,8 @@
         "links": [
             "862a17f4e9fcffd0"
         ],
-        "x": 115,
-        "y": 240,
+        "x": 235,
+        "y": 180,
         "wires": [
             [
                 "cb72929f1b7fba93"
@@ -798,8 +801,8 @@
         "links": [
             "862a17f4e9fcffd0"
         ],
-        "x": 115,
-        "y": 320,
+        "x": 235,
+        "y": 260,
         "wires": [
             [
                 "28deb7886302718d"
@@ -815,8 +818,8 @@
         "links": [
             "862a17f4e9fcffd0"
         ],
-        "x": 115,
-        "y": 400,
+        "x": 235,
+        "y": 340,
         "wires": [
             [
                 "21c7ba25ece16dd1"
@@ -841,8 +844,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#ffffff",
-        "x": 630,
-        "y": 400,
+        "x": 750,
+        "y": 340,
         "wires": []
     },
     {
@@ -884,8 +887,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 630,
-        "y": 140,
+        "x": 750,
+        "y": 80,
         "wires": [
             []
         ]
@@ -903,8 +906,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1310,
-        "y": 820,
+        "x": 1430,
+        "y": 760,
         "wires": [
             [
                 "0df22ea9b6e77b1a"
@@ -938,8 +941,8 @@
         "offcolor": "",
         "animate": true,
         "className": "",
-        "x": 1140,
-        "y": 820,
+        "x": 1260,
+        "y": 760,
         "wires": [
             [
                 "8f448983e24f6382"
@@ -963,8 +966,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1520,
-        "y": 820,
+        "x": 1640,
+        "y": 760,
         "wires": [
             []
         ]
@@ -991,8 +994,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 180,
-        "y": 820,
+        "x": 300,
+        "y": 760,
         "wires": [
             [
                 "1b1fa5b9cfbb2a1f"
@@ -1016,8 +1019,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 360,
-        "y": 820,
+        "x": 480,
+        "y": 760,
         "wires": [
             [
                 "8a325ccf870ce8c2"
@@ -1037,8 +1040,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 570,
-        "y": 820,
+        "x": 690,
+        "y": 760,
         "wires": [
             [
                 "9b47b424f24556ad"
@@ -1058,8 +1061,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1040,
-        "y": 580,
+        "x": 1160,
+        "y": 520,
         "wires": [
             [
                 "91db7135bd399752"
@@ -1088,8 +1091,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 890,
-        "y": 680,
+        "x": 1010,
+        "y": 620,
         "wires": [
             [
                 "bb22d379ba623e5d"
@@ -1109,8 +1112,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1180,
-        "y": 680,
+        "x": 1300,
+        "y": 620,
         "wires": [
             [
                 "6c701d0c4456d895"
@@ -1134,8 +1137,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1480,
-        "y": 680,
+        "x": 1600,
+        "y": 620,
         "wires": [
             [
                 "d9b7264697093456"
@@ -1155,8 +1158,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 910,
-        "y": 820,
+        "x": 1030,
+        "y": 760,
         "wires": [
             [
                 "4db6fc1ef4b7b6f7",
@@ -1181,8 +1184,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1140,
-        "y": 760,
+        "x": 1260,
+        "y": 700,
         "wires": [
             []
         ]
@@ -1200,8 +1203,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1430,
-        "y": 580,
+        "x": 1550,
+        "y": 520,
         "wires": [
             [
                 "e4d141c3aa348d71"
@@ -1224,8 +1227,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 650,
-        "y": 500,
+        "x": 770,
+        "y": 440,
         "wires": [
             [
                 "0670c38307266245"
@@ -1245,8 +1248,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
-        "y": 500,
+        "x": 540,
+        "y": 440,
         "wires": [
             [
                 "667318473411eb80"
@@ -1266,8 +1269,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 230,
-        "y": 580,
+        "x": 350,
+        "y": 520,
         "wires": [
             [
                 "0b8ca9f040896c27"
@@ -1287,8 +1290,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 220,
-        "y": 540,
+        "x": 340,
+        "y": 480,
         "wires": [
             [
                 "0b8ca9f040896c27"
@@ -1308,8 +1311,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 210,
-        "y": 500,
+        "x": 330,
+        "y": 440,
         "wires": [
             [
                 "0b8ca9f040896c27"
@@ -1329,8 +1332,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 650,
-        "y": 540,
+        "x": 770,
+        "y": 480,
         "wires": [
             [
                 "667318473411eb80"
@@ -1346,8 +1349,8 @@
         "links": [
             "e4d141c3aa348d71"
         ],
-        "x": 115,
-        "y": 580,
+        "x": 235,
+        "y": 520,
         "wires": [
             [
                 "5e8e78e76f831ae7"
@@ -1361,11 +1364,10 @@
         "g": "cbfac64917cb9c1d",
         "name": "link in 2",
         "links": [
-            "3011b1ad8087dcfa",
             "862a17f4e9fcffd0"
         ],
-        "x": 115,
-        "y": 540,
+        "x": 235,
+        "y": 480,
         "wires": [
             [
                 "dc30cb3fade84aa7"
@@ -1381,8 +1383,8 @@
         "links": [
             "b277af79532d9b36"
         ],
-        "x": 115,
-        "y": 500,
+        "x": 235,
+        "y": 440,
         "wires": [
             [
                 "84927bf4334ef8b6"
@@ -1402,8 +1404,8 @@
             "81d6d45ae8422238",
             "b8e9ef178233d8ec"
         ],
-        "x": 1585,
-        "y": 580,
+        "x": 1705,
+        "y": 520,
         "wires": []
     },
     {
@@ -1416,8 +1418,8 @@
         "links": [
             "063223cbe0f227b7"
         ],
-        "x": 1025,
-        "y": 820,
+        "x": 1145,
+        "y": 760,
         "wires": []
     },
     {
@@ -1436,8 +1438,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 380,
-        "y": 680,
+        "x": 500,
+        "y": 620,
         "wires": [
             [
                 "8ceba32cdbd6a7fb"
@@ -1457,8 +1459,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 630,
-        "y": 740,
+        "x": 750,
+        "y": 680,
         "wires": [
             [
                 "de1069b9e65ff1ca"
@@ -1482,8 +1484,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 640,
-        "y": 700,
+        "x": 760,
+        "y": 640,
         "wires": [
             []
         ]
@@ -1504,8 +1506,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 380,
-        "y": 720,
+        "x": 500,
+        "y": 660,
         "wires": [
             [
                 "8ceba32cdbd6a7fb"
@@ -1521,8 +1523,8 @@
         "links": [
             "e4d141c3aa348d71"
         ],
-        "x": 195,
-        "y": 680,
+        "x": 315,
+        "y": 620,
         "wires": [
             [
                 "f3797bec809dd812"
@@ -1538,8 +1540,8 @@
         "links": [
             "e4d141c3aa348d71"
         ],
-        "x": 195,
-        "y": 720,
+        "x": 315,
+        "y": 660,
         "wires": [
             [
                 "6f36135232588dd4"
@@ -1556,11 +1558,10 @@
         "links": [
             "ee9070895e346e8b",
             "50c13d5d82509eba",
-            "6e3e1b8ac2ef0598",
             "484b804add635b30"
         ],
-        "x": 695,
-        "y": 820,
+        "x": 815,
+        "y": 760,
         "wires": []
     },
     {
@@ -1572,8 +1573,8 @@
         "links": [
             "9b47b424f24556ad"
         ],
-        "x": 115,
-        "y": 680,
+        "x": 235,
+        "y": 620,
         "wires": [
             [
                 "f3797bec809dd812"
@@ -1589,8 +1590,8 @@
         "links": [
             "9b47b424f24556ad"
         ],
-        "x": 115,
-        "y": 720,
+        "x": 235,
+        "y": 660,
         "wires": [
             [
                 "6f36135232588dd4"
@@ -1608,8 +1609,8 @@
         "split": false,
         "rowsPerMsg": 1,
         "outputs": 1,
-        "x": 1330,
-        "y": 400,
+        "x": 1470,
+        "y": 340,
         "wires": [
             [
                 "4005e2523dbc79e7"
@@ -1629,8 +1630,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1110,
-        "y": 400,
+        "x": 1250,
+        "y": 340,
         "wires": [
             [
                 "b5eedb78c6c8705e"
@@ -1659,8 +1660,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 890,
-        "y": 400,
+        "x": 1010,
+        "y": 340,
         "wires": [
             [
                 "34c56c0b935fad0c"
@@ -1673,7 +1674,7 @@
         "z": "980c7951c5c88b87",
         "g": "b0befb7b6408a70e",
         "group": "1ea0f3e13ccc4f3a",
-        "name": "Tabela de dados",
+        "name": "",
         "order": 1,
         "width": 20,
         "height": 23,
@@ -1683,8 +1684,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1520,
-        "y": 400,
+        "x": 1660,
+        "y": 340,
         "wires": [
             []
         ]
@@ -1705,8 +1706,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 380,
-        "y": 760,
+        "x": 500,
+        "y": 700,
         "wires": [
             [
                 "8ceba32cdbd6a7fb"
@@ -1722,8 +1723,8 @@
         "links": [
             "e4d141c3aa348d71"
         ],
-        "x": 195,
-        "y": 760,
+        "x": 315,
+        "y": 700,
         "wires": [
             [
                 "6986c6d5b55c7e3c"
@@ -1739,8 +1740,8 @@
         "links": [
             "9b47b424f24556ad"
         ],
-        "x": 115,
-        "y": 760,
+        "x": 235,
+        "y": 700,
         "wires": [
             [
                 "6986c6d5b55c7e3c"
@@ -1751,8 +1752,8 @@
         "id": "d50ccc3cc62e85c8",
         "type": "function",
         "z": "980c7951c5c88b87",
-        "g": "695975f8d7792e0d",
-        "name": "configurador de dados .env",
+        "g": "d54acba62f40532b",
+        "name": "configurador de dados",
         "func": "\n/*\n * CONFIG - SOBRE\n * Edite os textos, integrantes e contatos somente aqui.\n */\n\nmsg.payload = {\n    projeto: {\n        titulo: \"Integração ESP32 e Node-RED\",\n\n        subtitulo:\n            \"Programação Remota, Comunicação e Visualização Web usando API REST HTTP\",\n\n        descricao:\n            \"Este projeto desenvolve um sistema IoT para monitoramento e controle remoto utilizando um ESP32 LORA e uma plaquinha de sensores. A solução permite visualizar dados dos sensores, acompanhar o estado do botão físico do board e controlar um LED por meio de uma interface web.\",\n\n        objetivo:\n            \"comunicação HTTP REST, processamento de dados, banco de dados e visualização em tempo real em uma única solução.\",\n\n        tecnologias: [\n            \"ESP32\",\n            \"Arduino / C++\",\n            \"API REST HTTP\",\n            \"Python / FastAPI\",\n            \"Node-RED\",\n            \"PostgreSQL\",\n            \"HTML, CSS e JavaScript\"\n        ],\n\n        funcionalidades: [\n            \"Monitoramento de temperatura, umidade e pressão\",\n            \"Visualização do estado do botão físico\",\n            \"Controle remoto do LED\",\n            \"Registro e consulta do histórico no PostgreSQL\",\n            \"Dashboard web para monitoramento e controle\",\n            \"Simulação do dispositivo para testes sem hardware físico\"\n        ],\n\n        repositorio:\n            \"https://github.com/rick-12q/Trabalho_02_RIC\",\n        \n        relatorio:\n            \"http://localhost:1880/relatorio.pdf\",\n\n        instituicao:\n            \"UNESP — Universidade Estadual Paulista\",\n\n        disciplina:\n            \"RIC — TRABALHO II\",\n\n        ano: \"2026\"\n    },\n\n    membros: [\n        {\n            nome: \"Luiz Henrique Corrêa Monteiro\",\n            funcao: \"Integrante do projeto\",\n            email: \"lh.monteiro@unesp.br\"\n        },\n        {\n            nome: \"Paulo de Melo Pereira Rodrigues Ramalho\",\n            funcao: \"Integrante do projeto\",\n            email: \"paulo.ramalho@unesp.br\"\n        }\n    ],\n\n    rodape: {\n        texto:\n            \"Projeto acadêmico desenvolvido para conclusão da disciplina de RIC.\",\n        versao: \"1.2.1\"\n    }\n};\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
@@ -1760,8 +1761,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1260,
-        "y": 300,
+        "x": 1360,
+        "y": 240,
         "wires": [
             [
                 "1401706568060e5a"
@@ -1772,9 +1773,9 @@
         "id": "1401706568060e5a",
         "type": "ui_template",
         "z": "980c7951c5c88b87",
-        "g": "695975f8d7792e0d",
+        "g": "d54acba62f40532b",
         "group": "3827f62d045e9de8",
-        "name": "formatador",
+        "name": "",
         "order": 0,
         "width": "18",
         "height": "28",
@@ -1784,8 +1785,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1530,
-        "y": 300,
+        "x": 1660,
+        "y": 240,
         "wires": [
             []
         ]
@@ -1794,8 +1795,8 @@
         "id": "a525330b3ccdd8d4",
         "type": "inject",
         "z": "980c7951c5c88b87",
-        "g": "695975f8d7792e0d",
-        "name": "Inicializador dos dados de SOBRE",
+        "g": "d54acba62f40532b",
+        "name": "",
         "props": [
             {
                 "p": "payload"
@@ -1812,8 +1813,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 960,
-        "y": 300,
+        "x": 1040,
+        "y": 240,
         "wires": [
             [
                 "d50ccc3cc62e85c8"
@@ -1821,7 +1822,7 @@
         ]
     },
     {
-        "id": "ef5f7d2ff1c95cd5",
+        "id": "293d3415fb1ab595",
         "type": "global-config",
         "env": [],
         "modules": {

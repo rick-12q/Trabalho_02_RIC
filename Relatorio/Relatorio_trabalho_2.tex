@@ -1,0 +1,164 @@
+%%%%%%%%%%%%%%%
+% TEXTO FEITO %
+%   POR LUIZ   %
+%   HENRIQUE   %
+%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,12pt]{article}
+
+%--- Informações do Documento ---%
+\newcommand{\instituicao}{UNESP}
+\newcommand{\departamento}{Câmpus de Sorocaba \\ICTS – Instituto de Ciências e Tecnologia}
+\newcommand{\curso}{Engenharia de Controle e Automação}
+\newcommand{\titulo}{Trabalho 2}
+\newcommand{\autor}{Luiz Henrique Corrêa Monteiro, Paulo de Melo Pereira R. Ramalho}
+\newcommand{\orientador}{Prof. Dr. Eduardo Godoy Paciência}
+\newcommand{\local}{Sorocaba - SP}
+\newcommand{\data}{\today}
+
+%--- Pacotes Essenciais ---%
+\usepackage[a4paper, left=3cm, right=2cm, top=3cm, bottom=2cm]{geometry}
+\usepackage{times}
+\usepackage[utf8]{inputenc} % Garante leitura de acentos no código
+\usepackage[T1]{fontenc}    % Melhora a fonte final
+\usepackage[portuguese]{babel}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{lipsum}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}  
+\usepackage{listings}  
+
+%--- CONFIGURAÇÃO DE IMAGENS ---%
+\graphicspath{{2-imagens/}} % Agora você não precisa digitar a pasta toda vez
+
+\usepackage{algorithm2e}    
+\usepackage{amsfonts, amsthm, amssymb, amsmath, latexsym, bezier, amscd}  
+\usepackage{caption}    
+\usepackage{subcaption}    
+\usepackage{nameref}  
+\usepackage{etoolbox}  
+\usepackage{float}	
+\usepackage{cancel}     
+\usepackage{verbatim}			
+\usepackage{multirow, array}	
+\usepackage{indentfirst}	
+\usepackage{xcolor, colortbl}	
+\usepackage{pdflscape}    
+\usepackage{setspace}  
+\usepackage{csquotes} 
+\usepackage{multicol} 
+\usepackage{enumitem}
+\usepackage{romannum}
+\usepackage{tcolorbox}
+
+%--- BIBLIOGRAFIA (Ajustado para evitar erro de 'brazil undefined') ---%
+\usepackage[backend=biber, style=abnt]{biblatex}
+\addbibresource{referencia.bib}
+
+%--- Ajustes de Espaçamento ---%
+\titlespacing*{\chapter}{0pt}{-10pt}{20pt}
+\titlespacing*{\section}{0pt}{-5pt}{5pt}
+\titlespacing*{\subsection}{0pt}{-5pt}{5pt}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92} % Fundo clarinho
+\definecolor{codegreen}{rgb}{0,0.6,0}         % Comentários
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}      % Números das linhas
+\definecolor{codepurple}{rgb}{0.58,0,0.82}    % Strings e Textos
+\definecolor{bluekeyword}{rgb}{0.13,0.13,1}   % Palavras-chave padrão
+\definecolor{typecolor}{rgb}{0.17,0.57,0.68}  % Tipos customizados (esp_err_t, etc)
+\definecolor{macrocolor}{rgb}{0.5,0.0,0.0}    % Macros (ESP_RETURN_ON_FALSE)
+
+% Configuração super "coloridinha" e com quebra de linha
+\lstset{
+	language=C++,
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{bluekeyword}\bfseries,
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\scriptsize, % Fonte menor para não sair da folha
+	breakatwhitespace=false,         
+	breaklines=true,                 % Força a quebra de linhas longas
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    % Números na esquerda
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=4,
+	% Adicionando seus tipos e funções como palavras-chave para colorir!
+	morekeywords={uint8_t, size_t, esp_err_t},
+	keywordstyle=[2]{\color{typecolor}},
+	morekeywords=[2]{ESP_RETURN_ON_FALSE, i2c_master_transmit_receive, i2c_master_transmit, static_cast},
+	keywordstyle=[3]{\color{macrocolor}},
+	morekeywords=[3]{ESP_RETURN_ON_FALSE}
+}
+%-------------------------------------------%
+\begin{document}
+	\pagenumbering{arabic}
+	
+	%-------------- CAPA -----------------%
+	\begin{titlepage}
+		\begin{center}
+			% Forçamos o caminho completo caso o graphicspath falhe na primeira vez
+			\includegraphics[width=0.8\linewidth]{2-imagens/image.png} 
+			
+			\vspace*{1cm}
+			\textbf{\Large Campus de Sorocaba}\\
+			\textbf{\Large ICTS – Instituto de Ciências e Tecnologia}\\[3cm]
+			
+			\large {Trabalho 1}\\[2cm]
+			
+			{\large \textbf{Redes de Comunicação Industrial}}\\[4cm]
+			\vfill
+			\Large\textbf{Discente: \autor}\\
+			\textbf{Orientador: \orientador}\\[3.0cm]
+			
+			\local\\
+			2026
+		\end{center}
+	\end{titlepage}
+	
+	%--------- FOLHA DE ROSTO ------------%
+	\begin{titlepage}
+		\begin{center}
+			\vspace*{1cm}
+			\textbf{\autor}\\[2cm]
+			\large \textbf{Programação Remota, Comunicação e Visualização Web usando API Rest HTTP }\\[3cm]
+			
+			Trabalho apresentado ao Instituto de Ciências e Tecnologia da Unesp, como parte dos requisitos para a conclusão da disciplina em Redes de Comunicação Industrial.\\[2cm]
+			
+			Orientador: \orientador\\[1cm]
+			
+			\textit{E-mail} dos alunos autores:\\
+			\texttt{lh.monteiro@unesp.br}\\ \texttt{paulo.ramalho@unesp.br}\\[3cm]
+			
+			\local\\
+			2026
+		\end{center}
+	\end{titlepage}
+	
+	%--- INPUTS (Sugestão: Renomeie os arquivos para tirar acentos) ---%
+	%\input{1-textos/0-resumo}
+	
+	\hypersetup{hidelinks}
+	\tableofcontents
+	\newpage
+	
+	% Se os arquivos na pasta ainda tiverem acento, use os nomes com acento abaixo. 
+	% Se você renomear (recomendado), tire o acento aqui também.
+	\input{1-textos/1-introdução}
+	\input{1-textos/4-resultadodiscussão}
+	\input{1-textos/2-Mat_metod}
+	\input{1-textos/3-metodos}
+	\input{1-textos/6-conclusão}
+	
+	%------------ REFERÊNCIAS ---------------%
+	\nocite{*}
+	\printbibliography 
+	
+	%------------ APÊNDICES -----------------%
+	%\input{1-textos/7-apêndices}
+	
+\end{document}
