@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (MiKTeX 25.12) (format=lualatex 2026.8.20)  14 OCT 2026 14:24
+This is LuaHBTeX, Version 1.24.0 (MiKTeX 25.12) (format=lualatex 2026.8.20)  15 OCT 2026 00:11
  restricted system commands enabled.
 **Relatorio_trabalho_2.tex
 (./Relatorio_trabalho_2.tex
@@ -1439,29 +1439,36 @@ Package csquotes Info: Redefining alias 'default' -> 'portuguese'.
 (./Relatorio_trabalho_2.aux
 Package babel Info: 'portuguese' activates 'portuges' shorthands.
 (babel)             Reported on input line 10.
+
+
+LaTeX Warning: Label `fig:prints-tabelas-sql' multiply defined.
+
+
+LaTeX Warning: Label `fig:prints-tabelas-sql' multiply defined.
+
 )
 \openout1 = Relatorio_trabalho_2.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1497,7 +1504,7 @@ LaTeX Font Info:    ... okay on input line 98.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 98.
+Package hyperref Info: Link coloring OFF on input line 115.
 (./Relatorio_trabalho_2.out) (./Relatorio_trabalho_2.out)
 \@outlinefile=\write5
 
@@ -1688,12 +1695,12 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Relatorio_trabalho_2.bbl' found.
  (./Relatorio_trabalho_2.bbl)
-Package biblatex Info: Reference section=0 on input line 98.
-Package biblatex Info: Reference segment=0 on input line 98.
+Package biblatex Info: Reference section=0 on input line 115.
+Package biblatex Info: Reference segment=0 on input line 115.
 <2-imagens/image.png, id=54, 395.076pt x 72.27pt>
 File: 2-imagens/image.png Graphic file (type png)
 <use 2-imagens/image.png>
-Package luatex.def Info: 2-imagens/image.png  used on input line 105.
+Package luatex.def Info: 2-imagens/image.png  used on input line 122.
 (luatex.def)             Requested size: 364.19667pt x 66.62262pt.
 
 Missing character: There is no – (U+2013) in font ptmb8t!
@@ -1703,8 +1710,8 @@ Missing character: There is no – (U+2013) in font ptmb8t!
 {C:/Users/rickn/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 Missing character: There is no – (U+2013) in font ptmb8t!
 <./2-imagens/image.png>]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 13
-5.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 15
+2.
 
 (C:/Users/rickn/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -1750,11 +1757,103 @@ Package luatex.def Info: 2-imagens/pinout_esp.png  used on input line 21.
 LaTeX Warning: Citation 'heltec_wifi_lora_32_v2' on page 3 undefined on input l
 ine 26.
 
-) (./1-textos/3-metodos.tex) (./1-textos/6-conclusão.tex)
+[3<./2-imagens/pinout_esp.png>]
+Overfull \hbox (7.76093pt too wide) in paragraph at lines 48--49
+\T1/ptm/m/n/12 ESP32 real uti-liza o \T1/ptm/m/it/12 de-vice id \T1/pcr/m/n/12 
+esp32-001\T1/ptm/m/n/12 , en-quanto o si-mu-la-dor uti-liza \T1/pcr/m/n/12 esp32
+-simulator-
+ []
 
-LaTeX Warning: Empty bibliography on input line 159.
+<2-imagens/print_simulador.png, id=95, 1606.0pt x 815.045pt>
+File: 2-imagens/print_simulador.png Graphic file (type png)
+<use 2-imagens/print_simulador.png>
+Package luatex.def Info: 2-imagens/print_simulador.png  used on input line 60.
+(luatex.def)             Requested size: 318.66948pt x 161.72514pt.
+<2-imagens/print_backend.png, id=96, 1606.0pt x 299.1175pt>
+File: 2-imagens/print_backend.png Graphic file (type png)
+<use 2-imagens/print_backend.png>
+Package luatex.def Info: 2-imagens/print_backend.png  used on input line 70.
+(luatex.def)             Requested size: 318.66948pt x 59.35233pt.
+[4<./2-imagens/print_simulador.png>]
+<2-imagens/Print tabela sql 1.png, id=103, 898.35625pt x 347.2975pt>
+File: 2-imagens/Print tabela sql 1.png Graphic file (type png)
+<use 2-imagens/Print tabela sql 1.png>
+Package luatex.def Info: 2-imagens/Print tabela sql 1.png  used on input line 8
+2.
+(luatex.def)             Requested size: 218.51521pt x 84.47655pt.
+<2-imagens/Print tabela sql 2.png, id=104, 1500.60625pt x 433.62pt>
+File: 2-imagens/Print tabela sql 2.png Graphic file (type png)
+<use 2-imagens/Print tabela sql 2.png>
+Package luatex.def Info: 2-imagens/Print tabela sql 2.png  used on input line 8
+9.
+(luatex.def)             Requested size: 218.51521pt x 63.14125pt.
+) (./1-textos/3-metodos.tex
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 28.
+ [5<./2-imagens/print_backend.png><./2-imagens/Print tabela sql 1.png><./2-image
+ns/Print tabela sql 2.png>] [6]
+Overfull \hbox (46.84343pt too wide) in paragraph at lines 86--87
+[]\T1/ptm/m/n/12 As lei-tu-ras de tem-pe-ra-tura, umi-dade e pres-são são fei-
+tas uti-li-zando a bi-bli-o-teca \T1/pcr/m/n/12 Adafruit_BME280\T1/ptm/m/n/12 .
+ []
 
-[3<./2-imagens/pinout_esp.png>] [4] (./Relatorio_trabalho_2.aux)
+<2-imagens/imagem esp led off.jpeg, id=172, 1500.60625pt x 840.13875pt>
+File: 2-imagens/imagem esp led off.jpeg Graphic file (type jpg)
+<use 2-imagens/imagem esp led off.jpeg>
+Package luatex.def Info: 2-imagens/imagem esp led off.jpeg  used on input line 
+92.
+(luatex.def)             Requested size: 318.66948pt x 178.40854pt.
+<2-imagens/flow node red.png, id=173, 1467.4825pt x 743.77875pt>
+File: 2-imagens/flow node red.png Graphic file (type png)
+<use 2-imagens/flow node red.png>
+Package luatex.def Info: 2-imagens/flow node red.png  used on input line 114.
+(luatex.def)             Requested size: 318.66948pt x 161.50954pt.
+[7<./2-imagens/imagem esp led off.jpeg>]
+<2-imagens/dashboard-NR1.jpeg, id=179, 1606.0pt x 747.79375pt>
+File: 2-imagens/dashboard-NR1.jpeg Graphic file (type jpg)
+<use 2-imagens/dashboard-NR1.jpeg>
+Package luatex.def Info: 2-imagens/dashboard-NR1.jpeg  used on input line 126.
+(luatex.def)             Requested size: 218.51521pt x 101.74652pt.
+<2-imagens/dashboard-NR2.jpeg, id=180, 1606.0pt x 795.97375pt>
+File: 2-imagens/dashboard-NR2.jpeg Graphic file (type jpg)
+<use 2-imagens/dashboard-NR2.jpeg>
+Package luatex.def Info: 2-imagens/dashboard-NR2.jpeg  used on input line 133.
+(luatex.def)             Requested size: 218.51521pt x 108.302pt.
+
+Overfull \hbox (3.46478pt too wide) in paragraph at lines 144--145
+[]\T1/ptm/m/n/12 Quando o si-mu-la-dor é es-co-lhido, o iden-ti-fi-ca-dor uti-l
+i-zado passa a ser \T1/pcr/m/n/12 esp32-simulator-
+ []
+
+File: 2-imagens/imagem esp led off.jpeg Graphic file (type jpg)
+<use 2-imagens/imagem esp led off.jpeg>
+Package luatex.def Info: 2-imagens/imagem esp led off.jpeg  used on input line 
+152.
+(luatex.def)             Requested size: 218.51521pt x 122.33618pt.
+<2-imagens/imagem esp led on.jpeg, id=181, 1604.99625pt x 902.37125pt>
+File: 2-imagens/imagem esp led on.jpeg Graphic file (type jpg)
+<use 2-imagens/imagem esp led on.jpeg>
+Package luatex.def Info: 2-imagens/imagem esp led on.jpeg  used on input line 1
+59.
+(luatex.def)             Requested size: 218.51521pt x 122.84753pt.
+[8<./2-imagens/flow node red.png><./2-imagens/dashboard-NR1.jpeg><./2-imagens/da
+shboard-NR2.jpeg>] [9<./2-imagens/imagem esp led on.jpeg>]
+<2-imagens/OTA succes.jpeg, id=215, 676.77844pt x 797.98125pt>
+File: 2-imagens/OTA succes.jpeg Graphic file (type jpg)
+<use 2-imagens/OTA succes.jpeg>
+Package luatex.def Info: 2-imagens/OTA succes.jpeg  used on input line 223.
+(luatex.def)             Requested size: 227.62206pt x 268.38774pt.
+ [10<./2-imagens/OTA succes.jpeg>]
+<2-imagens/dashboard-WEB.jpeg, id=231, 952.55875pt x 714.67pt>
+File: 2-imagens/dashboard-WEB.jpeg Graphic file (type jpg)
+<use 2-imagens/dashboard-WEB.jpeg>
+Package luatex.def Info: 2-imagens/dashboard-WEB.jpeg  used on input line 245.
+(luatex.def)             Requested size: 318.66948pt x 239.0915pt.
+) (./1-textos/6-conclusão.tex [11<./2-imagens/dashboard-WEB.jpeg>])
+
+LaTeX Warning: Empty bibliography on input line 176.
+
+[12] (./Relatorio_trabalho_2.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1762,6 +1861,9 @@ L3 programming layer <2020/03/25>
 
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Relatorio_trabalho_2.out' has not changed.
 (rerunfilecheck)             Checksum: 3394BCCC77A54C1103CD6A76CF50086B;1952.
@@ -1776,23 +1878,26 @@ Package logreq Info: Writing requests to 'Relatorio_trabalho_2.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 39394 strings out of 476081
- 125054,1977958 words of node,token memory allocated
- 878 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 5 glue, 23 kern, 1 glyph, 32 attribute, 90 glue_spe
-c, 18 attribute_list, 2 write nodes
-   avail lists: 1:2,2:775,3:276,4:66,5:117,6:38,7:2444,8:2,9:236,10:14,11:249
- 60741 multiletter control sequences out of 65536+600000
- 55 fonts using 3482975 bytes
- 98i,8n,104p,708b,6021s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 39965 strings out of 476081
+ 477140,1977958 words of node,token memory allocated
+ 1810 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 5 glue, 141 kern, 1 glyph, 146 attribute, 90 glue_s
+pec, 75 attribute_list, 2 write nodes
+   avail lists: 1:6,2:6431,3:352,4:9332,5:8360,6:116,7:13538,8:2,9:21523,10:30,1
+1:1111
+ 61164 multiletter control sequences out of 65536+600000
+ 65 fonts using 4287439 bytes
+ 98i,8n,104p,813b,6021s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/rickn/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Us
-ers/rickn/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/U
-sers/rickn/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Us
-ers/rickn/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Use
-rs/rickn/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Relatorio_trabalho_2.pdf (6 pages, 523022 bytes).
+ers/rickn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><C:/Users/rickn/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.p
+fb><C:/Users/rickn/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pf
+b><C:/Users/rickn/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb
+><C:/Users/rickn/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb
+>
+Output written on Relatorio_trabalho_2.pdf (14 pages, 1975663 bytes).
 
-PDF statistics: 118 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 1048576)
+PDF statistics: 266 PDF objects out of 1000 (max. 8388607)
+ 120 named destinations out of 1000 (max. 1048576)
  112 words of extra memory for PDF output out of 10000 (max. 100000000)
 

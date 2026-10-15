@@ -29,5 +29,74 @@ O ESP32 utilizado, apresenta a seguinte configuração de \textit{pinout}:
 \vspace{3mm}
 \subsection{Descrição da arquitetura de rede}
 
+A arquitetura utilizada no projeto foi desenvolvida buscando separar as diferentes partes do sistema, de modo que cada uma seja responsável por uma determinada função. De maneira geral, a estrutura é formada pelo ESP32, uma API REST desenvolvida em Python, um banco de dados PostgreSQL, a interface Node-Red e, como desenvolvimento extra, uma interface Web e um simulador do ESP32.
+
+A comunicação principal ocorre através do protocolo HTTP. O ESP32 se conecta à rede Wi-Fi e realiza periodicamente o envio das informações coletadas pelo BME280 para o \textit{backend}. Este servidor foi desenvolvido utilizando o \textit{framework} FastAPI e é executado na porta 8000 do computador responsável pelo sistema.
+
+Os dados enviados pelo ESP32 são compostos pela identificação do dispositivo, temperatura, umidade, pressão e estado do botão físico. No firmware também é calculada a altitude através da pressão atmosférica, entretanto, para o armazenamento principal do sistema foram utilizados os valores de temperatura, umidade e pressão.
+
+O fluxo simplificado de comunicação pode ser representado da seguinte maneira:
+
+\begin{center}
+	ESP32 $\rightarrow$ API REST $\rightarrow$ PostgreSQL
+\end{center}
+
+Além do envio de dados, a comunicação ocorre também no sentido contrário para o controle do LED. Neste caso, o Node-Red ou a interface Web envia uma requisição para a API solicitando a alteração do estado do LED. O ESP32 consulta periodicamente este estado através da API e atualiza sua saída digital de acordo com o valor recebido.
+
+Dessa maneira, não é necessário que o Node-Red se comunique diretamente com o ESP32 para todas as operações. A API funciona como um intermediário entre os diferentes elementos do sistema, o que facilita a troca da fonte de dados e também a utilização do simulador.
+
+Para diferenciar o equipamento físico do simulado foram utilizados dois identificadores. O ESP32 real utiliza o \textit{device id} \texttt{esp32-001}, enquanto o simulador utiliza \texttt{esp32-simulator-001}. A fonte que está sendo utilizada pode ser selecionada pela própria interface, evitando que os dois dispositivos enviem informações simultaneamente para o sistema.
+
+
 \vspace{3mm}
 \subsection{Metodologia de implementação}
+
+A implementação foi realizada de forma modular, inicialmente desenvolvendo e testando as diferentes partes do sistema de maneira separada. Essa escolha foi feita principalmente para permitir que grande parte do projeto pudesse ser desenvolvido antes da utilização do ESP32 físico.
+
+Primeiramente foi desenvolvido um simulador em Python, utilizando também o FastAPI. Esse programa reproduz as principais funcionalidades esperadas para o ESP32, gerando valores de temperatura, umidade e pressão, além de permitir a simulação do botão e do LED. Os valores apresentam pequenas variações durante a execução, buscando representar de maneira simples o comportamento de um sensor real.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{2-imagens/print_simulador}
+	\caption{Captura de tela do simulador desenvolvido.}
+	\label{fig:printsimulador}
+\end{figure}
+
+
+Após isso, foi desenvolvido o \textit{backend} principal da aplicação. A API foi responsável por receber os dados enviados pelo simulador ou pelo ESP32, armazenar essas informações e disponibilizar rotas para consulta. Também foram implementadas rotas específicas para o controle do LED e para escolha entre a fonte simulada e o ESP32 real.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{2-imagens/print_backend}
+	\caption{Captura de tela do backend rodando.}
+	\label{fig:printbackend}
+\end{figure}
+
+
+Para o armazenamento das informações foi utilizado o PostgreSQL. Foram criadas tabelas separadas para os dados dos sensores e para os estados do atuador. Cada medição armazenada possui um instante de tempo, identificação do dispositivo, nome do sensor, valor medido e estado do botão. Para o LED são armazenados seu estado, dispositivo relacionado, horário da alteração e a origem do comando.
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/Print tabela sql 1"}
+		\caption{Primeira tabela.}
+		\label{fig:print-tabela-sql-1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/Print tabela sql 2"}
+		\caption{Segunda tabela.}
+		\label{fig:print-tabela-sql-2}
+	\end{subfigure}
+	\caption{Capturas de tela das tabelas de dados SQL.}
+	\label{fig:prints-tabelas-sql}
+\end{figure}
+
+
+Com o funcionamento do simulador, da API e do banco de dados, foi possível desenvolver a interface de monitoramento sem depender inicialmente do hardware. Posteriormente o firmware do ESP32 foi programado utilizando o mesmo padrão de comunicação REST empregado pelo simulador. Desta forma, a troca entre o equipamento simulado e o equipamento físico não exige alterações nas rotas principais utilizadas pelo restante do sistema.
+
+Por fim foi realizada a integração com o Node-Red, reunindo a visualização das variáveis, histórico dos sensores, estado do botão, controle do LED e seleção da fonte de dados em uma única interface.
+
+

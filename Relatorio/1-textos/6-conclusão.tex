@@ -1,7 +1,15 @@
 %%======%%======%0%======%%=======%%
-
+\vspace{3mm}
 \section{Conclusão}
 %\addcontentsline{toc}{chapter}{Conclusão}
 
 %%======%%======%0%======%%=======%%
+O desenvolvimento deste trabalho permitiu implementar um sistema completo de comunicação entre um ESP32 e diferentes aplicações através de uma API REST HTTP. A partir do sensor BME280 foi possível realizar a leitura das variáveis ambientais e enviar essas informações através da rede Wi-Fi, enquanto o LED pôde ser controlado de maneira remota.
 
+A utilização do Node-Red permitiu reunir em uma única interface os dados obtidos, gráficos, estado do botão, controle do LED e informações sobre a conexão do dispositivo. Além disso, a implementação do OTA possibilitou realizar novas programações do ESP32 através da rede, diminuindo a dependência da conexão física com o computador após a primeira gravação.
+
+Durante o desenvolvimento também foram implementadas algumas funcionalidades extras, principalmente o simulador do ESP32, a interface Web e o banco de dados PostgreSQL. O simulador permitiu desenvolver grande parte do sistema mesmo sem o equipamento físico conectado, enquanto o banco de dados possibilitou manter um histórico das medições realizadas.
+
+A criação de uma opção para selecionar entre o simulador e o ESP32 real também facilitou bastante os testes, pois ambos utilizam praticamente a mesma estrutura de comunicação com a API. Dessa forma, foi possível substituir a fonte dos dados sem precisar modificar manualmente todas as requisições utilizadas pelo sistema.
+
+De forma geral, os resultados obtidos atenderam os principais objetivos propostos para o trabalho, sendo possível realizar a aquisição, transmissão, armazenamento e visualização dos dados, além do controle remoto de um atuador. A estrutura desenvolvida também permite que futuramente outros sensores ou atuadores sejam adicionados, utilizando a mesma arquitetura de comunicação já implementada.
