@@ -24,7 +24,7 @@ const char* WIFI_SSID     = "labautomacao";
 const char* WIFI_PASSWORD = "L@bA1to25";
 
 // IP atual do notebook na mesma rede do ESP32
-const char* BACKEND_HOST = "200.145.26.14";
+const char* BACKEND_HOST = "200.145.26.3";
 const int   BACKEND_PORT = 8000;
 
 // Identificacao do ESP32
@@ -78,6 +78,7 @@ WebServer server(80);
 bool bmeOK = false;
 bool ledState = false;
 bool buttonState = false;
+bool lastButtonState = false;
 bool otaStarted = false;
 
 float temperature = 0;
@@ -135,6 +136,13 @@ void setupBME280() {
 
 void readSensors() {
   buttonState = digitalRead(BUTTON) == LOW;
+
+  // Inverte o LED somente no momento em que o botao e pressionado
+  if (buttonState && !lastButtonState) {
+    setLed(!ledState);
+  }
+
+  lastButtonState = buttonState;
 
   if (!bmeOK) return;
 
