@@ -1,0 +1,19 @@
+	Trabalho\_02\_RIC/
+	|
+	+-- Code/
+	|   |
+	|   +-- backend/
+	|   |
+	|   +-- firmware/         # Código do ESP32 (.ino)
+	|   |
+	|   +-- frontend/
+	|   |
+	|   +-- simulator/
+	|   |
+	|   +-- README.md
+	|
+	+-- Node\_red/
+	|   |
+	|   +-- Node\_red.json
+	|
+	+-- ...

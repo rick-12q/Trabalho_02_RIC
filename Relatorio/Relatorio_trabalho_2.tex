@@ -28,6 +28,56 @@
 \usepackage{fancyhdr} 
 \usepackage{graphicx}  
 \usepackage{listings}  
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+\usepackage[most]{tcolorbox}
+
+\definecolor{repobg}{RGB}{247,248,250}
+\definecolor{repoborder}{RGB}{205,210,218}
+\definecolor{repoheader}{RGB}{45,55,72}
+\definecolor{repocomment}{RGB}{90,110,95}
+
+\lstdefinestyle{repotree}{
+	basicstyle=\ttfamily\small,
+	backgroundcolor=\color{repobg},
+	commentstyle=\color{repocomment},
+	showstringspaces=false,
+	breaklines=true,
+	columns=fullflexible,
+	keepspaces=true,
+	aboveskip=0pt,
+	belowskip=0pt,
+	frame=none
+}
+
+\newtcblisting{repobox}{
+	listing only,
+	listing options={style=repotree},
+	colback=repobg,
+	colframe=repoborder,
+	boxrule=0.7pt,
+	arc=3mm,
+	left=5mm,
+	right=5mm,
+	top=4mm,
+	bottom=4mm,
+	enhanced,
+	breakable,
+	title={\texttt{Trabalho\_02\_RIC}},
+	coltitle=white,
+	colbacktitle=repoheader,
+	fonttitle=\bfseries\ttfamily,
+	attach boxed title to top left={
+		xshift=0mm,
+		yshift=-0.1mm
+	},
+	boxed title style={
+		boxrule=0pt,
+		arc=2mm,
+		left=3mm,
+		right=3mm
+	}
+}
 
 \lstdefinestyle{codigoESP}{
 	language=C++,

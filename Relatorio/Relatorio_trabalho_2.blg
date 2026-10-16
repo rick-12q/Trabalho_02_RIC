@@ -1,9 +1,9 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'Relatorio_trabalho_2.blg'
-[93] biber-MSWIN64:342> INFO - === 
-[138] Biber.pm:421> INFO - Reading 'Relatorio_trabalho_2.bcf'
-[240] Biber.pm:999> INFO - Using all citekeys in bib section 0
-[250] Biber.pm:4487> INFO - Processing section 0
-[260] Biber.pm:4678> INFO - Looking for bibtex file 'referencia.bib' for section 0
-[493] Utils.pm:479> ERROR - Cannot find 'referencia.bib'!
-[493] Biber.pm:137> INFO - ERRORS: 1
+[510] biber-MSWIN64:342> INFO - === 
+[758] Biber.pm:421> INFO - Reading 'Relatorio_trabalho_2.bcf'
+[1077] Biber.pm:999> INFO - Using all citekeys in bib section 0
+[1120] Biber.pm:4487> INFO - Processing section 0
+[1183] Biber.pm:4678> INFO - Looking for bibtex file 'referencia.bib' for section 0
+[1504] Utils.pm:479> ERROR - Cannot find 'referencia.bib'!
+[1504] Biber.pm:137> INFO - ERRORS: 1

@@ -1,19 +1,32 @@
-%%======%%======%0%======%%=======%%
+%%====================================================================%%
+%%                    DIFICULDADES E IMPRESSÕES                        %%
+%%====================================================================%%
 \vspace{5mm}
 \section{Dificuldades e impressões}
-%\addcontentsline{toc}{chapter}{Resultados e discussões}
+\label{sec:dificuldades}
 
-%%======%%======%0%======%%=======%%
+Durante o desenvolvimento do trabalho foram encontradas algumas dificuldades relacionadas principalmente à integração entre os diferentes componentes. Individualmente, o funcionamento do simulador, backend, banco de dados e interfaces era relativamente simples de verificar. Entretanto, quando todos os módulos passaram a trabalhar simultaneamente, pequenas diferenças de configuração começaram a causar comportamentos incorretos.
 
-%===%===%
-%\vspace{1cm}
-%===%===%
-Durante todo o processo de construção do projeto, algumas dificuldades foram enfrentadas, dentre elas a seleção da fonte de dados (ESP32 Real ou simulador). A questão é que mudar a fonte de dados no frontend não implica, necessariamente, alterar a fonte utilizada pelo backend. Para solucionar esse problema, foi necessária a implementação de uma lógica de seleção da fonte ativa, garantindo que os dados apresentados e armazenados correspondessem ao dispositivo selecionado pelo usuário.
+Uma das primeiras dificuldades ocorreu durante a implementação da seleção entre o simulador e o ESP32 real. Inicialmente, alterar a opção apresentada na interface não significava necessariamente que o backend estava utilizando a mesma fonte. Dessa forma, em algumas situações o dashboard indicava que o ESP32 real estava selecionado enquanto a API ainda considerava o simulador como dispositivo ativo.
 
-Além disso, outro ponto que exigiu atenção foi a integração do Node-RED com a API. Como o Node-RED, o frontend, o simulador e o ESP32 realizam requisições ao backend, foi necessário garantir que todos utilizassem o mesmo endereço da API e a mesma identificação do dispositivo ativo. Durante os testes, diferenças entre o endereço utilizado localmente (\texttt{127.0.0.1}) e o endereço utilizado pelo ESP32 na rede fizeram com que diferentes componentes não apresentassem o mesmo estado da aplicação. A padronização do acesso ao backend foi, portanto, fundamental para manter a comunicação consistente entre os diferentes módulos.
+Para solucionar esse problema foi criada uma lógica específica de seleção da fonte através da API. A partir dessa alteração, as interfaces passaram a consultar e modificar a fonte ativa diretamente no backend. Foram utilizados identificadores diferentes para cada dispositivo, permitindo distinguir \texttt{esp32-001} de \texttt{esp32-simulator-001}.
 
-A implementação da comunicação com o ESP32 real também apresentou dificuldades adicionais em relação ao simulador. Enquanto o simulador executado no computador possui acesso direto aos serviços locais, o ESP32 depende da comunicação pela rede Wi-Fi. Dessa forma, foi necessário verificar aspectos como o endereço IP do servidor, a disponibilidade da porta utilizada pela API e a conectividade entre o microcontrolador e o computador. Os códigos de resposta HTTP fornecidos pela API foram particularmente úteis durante essa etapa, permitindo identificar situações em que a comunicação estava ocorrendo, mas a requisição era rejeitada por incompatibilidade entre o dispositivo e a fonte de dados selecionada.
+Essa alteração também resultou em um mecanismo de proteção contra dados provenientes do dispositivo incorreto. Quando o backend recebe determinadas requisições de um dispositivo diferente daquele atualmente selecionado, a operação pode ser rejeitada. Durante os testes esse comportamento apareceu através de respostas HTTP de conflito, o que inicialmente parecia indicar uma falha de comunicação, mas na realidade mostrava que a seleção de fonte estava funcionando.
 
-Outro aspecto importante foi a implementação da atualização remota do firmware por meio de OTA (\textit{Over-the-Air}). Essa funcionalidade exigiu que o ESP32 estivesse corretamente conectado à rede e pudesse ser identificado pelo computador antes do envio de uma nova versão do firmware. Apesar das dificuldades iniciais de configuração e detecção do dispositivo pela rede, o recurso mostrou-se especialmente útil por permitir futuras alterações no firmware sem a necessidade de conexão física direta ao microcontrolador.
+Outra dificuldade encontrada esteve relacionada aos endereços utilizados para comunicação com a API. Durante o desenvolvimento no próprio computador, alguns testes foram realizados utilizando o endereço local \texttt{127.0.0.1}. Entretanto, esse endereço representa a própria máquina que realiza a requisição e não pode ser utilizado pelo ESP32 para acessar o servidor executado em outro equipamento.
 
-De maneira geral, as dificuldades encontradas durante o desenvolvimento contribuíram para uma melhor compreensão da integração entre sistemas embarcados, aplicações web e serviços de backend. Os testes realizados ao longo do desenvolvimento foram, portanto, essenciais para identificar problemas de comunicação e tornar a aplicação mais integrada e confiável.
+Foi necessário, portanto, configurar o ESP32 e as demais aplicações utilizando o endereço de rede correspondente ao servidor. A padronização desses endereços foi importante para evitar situações em que a interface Web funcionava corretamente no computador, mas o dispositivo físico não conseguia alcançar a API.
+
+A integração com o ESP32 real também apresentou dificuldades que não apareciam durante a utilização do simulador. Enquanto o simulador dependia apenas dos programas executados no computador, o dispositivo físico dependia também da conexão Wi-Fi, intensidade do sinal, configuração correta do endereço do servidor e disponibilidade da API.
+
+Durante essa etapa, a análise das respostas HTTP fornecidas pelo servidor foi importante para diferenciar problemas de conexão de erros relacionados à lógica da aplicação. A observação das requisições recebidas pelo backend também permitiu verificar se o ESP32 estava enviando telemetria e consultando corretamente o estado do LED.
+
+A implementação do OTA apresentou outra dificuldade durante o desenvolvimento. Apesar de o dispositivo estar conectado à rede e executar corretamente o firmware, a identificação automática através do nome configurado depende do funcionamento adequado dos serviços de descoberta na rede. Em algumas situações o dispositivo não aparecia imediatamente como uma opção disponível para programação.
+
+Após a configuração e os testes necessários, foi possível realizar a atualização do firmware pela rede. Essa funcionalidade facilitou consideravelmente as alterações posteriores, pois eliminou a necessidade de manter o dispositivo permanentemente conectado através do cabo utilizado para programação.
+
+Também foi possível observar a vantagem da utilização de uma API como ponto central do sistema. Durante o desenvolvimento foram utilizadas duas interfaces diferentes, Node-RED e uma aplicação Web, além de duas fontes de dados, o simulador e o ESP32. Mesmo assim, não foi necessário desenvolver uma estrutura de comunicação completamente diferente para cada combinação, pois todos os módulos utilizavam a API como elemento intermediário.
+
+De maneira geral, as maiores dificuldades não estiveram na leitura individual do sensor ou no acionamento do LED, mas na integração e sincronização de todos os elementos. Essa etapa permitiu compreender melhor problemas que aparecem em sistemas distribuídos, principalmente aqueles relacionados à identificação dos dispositivos, endereçamento de rede, disponibilidade dos serviços e consistência das informações apresentadas ao usuário.
+
+

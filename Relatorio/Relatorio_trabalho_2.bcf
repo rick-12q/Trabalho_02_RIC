@@ -2465,8 +2465,7 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">referencia.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">heltec_wifi_lora_32_v2</bcf:citekey>
-    <bcf:citekey order="2" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="1" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

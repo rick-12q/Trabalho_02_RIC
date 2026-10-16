@@ -1,102 +1,190 @@
+%%====================================================================%%
+%%                      RECURSOS UTILIZADOS                            %%
+%%====================================================================%%
+\vspace{5mm}
+\section{Recursos utilizados}
+\label{sec:recursos}
 
-%%======%%======%0%======%%=======%%
-\newpage
-\section{Materiais e métodos}
-%\addcontentsline{toc}{chapter}{Objetivos}
-
-%%======%%======%0%======%%=======%%
+Para o desenvolvimento do sistema foram utilizados recursos de hardware e software responsáveis pela aquisição das variáveis, comunicação através da rede, visualização das informações e atualização remota do firmware. Entre os principais elementos utilizados estão a placa ESP32, o sensor BME280, o protocolo HTTP, a API REST e a plataforma Node-RED.
+\vspace{3mm}
 \subsection{Descrição do módulo}
-A placa utilizada para a prototipagem e desenvolvimento do projeto, foi um módulo que integra um microcontrolador \textbf{ESP32}, equipado com um display LCD, e uma antena de LoRa (\textit{Long Range}). Além disso, o kit ainda contempla um sensor \textbf{Bosch BME 280}, o qual apresenta comunicação serial com o ESP32, via I2C  (\textit{Inter-Integrated
-Circuit}) ou SPI (\textit{Serial Peripheral Interface}), e é capaz de analisar as seguintes variáveis:
-\begin{itemize}
-	\item pressão;
-	\item temperatura;
-	\item umidade;
-	\item altitude.
-\end{itemize}
-O ESP32 utilizado, apresenta a seguinte configuração de \textit{pinout}:
+
+O elemento principal de hardware utilizado no projeto foi uma placa baseada no microcontrolador ESP32. A conectividade Wi-Fi disponível no dispositivo foi utilizada para estabelecer a comunicação com os demais elementos do sistema através da rede.
+
+Além do microcontrolador, o módulo utilizado possui um display OLED, empregado durante o desenvolvimento para apresentar localmente algumas informações relacionadas ao funcionamento do sistema. Dessa forma, foi possível observar diretamente no dispositivo os valores adquiridos e algumas informações relacionadas à conexão.
+
+Para aquisição das variáveis ambientais foi utilizado o sensor Bosch BME280. O sensor permite realizar medições de temperatura, umidade relativa e pressão atmosférica, sendo conectado ao ESP32 através do barramento I$^2$C.
+
+A altitude também é apresentada pelo dispositivo, porém esse valor não corresponde a uma medição direta realizada pelo BME280. Seu valor é estimado através da pressão atmosférica medida e de uma pressão de referência ao nível do mar.
+
+Além do BME280, foi utilizado um botão como entrada digital e um LED como saída. O botão permite enviar para o sistema uma informação proveniente de uma entrada física, enquanto o LED permite verificar o funcionamento da comunicação no sentido contrário, uma vez que seu estado pode ser alterado remotamente.
+
+A Figura \ref{fig:pinout-esp} apresenta o diagrama de pinos utilizado como referência durante a implementação.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.4\linewidth, angle=90]{2-imagens/pinout_esp}
-	\caption{Fotografia do \textit{pinout} da placa ESP32 LoRa.}
-	\label{fig:pinoutesp}
+	\includegraphics[width=0.3\textwidth, angle=90]{2-imagens/pinout_esp.png}
+	\caption{Diagrama de pinos do módulo ESP32 utilizado no projeto.}
+	\label{fig:pinout-esp}
 \end{figure}
-\begin{center}
-	Fonte: \cite{heltec_wifi_lora_32_v2}, 2026.
-\end{center}
 
-\vspace{3mm}
-\subsection{Descrição da arquitetura de rede}
 
-A arquitetura utilizada no projeto foi desenvolvida buscando separar as diferentes partes do sistema, de modo que cada uma seja responsável por uma determinada função. De maneira geral, a estrutura é formada pelo ESP32, uma API REST desenvolvida em Python, um banco de dados PostgreSQL, a interface Node-Red e, como desenvolvimento extra, uma interface Web e um simulador do ESP32.
+\subsection{Descrição da arquitetura de comunicação}
 
-A comunicação principal ocorre através do protocolo HTTP. O ESP32 se conecta à rede Wi-Fi e realiza periodicamente o envio das informações coletadas pelo BME280 para o \textit{backend}. Este servidor foi desenvolvido utilizando o \textit{framework} FastAPI e é executado na porta 8000 do computador responsável pelo sistema.
+A arquitetura principal do trabalho foi desenvolvida com o objetivo de permitir a comunicação entre o ESP32 e o Node-RED através de uma API REST utilizando o protocolo HTTP.
 
-Os dados enviados pelo ESP32 são compostos pela identificação do dispositivo, temperatura, umidade, pressão e estado do botão físico. No firmware também é calculada a altitude através da pressão atmosférica, entretanto, para o armazenamento principal do sistema foram utilizados os valores de temperatura, umidade e pressão.
+O ESP32 é responsável pela aquisição das variáveis físicas. Periodicamente são realizadas leituras do sensor BME280 e do estado do botão. Essas informações são então organizadas pelo firmware e enviadas através da rede.
 
-O fluxo simplificado de comunicação pode ser representado da seguinte maneira:
+A API REST é utilizada como meio de comunicação entre os diferentes elementos do sistema. Através de requisições HTTP, os dados adquiridos pelo ESP32 podem ser disponibilizados para o Node-RED, onde são posteriormente tratados e apresentados ao usuário.
+
+De maneira simplificada, o fluxo relacionado à aquisição das informações pode ser representado por:
 
 \begin{center}
-	ESP32 $\rightarrow$ API REST $\rightarrow$ PostgreSQL
+	\textbf{BME280 / Botão $\rightarrow$ ESP32 $\rightarrow$ API REST $\rightarrow$ Node-RED}
 \end{center}
 
-Além do envio de dados, a comunicação ocorre também no sentido contrário para o controle do LED. Neste caso, o Node-Red ou a interface Web envia uma requisição para a API solicitando a alteração do estado do LED. O ESP32 consulta periodicamente este estado através da API e atualiza sua saída digital de acordo com o valor recebido.
+Além da aquisição, foi implementada uma comunicação no sentido contrário para permitir a atuação remota sobre o LED. Nesse caso, o usuário realiza uma alteração através do dashboard do Node-RED e o comando correspondente é disponibilizado através da API para o ESP32.
 
-Dessa maneira, não é necessário que o Node-Red se comunique diretamente com o ESP32 para todas as operações. A API funciona como um intermediário entre os diferentes elementos do sistema, o que facilita a troca da fonte de dados e também a utilização do simulador.
+O fluxo de atuação pode ser representado por:
 
-Para diferenciar o equipamento físico do simulado foram utilizados dois identificadores. O ESP32 real utiliza o \textit{device id} \texttt{esp32-001}, enquanto o simulador utiliza \texttt{esp32-simulator-001}. A fonte que está sendo utilizada pode ser selecionada pela própria interface, evitando que os dois dispositivos enviem informações simultaneamente para o sistema.
+\begin{center}
+	\textbf{Node-RED $\rightarrow$ API REST $\rightarrow$ ESP32 $\rightarrow$ LED}
+\end{center}
 
+Essa estrutura permite demonstrar duas situações diferentes de comunicação. Na primeira, o ESP32 atua como origem das informações adquiridas pelos sensores. Na segunda, o dispositivo recebe uma informação proveniente da interface e realiza uma ação física.
 
-\vspace{3mm}
+A utilização de uma API REST permite separar a aquisição realizada pelo dispositivo da apresentação realizada no Node-RED. Dessa maneira, a comunicação ocorre através de rotas e mensagens definidas, sem a necessidade de uma ligação direta entre os elementos da interface e cada função implementada no firmware.
+
+\begin{figure}[H]
+	\centering
+	\resizebox{\linewidth}{!}{%
+		\begin{tikzpicture}[
+			node distance=1.1cm,
+			>=Latex,
+			bloco/.style={
+				rectangle,
+				draw=black,
+				rounded corners=3pt,
+				minimum width=2.6cm,
+				minimum height=1.2cm,
+				align=center,
+				font=\small
+			},
+			seta/.style={
+				->,
+				thick
+			}
+			]
+			
+			% --------------------------------------------------------
+			% Blocos principais
+			% --------------------------------------------------------
+			
+			\node[bloco] (sensores) {
+				\textbf{Aquisição}\\
+				BME280 / Botão
+			};
+			
+			\node[bloco, right=of sensores] (esp32) {
+				\textbf{ESP32}\\
+				Firmware
+			};
+			
+			\node[bloco, right=of esp32] (api) {
+				\textbf{API REST}\\
+				HTTP
+			};
+			
+			\node[bloco, right=of api] (nodered) {
+				\textbf{Node-RED}\\
+				Dashboard
+			};
+			
+			
+			% --------------------------------------------------------
+			% Fluxo de aquisição
+			% --------------------------------------------------------
+			
+			\draw[seta]
+			(sensores) --
+			node[above, font=\scriptsize] {Leitura}
+			(esp32);
+			
+			\draw[seta]
+			(esp32) --
+			node[above, font=\scriptsize] {Dados}
+			(api);
+			
+			\draw[seta]
+			(api) --
+			node[above, font=\scriptsize] {HTTP}
+			(nodered);
+			
+			
+			% --------------------------------------------------------
+			% LED
+			% --------------------------------------------------------
+			
+			\node[bloco, below=2.2cm of esp32] (led) {
+				\textbf{Atuador}\\
+				LED
+			};
+			
+			
+			% --------------------------------------------------------
+			% Fluxo de atuação
+			% --------------------------------------------------------
+			
+			\draw[seta]
+			(nodered.south) -- ++(0,-0.8)
+			-|
+			node[pos=0.25, below, font=\scriptsize] {Comando}
+			(api.south);
+			
+			\draw[seta]
+			(api.south) -- ++(0,-1.6)
+			-|
+			node[pos=0.25, below, font=\scriptsize] {Estado do LED}
+			(esp32.south);
+			
+			\draw[seta]
+			(esp32) --
+			node[right, font=\scriptsize] {Acionamento}
+			(led);
+			
+			
+			% --------------------------------------------------------
+			% Identificação dos fluxos
+			% --------------------------------------------------------
+			
+			\node[
+			above=0.55cm of api,
+			font=\small\bfseries
+			] {Fluxo de aquisição};
+			
+			\node[
+			below=2.1cm of api,
+			font=\small\bfseries
+			] {Fluxo de atuação};
+			
+		\end{tikzpicture}%
+	}
+	\caption{Arquitetura principal de comunicação entre o ESP32, a API REST e o Node-RED.}
+	\label{fig:arquitetura_principal}
+\end{figure}
+
 \subsection{Metodologia de implementação}
 
-A implementação foi realizada de forma modular, inicialmente desenvolvendo e testando as diferentes partes do sistema de maneira separada. Essa escolha foi feita principalmente para permitir que grande parte do projeto pudesse ser desenvolvido antes da utilização do ESP32 físico.
+A implementação foi realizada inicialmente através do desenvolvimento da comunicação necessária entre o ESP32 e a API REST. O firmware foi preparado para realizar a leitura do sensor BME280 e do botão, além de permitir o acionamento do LED.
 
-Primeiramente foi desenvolvido um simulador em Python, utilizando também o FastAPI. Esse programa reproduz as principais funcionalidades esperadas para o ESP32, gerando valores de temperatura, umidade e pressão, além de permitir a simulação do botão e do LED. Os valores apresentam pequenas variações durante a execução, buscando representar de maneira simples o comportamento de um sensor real.
+Após a leitura correta das variáveis, foi realizada a implementação das requisições HTTP necessárias para a troca de informações. Nessa etapa foram realizados testes para verificar o envio da telemetria e a consulta do estado do atuador.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{2-imagens/print_simulador}
-	\caption{Captura de tela do simulador desenvolvido.}
-	\label{fig:printsimulador}
-\end{figure}
+Em seguida foi desenvolvido o fluxo no Node-RED. A interface passou a consultar as informações disponibilizadas pela API e apresentar os valores de temperatura, umidade e pressão, além dos estados correspondentes ao botão e ao LED.
 
+Posteriormente foi implementado o caminho contrário da comunicação, permitindo que o estado do LED fosse alterado através do dashboard. Dessa forma, foi possível verificar a comunicação tanto no sentido ESP32 para Node-RED quanto no sentido Nodered para ESP32.
 
-Após isso, foi desenvolvido o \textit{backend} principal da aplicação. A API foi responsável por receber os dados enviados pelo simulador ou pelo ESP32, armazenar essas informações e disponibilizar rotas para consulta. Também foram implementadas rotas específicas para o controle do LED e para escolha entre a fonte simulada e o ESP32 real.
+Por último, foi configurada a atualização remota do firmware utilizando OTA. Após a programação inicial através da conexão física, foram realizados testes de atualização utilizando a rede Wi-Fi.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{2-imagens/print_backend}
-	\caption{Captura de tela do backend rodando.}
-	\label{fig:printbackend}
-\end{figure}
-
-
-Para o armazenamento das informações foi utilizado o PostgreSQL. Foram criadas tabelas separadas para os dados dos sensores e para os estados do atuador. Cada medição armazenada possui um instante de tempo, identificação do dispositivo, nome do sensor, valor medido e estado do botão. Para o LED são armazenados seu estado, dispositivo relacionado, horário da alteração e a origem do comando.
-
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{"2-imagens/Print tabela sql 1"}
-		\caption{Primeira tabela.}
-		\label{fig:print-tabela-sql-1}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{"2-imagens/Print tabela sql 2"}
-		\caption{Segunda tabela.}
-		\label{fig:print-tabela-sql-2}
-	\end{subfigure}
-	\caption{Capturas de tela das tabelas de dados SQL.}
-	\label{fig:prints-tabelas-sql}
-\end{figure}
-
-
-Com o funcionamento do simulador, da API e do banco de dados, foi possível desenvolver a interface de monitoramento sem depender inicialmente do hardware. Posteriormente o firmware do ESP32 foi programado utilizando o mesmo padrão de comunicação REST empregado pelo simulador. Desta forma, a troca entre o equipamento simulado e o equipamento físico não exige alterações nas rotas principais utilizadas pelo restante do sistema.
-
-Por fim foi realizada a integração com o Node-Red, reunindo a visualização das variáveis, histórico dos sensores, estado do botão, controle do LED e seleção da fonte de dados em uma única interface.
+Após o funcionamento dos requisitos principais, foram desenvolvidas separadamente algumas funcionalidades adicionais, apresentadas posteriormente na subseção de desenvolvimento extra.
 
 

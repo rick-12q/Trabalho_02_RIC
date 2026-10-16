@@ -1,252 +1,383 @@
-%%======%%======%0%======%%=======%%
+%%====================================================================%%
+%%                           PROGRAMAÇÃO                               %%
+%%====================================================================%%
+
 \vspace{5mm}
 \section{Programação}
-%\addcontentsline{toc}{chapter}{Materiais e métodos}
+\label{sec:programacao}
 
-%%======%%======%0%======%%=======%%
+O desenvolvimento do sistema envolveu principalmente três partes: a programação do ESP32, a implementação da comunicação através da API REST e a construção da interface de supervisão utilizando Node-RED. Além disso, foi implementada a atualização remota do firmware utilizando OTA.
 
-Todo o código desenvolvido e utilizado, está presente no repositório do Git-Hub, e pode ser acessado clicando \href{https://github.com/rick-12q/Trabalho_02_RIC}{AQUI}.
+Para facilitar a organização dos diferentes componentes desenvolvidos, o repositório foi dividido em diretórios específicos para cada parte do sistema. Sua estrutura principal é apresentada a seguir:
 
-O projeto foi separado em diferentes diretórios, sendo os principais destinados ao firmware do ESP32, simulador, \textit{backend}, banco de dados, interface Web e Node-Red. Essa divisão foi utilizada para facilitar principalmente os testes e alterações durante o desenvolvimento.
+\begin{repobox}
+	Trabalho\_02\_RIC/
+	|
+	+-- Code/
+	|   |
+	|   +-- backend/          
+	|   |
+	|   +-- firmware/         # Código do ESP32 (.ino)
+	|   |
+	|   +-- frontend/         
+	|   |
+	|   +-- simulator/        
+	|   |
+	|   +-- README.md         
+	|
+	+-- Node\_red/
+	|   |
+	|   +-- Node\_red.json     
+	|
+	+-- ...
+\end{repobox}
 
+O firmware utilizado no ESP32 encontra-se no diretório \texttt{Code/firmware/}, enquanto o fluxo desenvolvido no Node-RED está disponível em \texttt{Node\_red/Node\_red.json}. Os demais diretórios presentes em \texttt{Code/} estão relacionados aos recursos adicionais implementados no projeto, incluindo a API, o simulador e a interface web.
 
-\vspace{5mm}
+\vspace{3mm}
 \subsection{Programação do ESP32}
 
-A programação do ESP32 foi desenvolvida em C++, utilizando as bibliotecas disponibilizadas para o ambiente Arduino. O código realiza a leitura do sensor BME280, leitura do botão físico, controle do LED, atualização do display OLED, conexão Wi-Fi, comunicação HTTP com o servidor e atualização remota por OTA.
+O firmware do ESP32 foi desenvolvido em C++ utilizando o framework Arduino. O programa é responsável pela leitura do BME280, leitura do botão, controle do LED, atualização do display OLED, conexão com a rede Wi-Fi, comunicação HTTP e funcionamento do OTA.
 
-O Código~\ref{cod:config_esp32} apresenta as principais configurações
-utilizadas no firmware do ESP32, incluindo as bibliotecas empregadas,
-a configuração da rede Wi-Fi, o endereço do servidor backend, a
-identificação do dispositivo, os parâmetros de atualização OTA e os
-pinos utilizados pelos periféricos.
+Para implementação disso, foram utilizadas bibliotecas específicas para comunicação Wi-Fi e HTTP, além daquelas em uso para o BME280, display OLED e atualização OTA.
 
-\begin{lstlisting}[
-	style=codigoESP,
-	caption={Configuração inicial do firmware do ESP32.},
-	label={cod:config_esp32}
-	]
-	/*
-	============================================================
-	PROJETO 2 - RIC
-	ESP32 + BME280 + OLED + REST + Wi-Fi + OTA
-	============================================================
-	*/
-	
-	#include <Arduino.h>
-	#include <WiFi.h>
-	#include <HTTPClient.h>
-	#include <WebServer.h>
-	#include <ArduinoOTA.h>
-	#include <ESPmDNS.h>
-	#include <Wire.h>
-	#include <Adafruit_Sensor.h>
-	#include <Adafruit_BME280.h>
-	#include <SSD1306.h>
-	
-	// ============================================================
-	// CONFIGURACAO
-	// ============================================================
-	
-	const char* WIFI_SSID = "labautomacao";
-	const char* WIFI_PASSWORD = "********";
-	
-	// IP do notebook na mesma rede do ESP32
-	const char* BACKEND_HOST = "200.145.26.14";
-	const int BACKEND_PORT = 8000;
-	
-	// Identificacao do ESP32
-	const char* DEVICE_ID = "esp32-001";
-	const char* HOSTNAME = "esp32-001";
-	
-	// Senha para atualizacoes OTA
-	const char* OTA_PASSWORD = "********";
-	
-	// ============================================================
-	// HARDWARE
-	// ============================================================
-	
-	#define LEDPIN 25
-	#define BUTTON 0
-	
-	// BME280
-	#define I2C_SDA 21
-	#define I2C_SCL 22
-	#define SEALEVELPRESSURE_HPA 1029.9
-	
-	// OLED
-	#define OLED_I2C_ADDR 0x3C
-	#define OLED_RESET 16
-	#define OLED_SDA 4
-	#define OLED_SCL 15
-\end{lstlisting}
+O sensor BME280 foi conectado através do barramento I$^2$C. Durante a inicialização do dispositivo, o firmware tenta localizar o sensor inicialmente através do endereço \texttt{0x76}. Caso não seja encontrado, também é realizada uma tentativa utilizando o endereço \texttt{0x77}.
 
-Para comunicação com o BME280 foi utilizado o protocolo I2C. No programa foram definidos os pinos GPIO 21 para SDA e GPIO 22 para SCL. Durante a inicialização o código procura o sensor inicialmente no endereço \texttt{0x76} e, caso ele não seja encontrado, é feita uma segunda tentativa utilizando o endereço \texttt{0x77}. Esse procedimento permite utilizar diferentes configurações encontradas nos módulos BME280.
+Após a inicialização, são realizadas leituras periódicas de temperatura, umidade e pressão atmosférica. 
 
-As leituras de temperatura, umidade e pressão são feitas utilizando a biblioteca \texttt{Adafruit\_BME280}. A altitude também é calculada localmente utilizando a pressão de referência ao nível do mar. O botão utilizado no projeto foi configurado no GPIO 0 como \texttt{INPUT\_PULLUP}, enquanto o LED foi configurado no GPIO 25 como saída digital.
+O botão foi configurado utilizando uma entrada digital com \texttt{INPUT\_PULLUP}. Dessa forma, o estado lógico do pino é alterado quando ocorre o acionamento físico do botão. Essa informação é enviada juntamente com os demais dados adquiridos pelo ESP32.
 
-Além do sensor, foi utilizado o display OLED presente no módulo. O display é atualizado aproximadamente a cada segundo, apresentando temperatura, umidade, pressão, endereço IP do ESP32, estado do LED e do botão. Dessa maneira foi possível verificar algumas das principais informações diretamente no equipamento, sem depender do dashboard.
+O LED foi configurado como saída digital e representa o atuador utilizado no projeto. Diferentemente das informações do BME280, que seguem do ESP32 para o sistema de supervisão, o estado desejado para o LED é recebido através da comunicação com a API.
+
+Para facilitar o acompanhamento do dispositivo durante os testes, também foi utilizado o display OLED presente no módulo. Nele são apresentados os valores obtidos pelo BME280, o endereço IP do ESP32 e os estados do botão e do LED.
+
+A comunicação com a rede é realizada através do Wi-Fi. Durante a inicialização, o ESP32 tenta estabelecer conexão com a rede configurada e, após a conexão, passa a realizar as requisições HTTP necessárias para funcionamento do sistema.
+
+O firmware também possui uma rotina de reconexão. Caso a conexão Wi-Fi seja interrompida durante a execução, novas tentativas são realizadas sem que seja necessário reinicializar manualmente o dispositivo.
+
+Para evitar uma quantidade excessiva de requisições, foram definidos intervalos para cada operação. O envio da telemetria é realizado aproximadamente a cada cinco segundos, enquanto a consulta do estado do LED ocorre aproximadamente a cada dois segundos.
+
+A Figura \ref{fig:esp-led-off} apresenta o dispositivo durante os testes com o LED desligado.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{"2-imagens/imagem esp led off"}
-	\caption{Fotografia do ESP32 juntamente com o dashboard Node-Red ao fundo, e a tela }
-	\label{fig:imagem-esp-led-off}
+	\includegraphics[width=0.60\textwidth]{2-imagens/imagem esp led off.jpeg}
+	\caption{ESP32 durante os testes com o LED desligado.}
+	\label{fig:esp-led-off}
+\end{figure}
+
+A Figura \ref{fig:esp-led-on} apresenta o mesmo dispositivo após o acionamento do LED.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.70\textwidth]{2-imagens/imagem esp led on.jpeg}
+	\caption{ESP32 durante os testes com o LED acionado.}
+	\label{fig:esp-led-on}
 \end{figure}
 
 
-Após a inicialização, o ESP32 tenta realizar a conexão com a rede Wi-Fi configurada. Caso a conexão seja perdida durante a execução, o próprio programa realiza novas tentativas de conexão, sem a necessidade de reiniciar a placa.
+\vspace{3mm}
+\subsection{Comunicação através da API REST}
 
-A telemetria é enviada para a API REST a cada 5 segundos através de uma requisição HTTP \texttt{POST}. Os dados são enviados utilizando o formato JSON, contendo o identificador do ESP32 e os valores medidos. No servidor, esses dados são validados e posteriormente armazenados no PostgreSQL.
+A comunicação entre o ESP32 e o Node-RED foi realizada utilizando uma API REST. Essa estrutura permite organizar diferentes operações através de rotas HTTP, separando o envio das informações dos sensores das operações relacionadas ao atuador.
 
-Para o acionamento do LED foi utilizado um funcionamento um pouco diferente. O ESP32 realiza uma requisição \texttt{GET} aproximadamente a cada 2 segundos para consultar qual deve ser o estado do LED. Quando existe uma alteração feita pelo Node-Red ou pela interface Web, a nova informação é recebida pelo ESP32 e aplicada ao pino de saída.
+No envio da telemetria, o ESP32 realiza uma requisição contendo as informações adquiridas. Entre os dados enviados estão o identificador do dispositivo, temperatura, umidade, pressão e estado do botão.
 
-Também foi implementado no próprio ESP32 um pequeno servidor HTTP local. Por meio dele é possível consultar o estado do equipamento, telemetria e também realizar testes de acionamento do LED diretamente pelo endereço IP da placa.
+Para o controle do LED é utilizado o processo contrário. O estado solicitado pelo usuário através do Node-RED é disponibilizado pela API e consultado periodicamente pelo ESP32. Após receber a informação, o firmware atualiza o estado da saída correspondente.
+
+Entre as rotas utilizadas durante o funcionamento do sistema estão:
+
+\begin{table}[H]
+	\centering
+	\caption{Principais rotas utilizadas na comunicação REST.}
+	\label{tab:endpoints-api}
+	\begin{tabular}{|c|p{5.3cm}|p{6.2cm}|}
+		\hline
+		\textbf{Método} & \textbf{Rota} & \textbf{Função} \\ \hline
+		
+		GET &
+		\texttt{/health} &
+		Verificação do funcionamento da API. \\ \hline
+		
+		POST &
+		\texttt{/api/telemetry} &
+		Recebimento das informações enviadas pelo ESP32. \\ \hline
+		
+		GET &
+		\texttt{/api/telemetry/latest} &
+		Consulta das informações mais recentes. \\ \hline
+		
+		GET &
+		\texttt{/api/actuators/led} &
+		Consulta do estado solicitado para o LED. \\ \hline
+		
+		POST &
+		\texttt{/api/actuators/led} &
+		Alteração do estado do LED através da interface. \\ \hline
+		
+	\end{tabular}
+\end{table}
+
+A utilização dos métodos GET e POST permitiu implementar tanto operações de consulta quanto operações de envio e alteração de informações. Dessa maneira, foi possível estabelecer a comunicação necessária para aquisição e atuação utilizando o mesmo padrão REST.
+
+Durante os testes, as respostas HTTP também foram utilizadas para verificar o resultado das requisições. Isso foi importante principalmente durante a integração com o ESP32 físico, pois permitiu diferenciar falhas de conexão de requisições recebidas corretamente pelo servidor.
+\begin{figure}[H]
+	\centering
+	
+	% Linha 1
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/POST led"}
+		\caption{Requisição POST para controle do LED.}
+		\label{fig:post-led}
+	\end{subfigure}
+	\hfill
+		\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/GET source"}
+		\caption{Requisição GET para consulta da fonte ativa.}
+		\label{fig:get-source}
+	\end{subfigure}
+	\vspace{0.4cm}
+		% Linha 2
+	\begin{subfigure}[b]{0.48\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{"2-imagens/GET telemetria"}
+	\caption{Requisição GET para consulta da telemetria.}
+	\label{fig:get-telemetria}
+\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/GET led"}
+		\caption{Requisição GET para o estado do LED.}
+		\label{fig:get-led}
+	\end{subfigure}
+	
+	\caption{Testes das principais rotas da API REST realizados através do Postman.}
+	\label{fig:testes-postman}
+\end{figure}
 
 
-\vspace{5mm}
-\subsection{Construção da interface Node-Red}
 
-A interface principal de visualização e controle foi desenvolvida utilizando o Node-Red. A escolha dessa ferramenta permitiu organizar a comunicação através de blocos, além de criar um dashboard para acompanhar os dados sem a necessidade de acessar diretamente a API.
+\vspace{3mm}
+\subsection{Construção da interface Node-RED}
+
+O Node-RED foi utilizado como interface principal para visualização e controle do sistema.
+A Figura \ref{fig:flow-node-red} apresenta o fluxo desenvolvido durante o trabalho.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{"2-imagens/flow node red"}
-	\caption{Captura de tela do Flow do node-red.}
+	\includegraphics[width=0.8\textwidth]{2-imagens/flow node red.png}
+	\caption{Fluxo desenvolvido no Node-RED para comunicação e supervisão do ESP32.}
 	\label{fig:flow-node-red}
 \end{figure}
 
+No dashboard foram criados elementos destinados à apresentação das variáveis provenientes do BME280. Dessa forma, é possível acompanhar os valores de temperatura, umidade relativa e pressão atmosférica obtidos pelo ESP32.
 
-O fluxo desenvolvido consulta periodicamente a API REST e utiliza os dados retornados para atualizar os elementos presentes no dashboard. Foram criados indicadores para temperatura, umidade, pressão, estado do botão e estado do LED. Também foram adicionados gráficos para permitir a visualização dos valores registrados ao longo do tempo.
+Além dos valores do sensor, também é apresentado o estado do botão físico. Quando ocorre seu acionamento, a alteração é enviada através da comunicação e apresentada no dashboard, permitindo verificar o funcionamento de uma entrada digital do dispositivo.
+
+Para demonstrar a comunicação no sentido contrário, também foi implementado o controle do LED. Através da interface, o usuário pode solicitar que o atuador seja ligado ou desligado. O comando é enviado através da API e posteriormente recebido pelo ESP32.
+
+Também foram adicionados indicadores para auxiliar na identificação do estado da comunicação e do dispositivo. Dessa maneira, além dos valores das variáveis, o usuário consegue verificar visualmente o estado do LED e se o dispositivo encontra-se comunicando corretamente.
+
+\vspace{3mm}
+\subsubsection{Entrada dos dados}
+
+A entrada e o processamento dos dados no Node-RED são realizados pelo grupo de nós denominado \textit{INPUT DATA}. Nesse grupo, foi implementado um nó \textit{HTTP IN}, identificado como ``ESP32 - Receber Telemetria'', configurado para receber requisições do tipo POST por meio da rota \texttt{/api/telemetry}. Os dados recebidos são estruturados em formato JSON, contendo informações como temperatura, umidade, pressão atmosférica, estado do botão e identificação do dispositivo.
+
+Além da entrada por POST, o fluxo possui uma consulta periódica à API REST. Um nó temporizador, configurado com intervalo de dois segundos, inicia a requisição HTTP para obtenção dos dados mais recentes. A resposta é encaminhada ao nó ``JSON Converter'' e, posteriormente, à função ``Processar Telemetria'', responsável por separar e converter os valores recebidos antes de encaminhá-los aos demais grupos do fluxo.
 
 \begin{figure}[H]
 	\centering
+	\includegraphics[width=0.6\linewidth]{"2-imagens/Entrada de dados node red"}
+	\caption{Captura de tela do grupo de entrada de dados no Node-Red.}
+	\label{fig:entrada-de-dados-node-red}
+\end{figure}
+
+\vspace{3mm}
+\subsubsection{Exposição dos dados obtidos}
+
+Após a chegada e o tratamento dos dados no \textit{flow} do Node-RED, estes são encaminhados, por meio de nós \textit{link}, ao grupo denominado \textit{INDICADORES}. Nesse grupo, blocos do tipo \textit{function} realizam a separação e preparação individual das variáveis de temperatura, umidade, pressão e estado do botão.
+
+Cada função atribui ao \texttt{msg.payload} o valor correspondente à variável que será apresentada. Em seguida, os dados de temperatura, umidade e pressão são encaminhados aos respectivos elementos \textit{gauge} do dashboard, enquanto o estado do botão é convertido para uma indicação textual, permitindo identificar se este se encontra pressionado ou não. Dessa forma, os dados recebidos são organizados e apresentados individualmente na interface de monitoramento.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{"2-imagens/INDICADORES de dados node red"}
+	\caption{Captura de tela do grupo de indicares de dados no Node-Red.}
+	\label{fig:INDICADORES-de-dados-node-red}
+\end{figure}
+
+\subsubsection{Status de conexão}
+
+O status de conexão é verificado periodicamente pelo Node-RED por meio do grupo \textit{STATUS DE CONEXÃO}. Um nó temporizador inicia a verificação em intervalos regulares, realizando uma requisição HTTP à API REST de acordo com a fonte de dados selecionada no sistema.
+
+A resposta da requisição é analisada por blocos \textit{function}, que verificam se houve comunicação com o dispositivo ativo. A partir desse resultado, o fluxo determina o estado da conexão e atualiza as informações utilizadas pelo dashboard.
+
+\begin{figure}[H]
+	\centering
+	
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{"2-imagens/dashboard-NR1"}
-		\caption{Primeiro print do Dashboard principal.}
-		\label{fig:dashboard-NR1}
+		\includegraphics[width=\linewidth]{"2-imagens/status de conexao node red"}
+		\caption{Grupo de Status de conexão no Node-RED.}
+		\label{fig:status-conexao-node-red}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.48\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{"2-imagens/dashboard-NR2"}
-		\caption{Segundo print do Dashboard principal.}
-		\label{fig:dashboard-NR2}
+		\includegraphics[width=\linewidth]{"2-imagens/indicador status node red"}
+		\caption{Seleção da fonte de dados e indicador do Status de conexão.}
+		\label{fig:indicador-status-node-red}
 	\end{subfigure}
-	\caption{Captura de tela dos Dashboards principais.}
-	\label{fig:prints-tabelas-sql}
+	
+	\caption{Implementação e visualização do Status de conexão no Node-RED.}
+	\label{fig:status-conexao-completo-node-red}
 \end{figure}
 
-
-Para evitar que fosse necessário alterar manualmente os endereços das requisições durante os testes, foi implementado um seletor de fonte. Através desse seletor é possível escolher entre \texttt{SIMULATOR} e \texttt{ESP REAL}. Quando a seleção é alterada, o Node-Red modifica o identificador utilizado pelas demais requisições e informa a nova fonte para o \textit{backend} através da rota \texttt{/api/source}.
-
-Quando o simulador é escolhido, o identificador utilizado passa a ser \texttt{esp32-simulator-001}. Para o equipamento físico é utilizado \texttt{esp32-001}. O mesmo estado é compartilhado pelas diferentes partes do fluxo, permitindo que gráficos, indicadores e comandos utilizem sempre o dispositivo selecionado.
-
-O controle do LED também foi integrado ao dashboard. Ao alterar o estado através da interface, é realizada uma requisição HTTP \texttt{POST} para a rota responsável pelo atuador. O novo estado fica registrado no servidor e posteriormente é consultado pelo ESP32. Também é realizada uma consulta periódica do estado atual, fazendo com que a interface permaneça sincronizada mesmo quando a alteração ocorre por outro ponto do sistema.
+\vspace{3mm}
+\subsubsection{Dashboard construído}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{2-imagens/dashboard-NR1.jpeg}
+	\caption{Dashboard principal desenvolvido no Node-RED.}
+	\label{fig:dashboard-nr1}
+\end{figure}
 
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}[b]{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{"2-imagens/imagem esp led off"}
-		\caption{Fotografia do ESP32 com o led desligado, sendo exibido o Dashboard no estado DESLIGADO.}
-		\label{fig:led off}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{"2-imagens/imagem esp led on"}
-		\caption{Fotografia do ESP32 com o led ligado, sendo exibido o Dashboard no estado LIGADO.}
-		\label{fig:led on}
-	\end{subfigure}
-	\caption{Fotografias do ESP32 com o led ligado e desligado.}
-	\label{fig:prints-tabelas-sql}
+	\includegraphics[width=0.95\textwidth]{2-imagens/dashboard-NR2.jpeg}
+	\caption{Visualização complementar do dashboard desenvolvido no Node-RED.}
+	\label{fig:dashboard-nr2}
 \end{figure}
 
-Além dos dados atuais, o Node-Red possui comunicação com o banco PostgreSQL, permitindo consultar informações armazenadas anteriormente. Foram utilizados os módulos \texttt{node-red-dashboard} e \texttt{node-red-contrib-postgresql} para construção da interface e comunicação com o banco de dados.
+A partir dos testes realizados foi possível observar tanto a atualização dos valores provenientes do sensor quanto a resposta do ESP32 aos comandos enviados pelo dashboard. Com isso, foi verificado o funcionamento da comunicação REST nos dois sentidos necessários para o projeto.
 
-Também foram implementados indicadores de conexão para informar se o \textit{backend} e a fonte selecionada estão online ou offline. Isso foi importante durante os testes, principalmente para diferenciar um problema na comunicação do servidor de uma possível desconexão do ESP32.
-
-
-\vspace{5mm}
+\vspace{3mm}
 \subsection{Realização do OTA}
 
-Além da programação convencional pela porta USB, foi implementada a possibilidade de atualização do código através de OTA (\textit{Over-The-Air}). Esse recurso permite enviar uma nova versão do programa para o ESP32 utilizando a própria rede Wi-Fi, sem que seja necessário manter a placa conectada fisicamente ao computador responsável pela programação.
+Além da comunicação REST, outro requisito do trabalho foi a implementação da programação remota do ESP32 utilizando OTA (\textit{Over-the-Air}).
 
-Para isso foi utilizada a biblioteca \texttt{ArduinoOTA}. Durante a inicialização do ESP32 é definido um \textit{hostname} para o dispositivo e uma senha de autenticação. Após a conexão com a rede Wi-Fi, o serviço OTA é inicializado e o ESP32 passa a aguardar possíveis atualizações.
+A utilização desse recurso permite atualizar o firmware através da própria rede Wi-Fi. Dessa maneira, após a configuração inicial, não é necessário conectar fisicamente o ESP32 ao computador sempre que uma nova versão do programa precisar ser enviada.
 
-\begin{lstlisting}[
-	style=codigoESP,
-	caption={Configuração do serviço de atualização remota OTA no ESP32.},
-	label={cod:config_ota}
-	]
-	// Configuracao OTA
-	void setupOTA() {
-		if (otaStarted || WiFi.status() != WL_CONNECTED) return;
-		
-		ArduinoOTA.setHostname(HOSTNAME);
-		ArduinoOTA.setPassword(OTA_PASSWORD);
-		
-		ArduinoOTA.onStart([]() {
-			Serial.println("OTA iniciado...");
-		});
-		
-		ArduinoOTA.onEnd([]() {
-			Serial.println("\nOTA concluido.");
-		});
-		
-		ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
-			Serial.printf("OTA: %u%%\r", (progress * 100) / total);
-		});
-		
-		ArduinoOTA.onError([](ota_error_t error) {
-			Serial.printf("Erro OTA [%u]\n", error);
-		});
-		
-		ArduinoOTA.begin();
-		otaStarted = true;
-		
-		Serial.print("OTA pronto: ");
-		Serial.print(HOSTNAME);
-		Serial.println(".local");
-	}
-\end{lstlisting}
-O dispositivo foi configurado com o nome \texttt{esp32-001}, podendo ser identificado na rede também através do serviço mDNS. Durante a execução normal, a função responsável pelo OTA é chamada continuamente no \textit{loop} principal, juntamente com as funções de leitura dos sensores, servidor HTTP e envio dos dados.
+Para implementação foi utilizada a biblioteca \texttt{ArduinoOTA}. Durante a inicialização do firmware são configurados os parâmetros necessários para identificação e autenticação do dispositivo na rede.
 
-O primeiro envio do programa precisa ser realizado de maneira convencional, utilizando a conexão física com a placa. Isso é necessário pois o firmware responsável pelo OTA ainda precisa estar previamente gravado no ESP32. Depois desta primeira programação e com o ESP32 conectado na mesma rede do computador, as próximas versões podem ser transferidas pela rede.
+No firmware foi definido um \textit{hostname} para facilitar a identificação do dispositivo. Também foi configurada uma senha para impedir que a atualização seja realizada sem autenticação.
 
-Durante uma atualização são exibidas informações pelo monitor serial, incluindo o início da atualização, porcentagem transferida, finalização e possíveis erros. Também foi implementada uma senha para impedir que uma atualização seja iniciada sem a autenticação definida no programa.
+Durante o processo de OTA também foram configuradas funções responsáveis por indicar o início da atualização, seu progresso, finalização e possíveis erros. Essas informações permitem acompanhar a transferência e verificar se o novo firmware foi recebido corretamente.
+
+Após a configuração inicial foram realizados testes de atualização através da rede. A Figura \ref{fig:ota-success} apresenta um dos testes realizados com sucesso.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\linewidth]{"2-imagens/OTA succes"}
-	\caption{Fotografia do OTA fazendo upload com sucesso.}
-	\label{fig:ota-succes}
+	\includegraphics[width=0.7\textwidth]{2-imagens/OTA succes.jpeg}
+	\caption{Atualização remota do firmware através de OTA realizada com sucesso.}
+	\label{fig:ota-success}
 \end{figure}
 
+A implementação do OTA se mostrou útil durante o próprio desenvolvimento do trabalho, uma vez que alterações posteriores no firmware puderam ser enviadas sem a necessidade de conectar novamente o cabo de programação ao ESP32.
 
-Uma vantagem observada nesse método é que, após o ESP32 estar instalado e alimentado, pequenas alterações no firmware podem ser feitas sem a necessidade de retirar o dispositivo do local apenas para conectá-lo novamente através do cabo USB.
 
+%%====================================================================%%
+%%                    DESENVOLVIMENTOS EXTRAS                          %%
+%%====================================================================%%
+\vspace{3mm}
+\subsection{Desenvolvimentos extras}
 
-\vspace{5mm}
-\subsection{Desenvolvimento extra}
+Após a implementação dos requisitos principais do trabalho, foram desenvolvidos recursos adicionais com o objetivo de ampliar o sistema. Esses recursos não são necessários para realizar a comunicação REST entre o ESP32 e o Node-RED nem para o funcionamento do OTA, sendo portanto considerados desenvolvimentos extras.
 
-Além dos requisitos principais do trabalho, foram desenvolvidas algumas funcionalidades adicionais para facilitar os testes e aumentar as possibilidades de utilização do sistema.
+\vspace{3mm}
+\subsubsection{Simulador do ESP32}
 
-O primeiro desenvolvimento foi um simulador completo do ESP32 executado no computador. Ele foi desenvolvido em Python e possui uma API semelhante ao dispositivo físico. O simulador gera valores para temperatura, umidade e pressão, permite alterar o estado de um botão virtual e reproduz também o funcionamento do LED. A cada 5 segundos os valores gerados são enviados para o mesmo \textit{backend} utilizado pelo ESP32 real.
+Como primeiro desenvolvimento adicional, foi criado um simulador do ESP32 utilizando Python. Sua finalidade foi permitir a execução de uma fonte virtual de dados sem depender permanentemente do dispositivo físico.
 
-Essa implementação foi bastante utilizada durante o desenvolvimento, pois permitiu construir e testar praticamente todo o restante do sistema antes da utilização do hardware físico.
+O simulador reproduz parte do comportamento do ESP32, gerando valores correspondentes às variáveis ambientais e mantendo estados virtuais para o botão e para o LED. Para diferenciá-lo do dispositivo real, foi utilizado um identificador próprio.
 
-Também foi desenvolvida uma interface Web utilizando HTML, CSS e JavaScript. A interface permite visualizar as medições dos sensores, estado do botão, situação da conexão e controlar o LED. Para representação gráfica do histórico foi utilizado o Chart.js. Assim como no Node-Red, a comunicação é realizada através da API REST, sem acesso direto ao banco de dados pelo navegador.
+A utilização do simulador também facilitou alguns testes durante o desenvolvimento, principalmente quando o ESP32 físico não estava conectado.
+
+A Figura \ref{fig:simulador-extra} apresenta o simulador em execução.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{2-imagens/dashboard-WEB}
-	\caption{Captura de tela do dashboard web desenvolvido com HTML5}
-	\label{fig:dashboard-web}
+	\includegraphics[width=0.7\textwidth]{2-imagens/print_simulador.png}
+	\caption{Simulador do ESP32 desenvolvido como funcionalidade adicional.}
+	\label{fig:simulador-extra}
 \end{figure}
 
-Outro desenvolvimento adicional foi a implementação do banco de dados PostgreSQL. As medições recebidas são armazenadas na tabela \texttt{sensor\_logs}, enquanto as alterações do LED são registradas em \texttt{actuator\_status}. Com isso, além de visualizar apenas o valor atual dos sensores, é possível consultar informações coletadas anteriormente.
+Para permitir a utilização tanto do dispositivo real quanto do simulador, foi adicionada uma seleção de fonte. O ESP32 físico é identificado como \texttt{esp32-001}, enquanto o simulador utiliza \texttt{esp32-simulator-001}. Assim, o usuário pode definir qual das duas fontes deseja utilizar durante os testes.
 
-Foi desenvolvido também o sistema para selecionar qual dispositivo deve alimentar a aplicação. A API mantém uma fonte ativa, que pode ser \texttt{simulator} ou \texttt{real}. Caso um dispositivo diferente da fonte selecionada tente enviar telemetria, seus dados não são aceitos. Esse controle foi utilizado principalmente para impedir que os valores simulados fossem misturados com as medições obtidas pelo ESP32 real.
+\vspace{3mm}
+\subsubsection{Interface Web}
+
+Também foi desenvolvida uma interface Web independente do Node-RED. Essa interface foi construída utilizando HTML, CSS e JavaScript e permite acompanhar as informações do sistema através de um navegador.
+
+A aplicação apresenta os valores obtidos pelos sensores, informações relacionadas ao dispositivo e o estado do atuador. Também foi implementado o controle do LED através da própria interface.
+
+A Figura \ref{fig:dashboard-web-extra} apresenta a interface desenvolvida.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{2-imagens/dashboard-WEB.jpeg}
+	\caption{Interface Web desenvolvida como funcionalidade adicional.}
+	\label{fig:dashboard-web-extra}
+\end{figure}
+
+A interface Web não substitui o dashboard desenvolvido no Node-RED. Sua implementação foi realizada como uma funcionalidade adicional, demonstrando que os mesmos dados podem ser utilizados por outras formas de visualização.
+
+\vspace{3mm}
+\subsubsection{Tela de LOGS no Node-RED}
+
+Foi desenvolvido um LOG de atividades no Node-RED, essa função é útil para rastrear conexões, comandos e possíveis problemas presentes na planta. Para a implementação foram utilizados nós \textit{link}, responsáveis por receber informações provenientes de diferentes partes do \textit{flow} e encaminhá-las para o bloco responsável pelo processamento dos registros.
+
+As mensagens recebidas são tratadas e padronizadas antes de serem apresentadas na interface. Cada registro contém informações referentes ao evento ocorrido, permitindo acompanhar alterações no estado da conexão, comandos enviados ao LED, mudanças no estado do botão e demais atividades relevantes durante a execução do sistema.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{"2-imagens/LOG node red"}
+	\caption{Captura de tela da página de LOG no Node-Red.}
+	\label{fig:log-node-red}
+\end{figure}
+
+
+\vspace{3mm}
+\subsubsection{Banco de dados PostgreSQL}
+
+Como outro desenvolvimento adicional, foi implementado um banco de dados PostgreSQL para armazenamento das informações recebidas pelo sistema.
+
+O objetivo dessa implementação foi permitir que as informações não fossem apenas apresentadas em tempo real, mas também armazenadas para consultas posteriores.
+
+Foram utilizadas duas tabelas principais. A tabela \texttt{sensor\_logs} é responsável pelo armazenamento das informações relacionadas às medições e ao botão, enquanto a tabela \texttt{actuator\_status} registra alterações relacionadas ao estado do LED.
+
+A Figura \ref{fig:sql-sensor-extra} apresenta registros relacionados às informações adquiridas.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.90\textwidth]{2-imagens/Print tabela sql 1.png}
+	\caption{Registros armazenados na tabela de telemetria do PostgreSQL.}
+	\label{fig:sql-sensor-extra}
+\end{figure}
+
+A Figura \ref{fig:sql-led-extra} apresenta registros relacionados ao atuador.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.90\textwidth]{2-imagens/Print tabela sql 2.png}
+	\caption{Registros relacionados ao estado do LED armazenados no PostgreSQL.}
+	\label{fig:sql-led-extra}
+\end{figure}
+
+A implementação do banco de dados possibilitou manter um histórico das informações produzidas durante a execução, ampliando as possibilidades de análise sem alterar o funcionamento principal da comunicação entre ESP32 e Node-RED.
+Além disso, foi desenvolvida uma página exclusiva para filtrar, validar e verificar o histórico do SQL no Node-red, de modo a facilitar a integração do usuário com as funcionalidades aplicadas.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"2-imagens/SQL node red"}
+	\caption{Captura de tela da página do Node-red que permite leitura personalizável do Node-Red.}
+	\label{fig:sql-node-red}
+\end{figure}
+
+
+
+Dessa forma, o simulador, a interface Web e o banco PostgreSQL foram utilizados para complementar o projeto, mas permaneceram independentes dos requisitos fundamentais relacionados à comunicação REST e ao OTA.
+
+

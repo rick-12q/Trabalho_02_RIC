@@ -1,13 +1,22 @@
 \babel@toc {portuguese}{}\relax 
 \contentsline {section}{\numberline {1}Introdução}{2}{section.1}%
 \contentsline {section}{\numberline {2}Dificuldades e impressões}{2}{section.2}%
-\contentsline {section}{\numberline {3}Materiais e métodos}{3}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Descrição do módulo}{3}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Descrição da arquitetura de rede}{3}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Metodologia de implementação}{4}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Programação}{5}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Programação do ESP32}{5}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Construção da interface Node-Red}{7}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Realização do OTA}{9}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Desenvolvimento extra}{11}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Conclusão}{11}{section.5}%
+\contentsline {section}{\numberline {3}Recursos utilizados}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Descrição do módulo}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Descrição da arquitetura de comunicação}{4}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Metodologia de implementação}{5}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Programação}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Programação do ESP32}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Comunicação através da API REST}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Construção da interface Node-RED}{9}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Entrada dos dados}{10}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Exposição dos dados obtidos}{10}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Status de conexão}{11}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Dashboard construído}{11}{subsubsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.4}Realização do OTA}{12}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Desenvolvimentos extras}{13}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Simulador do ESP32}{13}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Interface Web}{14}{subsubsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.3}Tela de LOGS no Node-RED}{15}{subsubsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.4}Banco de dados PostgreSQL}{15}{subsubsection.4.5.4}%
+\contentsline {section}{\numberline {5}Conclusão}{16}{section.5}%

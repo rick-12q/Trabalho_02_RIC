@@ -1,10 +1,25 @@
-% Introdução
+%%====================================================================%%
+%%                         INTRODUÇÃO                                  %%
+%%====================================================================%%
 
 \section{Introdução}
-%\addcontentsline{toc}{chapter}{Introdução} % Adiciona "Introdução" ao sumário
+\label{sec:introducao}
 
-Hoje em dia os sistemas modernos estão cada vez mais integrados entre si, e para fazer essa troca de informações uma das formas mais viáveis é o uso de \textbf{HTTP API Rest}. A ideia central do projeto é utilizar uma placa de desenvolvimento \textit{ESP32} com a tecnologia LoRa para ler dados de um sensor que mede umidade, altitude e temperatura, além de fazer a leitura do estado de um botão e controlar o acionamento de um LED interno.
+Atualmente, sistemas de automação e monitoramento utilizam cada vez mais a comunicação em rede para permitir a troca de informações entre dispositivos físicos e aplicações de supervisão. Dentro desse contexto, uma das formas de realizar essa comunicação é através do protocolo HTTP associado a uma API REST, permitindo que diferentes dispositivos realizem operações de envio, consulta e alteração de informações através de uma rede.
 
-Essas informações coletadas são enviadas pela internet via API REST, para um dashboard no Node-Red. Além disso, esse modo de comunicação permite que o Node-Red também envie comandos para a placa ESP32. Além do Node-Red, foi desenvolvido como extra uma interface HTML5, que permite outras formas de visualização, bem como um simulador digital da placa ESP32, por fim, os dados são salvos em um banco de dados SQL. 
+Neste trabalho foi desenvolvido um sistema de comunicação entre uma placa ESP32 e uma interface de supervisão construída no Node-RED. O objetivo principal foi realizar a aquisição de variáveis ambientais utilizando um sensor BME280 e disponibilizar essas informações através de uma API REST. Além da aquisição dos sensores, também foi realizada a leitura de um botão físico e o controle remoto de um LED conectado ao ESP32.
 
-A utilização dessa estrutura é bastante ampla, podendo ser empregada tanto no ramo industrial, bem como para automação residencial, profissional, etc.
+O sensor BME280 permite realizar medições de temperatura, umidade relativa e pressão atmosférica. A partir da pressão também é possível realizar uma estimativa da altitude, utilizando como referência um valor conhecido de pressão ao nível do mar. Essas informações são adquiridas pelo ESP32 e posteriormente disponibilizadas para utilização pelo sistema.
+
+A comunicação entre os diferentes elementos foi realizada através de uma rede Wi-Fi utilizando requisições HTTP. A API REST permite realizar a troca de informações entre o dispositivo e o Node-RED, fazendo com que os dados adquiridos pelo ESP32 possam ser apresentados em um dashboard e, no sentido contrário, que comandos realizados através da interface possam alterar o estado do LED.
+
+O Node-RED foi utilizado para construção da interface principal de supervisão. No dashboard desenvolvido é possível acompanhar os valores provenientes do BME280, verificar o estado do botão, visualizar o estado do LED e realizar seu acionamento remotamente. Dessa maneira, foi possível implementar tanto o monitoramento quanto a atuação através da comunicação REST.
+
+Outro requisito desenvolvido durante o trabalho foi a programação remota do ESP32 utilizando OTA (\textit{Over-the-Air}). Após uma primeira programação realizada através da conexão física, o recurso permite enviar novas versões do firmware pela rede Wi-Fi, reduzindo a necessidade de acesso físico ao dispositivo durante atualizações posteriores.
+
+Além dos requisitos principais do trabalho, também foram desenvolvidas algumas funcionalidades extras, que são apresentadas a seguir.
+Dessa forma, o desenvolvimento principal do trabalho está concentrado na integração entre ESP32, sensor BME280, API REST e Node-RED, juntamente com a implementação da atualização remota através de OTA. Os demais recursos desenvolvidos são apresentados separadamente como funcionalidades adicionais.
+
+
+
+mas distribuídos e conectados.
